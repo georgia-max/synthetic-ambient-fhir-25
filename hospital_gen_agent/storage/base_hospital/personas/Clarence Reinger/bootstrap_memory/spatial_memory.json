@@ -16,6 +16,24 @@
         "vitals station"
       ]
     },
+    "Isolation Unit": {
+      "isolation room": [
+        "isolation bed",
+        "PPE station"
+      ]
+    },
+    "General Medicine": {
+      "exam room": [
+        "exam table",
+        "computer"
+      ]
+    },
+    "Hospice / Palliative": {
+      "palliative room": [
+        "palliative bed",
+        "family chairs"
+      ]
+    },
     "OB / Prenatal Clinic": {
       "exam room": [
         "exam table",
@@ -25,6 +43,11 @@
     "Discharge": {
       "discharge desk": [
         "exit"
+      ]
+    },
+    "Inpatient Ward": {
+      "ward bay": [
+        "ward bed"
       ]
     }
   }

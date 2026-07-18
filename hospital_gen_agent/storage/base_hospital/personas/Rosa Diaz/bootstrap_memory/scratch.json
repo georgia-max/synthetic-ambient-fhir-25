@@ -2,12 +2,13 @@
   "vision_r": 8,
   "att_bandwidth": 8,
   "retention": 8,
-  "curr_time": "March 21, 2026, 09:04:00",
+  "curr_time": "March 21, 2026, 10:09:30",
   "curr_tile": [
-    6,
+    4,
     3
   ],
   "daily_plan_req": "See patients in Admissions: greet arrivals, check them in, and direct them to the waiting room.",
+  "dept_address": "General Hospital:Admissions:reception:reception desk",
   "name": "Rosa Diaz",
   "first_name": "Rosa",
   "last_name": "Diaz",
@@ -26,22 +27,22 @@
   "importance_ele_n": 2,
   "daily_req": [
     {
-      "desc": "on shift at reception",
+      "desc": "on shift in Admissions",
       "address": "General Hospital:Admissions:reception:reception desk",
       "duration": 999
     }
   ],
   "f_daily_schedule": [],
   "f_daily_schedule_hourly_org": [],
-  "act_address": "General Hospital:Admissions:reception:check-in kiosk",
+  "act_address": "General Hospital:Admissions:reception:reception desk",
   "act_start_time": "March 21, 2026, 08:00:00",
   "act_duration": 999,
-  "act_description": "on shift at reception",
-  "act_pronunciatio": "\ud83d\udece\ufe0f",
+  "act_description": "on shift in Admissions",
+  "act_pronunciatio": "\ud83d\udcac",
   "act_event": [
     "Rosa Diaz",
-    "is on shift at",
-    "reception"
+    "is",
+    "on shift in Admissions"
   ],
   "act_obj_description": null,
   "act_obj_pronunciatio": null,

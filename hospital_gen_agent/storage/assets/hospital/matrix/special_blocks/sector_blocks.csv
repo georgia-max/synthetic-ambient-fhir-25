@@ -1,5 +1,9 @@
 2, General Hospital, Admissions
 3, General Hospital, Triage
-4, General Hospital, OB / Prenatal Clinic
-5, General Hospital, Waiting Room
-6, General Hospital, Discharge
+4, General Hospital, General Medicine
+5, General Hospital, OB / Prenatal Clinic
+6, General Hospital, Inpatient Ward
+7, General Hospital, Waiting Room
+8, General Hospital, Isolation Unit
+9, General Hospital, Hospice / Palliative
+10, General Hospital, Discharge

@@ -2,12 +2,13 @@
   "vision_r": 8,
   "att_bandwidth": 8,
   "retention": 8,
-  "curr_time": "March 21, 2026, 09:04:00",
+  "curr_time": "March 21, 2026, 10:09:30",
   "curr_tile": [
-    13,
+    12,
     3
   ],
   "daily_plan_req": "See patients in Triage: take vitals, get a brief history, assign acuity, and call patients back.",
+  "dept_address": "General Hospital:Triage:triage bay 1:vitals station",
   "name": "Nurse Reyes",
   "first_name": "Nurse",
   "last_name": "Reyes",
@@ -26,7 +27,7 @@
   "importance_ele_n": 1,
   "daily_req": [
     {
-      "desc": "on shift taking vitals in triage",
+      "desc": "on shift in Triage",
       "address": "General Hospital:Triage:triage bay 1:vitals station",
       "duration": 999
     }
@@ -36,12 +37,12 @@
   "act_address": "General Hospital:Triage:triage bay 1:vitals station",
   "act_start_time": "March 21, 2026, 08:00:00",
   "act_duration": 999,
-  "act_description": "on shift taking vitals in triage",
+  "act_description": "on shift in Triage",
   "act_pronunciatio": "\ud83e\ude7a",
   "act_event": [
     "Nurse Reyes",
-    "takes",
-    "vitals in triage"
+    "is",
+    "on shift in Triage"
   ],
   "act_obj_description": null,
   "act_obj_pronunciatio": null,

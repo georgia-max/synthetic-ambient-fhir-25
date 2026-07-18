@@ -22,6 +22,9 @@ from hgen.seeding.patients import (
 )
 from hgen.seeding.world import (
     CURR_TIME,
+    DEPARTMENT_EXAM,
+    RECEPTION_STATION,
+    TRIAGE_STATION,
     canonical_world_tree,
     department_for,
     patient_start_spatial,
@@ -92,7 +95,8 @@ def aggregate_vitals(records: list[dict]) -> dict:
 
 
 def _staff_scratch(
-    name: str, age: int, learned: str, dept: str, plan_verbs: str, curr_time: str
+    name: str, age: int, learned: str, dept: str, plan_verbs: str, curr_time: str,
+    dept_address: Optional[str] = None,
 ) -> Scratch:
     parts = name.split(" ", 1)
     return Scratch(
@@ -107,6 +111,8 @@ def _staff_scratch(
         lifestyle="works clinical shifts at the hospital",
         living_area=dept,
         daily_plan_req=f"See patients in {dept}: {plan_verbs}.",
+        # Where this staff member stands on shift (their exam/bed or station).
+        dept_address=dept_address,
     )
 
 
@@ -117,7 +123,7 @@ def build_reception(
     scratch = _staff_scratch(
         name, 41, "front-desk reception clerk", "Admissions",
         "greet arrivals, check them in, and direct them to the waiting room",
-        curr_time,
+        curr_time, dept_address=RECEPTION_STATION,
     )
     chronic, _ = _created_times(curr_time)
     nb = NodeBuilder()
@@ -137,7 +143,7 @@ def build_triage_nurse(
     scratch = _staff_scratch(
         name, 38, "triage nurse", "Triage",
         "take vitals, get a brief history, assign acuity, and call patients back",
-        curr_time,
+        curr_time, dept_address=TRIAGE_STATION,
     )
     chronic, _ = _created_times(curr_time)
     nb = NodeBuilder()
@@ -171,7 +177,8 @@ def build_department_doctor(
 ) -> tuple[Scratch, dict, list[ConceptNode]]:
     """Department doctor: common conditions/procedures for their department, plus
     (if given) the hero record's Assessment/Plan as the expected outcome."""
-    scratch = _staff_scratch(name, 45, learned, dept, plan_verbs, curr_time)
+    scratch = _staff_scratch(name, 45, learned, dept, plan_verbs, curr_time,
+                             dept_address=DEPARTMENT_EXAM.get(dept))
     chronic, _ = _created_times(curr_time)
     nb = NodeBuilder()
 

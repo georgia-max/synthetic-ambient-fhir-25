@@ -18,7 +18,7 @@ from hgen.seeding.notes import (
     patient_symptom_turns,
     symptom_poignancy,
 )
-from hgen.seeding.world import CURR_TIME, patient_start_spatial
+from hgen.seeding.world import CURR_TIME, exam_address_for, patient_start_spatial
 
 # Poignancy rubric (subplan A section 3c): first matching level wins, high -> low.
 POIGNANCY_RUBRIC: list[tuple[int, tuple[str, ...]]] = [
@@ -190,6 +190,8 @@ def build_patient(
             "Go to the hospital: check in at Admissions, wait to be called, get "
             f"triaged, see the doctor about {reason}, get a plan, then go home."
         ),
+        # Route this patient to their real department (from visit_type).
+        dept_address=exam_address_for(meta["visit_type"]),
     )
 
     # Associative memory (oldest -> newest).

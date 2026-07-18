@@ -27,11 +27,28 @@ Ground rules for this effort:
 
 Everything below is written to these four choices.
 
+**Demo arc (two complementary acts):**
+1. **Human story (qualitative)** — the OB vertical slice: one real patient
+   (Clarence Reinger) with the real verbatim consult. Built and working
+   (`plans/SUBPLAN_B`).
+2. **Operations story (quantitative)** — the ER surge: synthetic mass-casualty
+   patients from a building fire, 1-vs-3 ER doctors, waiting-time + bottleneck
+   charts (`plans/SUBPLAN_D`). The dataset has no ER data, so these patients are
+   synthetically generated — which is the pitch.
+The pretty frontend (`plans/SUBPLAN_C`) upgrades the visuals for act 1 and can
+later animate act 2.
+
 **Subplans** (detailed specs):
 - `plans/SUBPLAN_A_seeding.md` — exact dataset → bootstrap rules (world spec,
   patient/staff `scratch` + memory nodes, poignancy rubric, note parsing).
 - `plans/SUBPLAN_B_vertical_slice.md` — the one-patient step script (cast, grid
   map with tile coords, `meta.json`, per-step timeline, acceptance criteria).
+- `plans/SUBPLAN_C_pretty_frontend.md` — visual upgrade: role-based character
+  avatars, furnished rooms, patient card panel, styled bubbles.
+- `plans/SUBPLAN_D_scenario_comparison.md` — ER surge analytics: synthetic
+  mass-casualty patients (a building fire), 1-vs-3 ER doctors, waiting-time XY chart
+  + bottleneck charts (discrete-event simulation, not LLM agents). Note: the dataset
+  has no ER encounters, so ER patients are synthetically generated.
 
 ---
 

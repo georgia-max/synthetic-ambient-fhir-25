@@ -1,9 +1,20 @@
-"""The 28x14 hospital grid spec + matrix/world.json generation.
+"""The hospital grid spec + matrix/world.json generation.
 
-Defines the logical maze for the vertical slice: rooms (sector/arena),
-game_objects, the spawn tile, the corridor spine, and the connector doors.
-Tile coordinates and colon addresses match SUBPLAN_B section 2 exactly so that
-seeding spatial addresses and director targets line up.
+Defines the logical maze: every clinical department the 25-patient dataset uses
+(General Medicine, OB / Prenatal Clinic, Inpatient Ward, Isolation Unit,
+Hospice / Palliative) plus the shared sectors every patient touches (Admissions,
+Triage, Waiting Room, Discharge). Each clinical department carries the exam
+table / bed a doctor sits at. Rooms line a single horizontal corridor spine so
+BFS pathfinding reaches every department from the Home spawn and on to Discharge.
+
+Layout (WIDTH x HEIGHT tiles, corridor on row 8)::
+
+      TOP ROOMS  (y 1..6)   Admissions  Triage  General Medicine  OB  Inpatient
+      corridor   (row 8, x 1..40)  ===================================
+      BOTTOM ROOMS (y 10..13) Waiting  Isolation  Hospice  Discharge
+
+Top rooms join the spine through a door on row 7; bottom rooms through a door on
+row 9. Home is the spawn tile on the corridor's left end.
 
 Address language: ``world:sector:arena:game_object`` (same as the original).
 The five single-row CSV matrices (collision, sector, arena, game_object,
@@ -21,20 +32,26 @@ from hgen.config import STORAGE, WEB, WORLD_NAME, MAZE_NAME
 # --------------------------------------------------------------------------- #
 # Grid constants                                                              #
 # --------------------------------------------------------------------------- #
-WIDTH = 28
-HEIGHT = 14
+WIDTH = 42
+HEIGHT = 15
 TILE_SIZE = 32
 COLLISION_CHAR = "1"  # non-"0" marks a wall in the collision matrix
 WORLD_ID = "1"
 SPAWN_NAME = "Home"
 SPAWN_ID = "30"
-SPAWN_TILE = (2, 13)
+SPAWN_TILE = (1, 8)
 
-# The corridor spine (row 7, open x=2..26) and the vertical connector doors that
-# join each room to the spine. Everything not carved below is a collision wall.
-CORRIDOR_ROW = 7
-CORRIDOR_X = range(2, 27)  # x = 2..26 inclusive
-DOOR_TILES = [(4, 6), (13, 6), (23, 6), (4, 8), (23, 8)]
+# The corridor spine (row 8, open x=1..40) and the door tiles that join each room
+# to the spine (row 7 for the top row of rooms, row 9 for the bottom row).
+# Everything not carved below is a collision wall.
+CORRIDOR_ROW = 8
+CORRIDOR_X = range(1, 41)  # x = 1..40 inclusive
+DOOR_TILES = [
+    # top-room doors (row 7)
+    (4, 7), (12, 7), (22, 7), (31, 7), (38, 7),
+    # bottom-room doors (row 9)
+    (6, 9), (17, 9), (27, 9), (37, 9),
+]
 
 
 @dataclass
@@ -70,35 +87,59 @@ class Room:
 
 
 # --------------------------------------------------------------------------- #
-# The floor plan (tiles + addresses match SUBPLAN_B section 2)                 #
+# The floor plan                                                              #
 # --------------------------------------------------------------------------- #
+# sector/arena/object NAMES here must match hgen.seeding.world (canonical tree +
+# DEPARTMENT_EXAM) and the canonical addresses in hgen.cognition.modules.
 ROOMS: list[Room] = [
+    # --- top row of rooms (y 1..6, door on row 7) ---------------------------
     Room(
         "admissions", "Admissions", "reception", "Admissions", "#5b8def",
-        (1, 1, 11, 5), "2", "10",
-        [Obj("reception desk", 4, 3, "20"), Obj("check-in kiosk", 6, 3, "21")],
+        (1, 1, 7, 6), "2", "20",
+        [Obj("reception desk", 4, 3, "40"), Obj("check-in kiosk", 6, 3, "41")],
     ),
     Room(
         "triage", "Triage", "triage bay 1", "Triage", "#3fb98f",
-        (13, 1, 20, 5), "3", "11",
-        [Obj("vitals station", 13, 3, "22")],
+        (9, 1, 16, 6), "3", "21",
+        [Obj("vitals station", 12, 3, "42")],
+    ),
+    Room(
+        "genmed", "General Medicine", "exam room", "General Medicine", "#6bd39a",
+        (18, 1, 26, 6), "4", "22",
+        [Obj("exam table", 22, 3, "43"), Obj("computer", 24, 3, "44")],
     ),
     Room(
         "ob", "OB / Prenatal Clinic", "exam room", "OB / Prenatal", "#e86aa6",
-        (22, 1, 26, 5), "4", "12",
-        [Obj("exam table", 23, 3, "23"), Obj("ultrasound machine", 25, 4, "24")],
+        (28, 1, 34, 6), "5", "23",
+        [Obj("exam table", 31, 3, "45"), Obj("ultrasound machine", 33, 4, "46")],
     ),
     Room(
+        "inpatient", "Inpatient Ward", "ward bay", "Inpatient Ward", "#c792ea",
+        (36, 1, 40, 6), "6", "24",
+        [Obj("ward bed", 38, 3, "47")],
+    ),
+    # --- bottom row of rooms (y 10..13, door on row 9) ----------------------
+    Room(
         "waiting", "Waiting Room", "waiting area", "Waiting Room", "#e0a53f",
-        (1, 9, 20, 12), "5", "13",
-        [Obj("waiting chairs", 4, 10, "25"),
-         Obj("waiting chairs", 5, 10, "25"),
-         Obj("waiting chairs", 6, 10, "25")],
+        (1, 10, 11, 13), "7", "25",
+        [Obj("waiting chairs", 4, 11, "48"),
+         Obj("waiting chairs", 5, 11, "48"),
+         Obj("waiting chairs", 6, 11, "48")],
+    ),
+    Room(
+        "isolation", "Isolation Unit", "isolation room", "Isolation Unit", "#ffcf5c",
+        (13, 10, 21, 13), "8", "26",
+        [Obj("isolation bed", 17, 11, "49"), Obj("PPE station", 19, 11, "50")],
+    ),
+    Room(
+        "hospice", "Hospice / Palliative", "palliative room", "Hospice / Palliative",
+        "#f06595", (23, 10, 32, 13), "9", "27",
+        [Obj("palliative bed", 27, 11, "51"), Obj("family chairs", 29, 11, "52")],
     ),
     Room(
         "discharge", "Discharge", "discharge desk", "Discharge", "#9b6ae8",
-        (22, 9, 26, 12), "6", "14",
-        [Obj("exit", 23, 10, "26")],
+        (34, 10, 40, 13), "10", "28",
+        [Obj("exit", 37, 11, "53")],
     ),
 ]
 

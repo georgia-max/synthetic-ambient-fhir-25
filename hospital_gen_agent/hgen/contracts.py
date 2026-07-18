@@ -177,6 +177,9 @@ class Scratch:
     curr_time: Optional[str] = None
     curr_tile: Optional[list] = None
     daily_plan_req: Optional[str] = None
+    # Care-pathway target: the department exam/bed (patients) or on-shift station
+    # (staff) this persona is routed to. Set at seeding; read by _care_pathway.
+    dept_address: Optional[str] = None
 
     # Core identity.
     name: Optional[str] = None

@@ -57,6 +57,13 @@ Admission to hospice (procedure)               -> Hospice / Palliative
 unknown                                         -> General Medicine
 ```
 
+**Emergency Department (authored, not from the data):** the dataset has no ER
+encounters, so an `Emergency Department` sector is added as an authored department
+for the surge scenario (Subplan D). Its patients are synthetically generated
+(mass-casualty fire cases, ESI 1-5), not seeded from the 25 records. Arenas: `ER
+triage`, `ER bay 1..N` (doctor + bed), `ER waiting`. This sector is only needed for
+the Subplan D surge demo, not the OB vertical slice.
+
 **Arenas + game_objects** (authored, but informed by the data):
 - `Diagnostics / Lab` objects are informed by the union of `DiagnosticReport.code.text`
   and `Observation.code.text` seen in the data (blood draw chair, analyzer,

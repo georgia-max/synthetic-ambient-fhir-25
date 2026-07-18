@@ -117,21 +117,30 @@ def _is_patient(persona) -> bool:
 
 
 def _care_pathway(persona) -> list[dict]:
-    """Build the ordered pathway steps for this persona (patient vs staff)."""
+    """Build the ordered pathway steps for this persona (patient vs staff).
+
+    Patients are routed to THEIR department's exam/bed via ``scratch.dept_address``
+    (set at seeding from ``visit_type``); it falls back to OB_EXAM so the hero
+    slice keeps working when a persona predates the dept_address field.
+    """
     scr = persona.scratch
     if _is_patient(persona):
         reason = scr.currently or "the visit"
+        dept = scr.dept_address or OB_EXAM
         return [
             {"desc": "walking in to check in", "address": ADMISSIONS, "duration": 2},
             {"desc": "checking in at reception", "address": ADMISSIONS, "duration": 2},
             {"desc": "waiting to be seen", "address": WAITING, "duration": 3},
             {"desc": "getting triaged (vitals and history)", "address": TRIAGE, "duration": 3},
-            {"desc": f"consulting with the doctor about {reason}", "address": OB_EXAM, "duration": 4},
-            {"desc": "receiving the care plan", "address": OB_EXAM, "duration": 2},
+            {"desc": f"consulting with the doctor about {reason}", "address": dept, "duration": 4},
+            {"desc": "receiving the care plan", "address": dept, "duration": 2},
             {"desc": "getting discharge instructions", "address": DISCHARGE, "duration": 2},
             {"desc": "leaving the hospital", "address": HOME, "duration": 2},
         ]
-    # Staff hold a single-stage "on shift" loop at their station.
+    # Staff hold a single-stage "on shift" loop at their station (dept_address).
+    if scr.dept_address:
+        return [{"desc": f"on shift in {scr.living_area}",
+                 "address": scr.dept_address, "duration": 999}]
     if "nurse" in (scr.name or "").lower() or "triage" in (scr.learned or "").lower():
         return [{"desc": "on shift taking vitals in triage", "address": TRIAGE, "duration": 999}]
     if "reception" in (scr.currently or "").lower() or "clerk" in (scr.learned or "").lower():

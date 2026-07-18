@@ -1,7 +1,7 @@
 {
   "world_name": "General Hospital",
-  "maze_width": 28,
-  "maze_height": 14,
+  "maze_width": 42,
+  "maze_height": 15,
   "sq_tile_size": 32,
   "special_constraint": ""
 }

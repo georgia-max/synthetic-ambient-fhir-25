@@ -27,6 +27,27 @@ def department_for(visit_type: str) -> str:
     return VISIT_TYPE_TO_DEPARTMENT.get(visit_type, "General Medicine")
 
 
+# department (sector) -> the exam-table / bed the department's doctor sits at.
+# These colon addresses MUST match the room sector/arena/game_object names in
+# hgen.world.grid so pathfinding + routing line up.
+DEPARTMENT_EXAM = {
+    "General Medicine": f"{WORLD_NAME}:General Medicine:exam room:exam table",
+    "OB / Prenatal Clinic": f"{WORLD_NAME}:OB / Prenatal Clinic:exam room:exam table",
+    "Inpatient Ward": f"{WORLD_NAME}:Inpatient Ward:ward bay:ward bed",
+    "Isolation Unit": f"{WORLD_NAME}:Isolation Unit:isolation room:isolation bed",
+    "Hospice / Palliative": f"{WORLD_NAME}:Hospice / Palliative:palliative room:palliative bed",
+}
+
+# Shared-station addresses staff hold.
+TRIAGE_STATION = f"{WORLD_NAME}:Triage:triage bay 1:vitals station"
+RECEPTION_STATION = f"{WORLD_NAME}:Admissions:reception:reception desk"
+
+
+def exam_address_for(visit_type: str) -> str:
+    """Return the department exam/bed address a patient with ``visit_type`` targets."""
+    return DEPARTMENT_EXAM[department_for(visit_type)]
+
+
 def canonical_world_tree() -> dict:
     """The full hospital spatial tree (world -> sector -> arena -> [game_objects]).
 

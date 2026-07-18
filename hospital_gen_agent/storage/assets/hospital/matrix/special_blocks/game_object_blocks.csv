@@ -1,7 +1,14 @@
-20, General Hospital, Admissions, reception, reception desk
-21, General Hospital, Admissions, reception, check-in kiosk
-22, General Hospital, Triage, triage bay 1, vitals station
-23, General Hospital, OB / Prenatal Clinic, exam room, exam table
-24, General Hospital, OB / Prenatal Clinic, exam room, ultrasound machine
-25, General Hospital, Waiting Room, waiting area, waiting chairs
-26, General Hospital, Discharge, discharge desk, exit
+40, General Hospital, Admissions, reception, reception desk
+41, General Hospital, Admissions, reception, check-in kiosk
+42, General Hospital, Triage, triage bay 1, vitals station
+43, General Hospital, General Medicine, exam room, exam table
+44, General Hospital, General Medicine, exam room, computer
+45, General Hospital, OB / Prenatal Clinic, exam room, exam table
+46, General Hospital, OB / Prenatal Clinic, exam room, ultrasound machine
+47, General Hospital, Inpatient Ward, ward bay, ward bed
+48, General Hospital, Waiting Room, waiting area, waiting chairs
+49, General Hospital, Isolation Unit, isolation room, isolation bed
+50, General Hospital, Isolation Unit, isolation room, PPE station
+51, General Hospital, Hospice / Palliative, palliative room, palliative bed
+52, General Hospital, Hospice / Palliative, palliative room, family chairs
+53, General Hospital, Discharge, discharge desk, exit

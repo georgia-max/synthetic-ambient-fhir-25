@@ -1,37 +1,172 @@
 {
   "Clarence Reinger": {
     "maze": "hospital",
-    "x": 2,
-    "y": 13
+    "x": 1,
+    "y": 8
+  },
+  "Ali Kuhic": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Ariane Runolfsson": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Corinne Crooks": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Delana Gutkowski": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Dick Larson": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Elias Wisozk": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Emory Kovacek": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Eva Casas": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Hiedi Thiel": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Isreal Howell": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Issac Mayer": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Julius Renner": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Lala Casper": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Lamont Ernser": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Latoyia Wilkinson": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Margarita Rau": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Marty Toy": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Melodee Satterfield": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Monica Hilpert": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Nigel Ankunding": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Nola Kling": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Solomon Macejkovic": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Traci Wiegand": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
+  },
+  "Van O'Reilly": {
+    "maze": "hospital",
+    "x": 1,
+    "y": 8
   },
   "Marcus": {
     "maze": "hospital",
-    "x": 3,
-    "y": 13
-  },
-  "Nurse Reyes": {
-    "maze": "hospital",
-    "x": 13,
-    "y": 3
-  },
-  "Dr. Amari": {
-    "maze": "hospital",
-    "x": 23,
-    "y": 3
+    "x": 2,
+    "y": 8
   },
   "Rosa Diaz": {
     "maze": "hospital",
     "x": 4,
     "y": 3
   },
-  "Patient A": {
+  "Nurse Reyes": {
     "maze": "hospital",
-    "x": 4,
-    "y": 10
+    "x": 12,
+    "y": 3
   },
-  "Patient B": {
+  "Nurse Kim": {
     "maze": "hospital",
-    "x": 5,
-    "y": 10
+    "x": 13,
+    "y": 3
+  },
+  "Dr. Amari": {
+    "maze": "hospital",
+    "x": 31,
+    "y": 3
+  },
+  "Dr. Okafor": {
+    "maze": "hospital",
+    "x": 22,
+    "y": 3
+  },
+  "Dr. Bhatt": {
+    "maze": "hospital",
+    "x": 38,
+    "y": 3
+  },
+  "Dr. Nguyen": {
+    "maze": "hospital",
+    "x": 17,
+    "y": 11
+  },
+  "Dr. Serrano": {
+    "maze": "hospital",
+    "x": 27,
+    "y": 11
   }
 }

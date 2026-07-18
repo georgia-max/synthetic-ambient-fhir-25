@@ -3,3 +3,5 @@
 storage/
 __pycache__/
 *.pyc
+
+/generative_agents-main/

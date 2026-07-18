@@ -2,12 +2,13 @@
   "vision_r": 8,
   "att_bandwidth": 8,
   "retention": 8,
-  "curr_time": "March 21, 2026, 09:04:00",
+  "curr_time": "March 21, 2026, 10:09:30",
   "curr_tile": [
-    23,
+    31,
     3
   ],
   "daily_plan_req": "See patients in OB / Prenatal Clinic: review the chart, examine, order prenatal labs and an ultrasound, and counsel patients.",
+  "dept_address": "General Hospital:OB / Prenatal Clinic:exam room:exam table",
   "name": "Dr. Amari",
   "first_name": "Dr.",
   "last_name": "Amari",
@@ -33,15 +34,15 @@
   ],
   "f_daily_schedule": [],
   "f_daily_schedule_hourly_org": [],
-  "act_address": "General Hospital:OB / Prenatal Clinic:exam room:doppler",
+  "act_address": "General Hospital:OB / Prenatal Clinic:exam room:exam table",
   "act_start_time": "March 21, 2026, 08:00:00",
   "act_duration": 999,
   "act_description": "on shift in OB / Prenatal Clinic",
   "act_pronunciatio": "\ud83e\udd30",
   "act_event": [
     "Dr. Amari",
-    "works",
-    "OB/Prenatal Clinic"
+    "is",
+    "on shift in OB / Prenatal Clinic"
   ],
   "act_obj_description": null,
   "act_obj_pronunciatio": null,

@@ -1,5 +1,9 @@
-10, General Hospital, Admissions, reception
-11, General Hospital, Triage, triage bay 1
-12, General Hospital, OB / Prenatal Clinic, exam room
-13, General Hospital, Waiting Room, waiting area
-14, General Hospital, Discharge, discharge desk
+20, General Hospital, Admissions, reception
+21, General Hospital, Triage, triage bay 1
+22, General Hospital, General Medicine, exam room
+23, General Hospital, OB / Prenatal Clinic, exam room
+24, General Hospital, Inpatient Ward, ward bay
+25, General Hospital, Waiting Room, waiting area
+26, General Hospital, Isolation Unit, isolation room
+27, General Hospital, Hospice / Palliative, palliative room
+28, General Hospital, Discharge, discharge desk

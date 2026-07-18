@@ -2,12 +2,13 @@
   "vision_r": 8,
   "att_bandwidth": 8,
   "retention": 8,
-  "curr_time": "March 21, 2026, 09:04:00",
+  "curr_time": "March 21, 2026, 10:09:30",
   "curr_tile": [
-    2,
-    12
+    1,
+    8
   ],
   "daily_plan_req": "Go to the hospital: check in at Admissions, wait to be called, get triaged, see the doctor about initial obstetric evaluation, get a plan, then go home.",
+  "dept_address": "General Hospital:OB / Prenatal Clinic:exam room:exam table",
   "name": "Clarence Reinger",
   "first_name": "Clarence",
   "last_name": "Reinger",
@@ -69,14 +70,14 @@
   "f_daily_schedule": [],
   "f_daily_schedule_hourly_org": [],
   "act_address": "<spawn_loc>Home",
-  "act_start_time": "March 21, 2026, 08:49:30",
+  "act_start_time": "March 21, 2026, 08:51:30",
   "act_duration": 2,
   "act_description": "leaving the hospital",
-  "act_pronunciatio": "\ud83d\udeaa",
+  "act_pronunciatio": "\ud83d\udeb6",
   "act_event": [
     "Clarence Reinger",
-    "left",
-    "hospital"
+    "is",
+    "leaving the hospital"
   ],
   "act_obj_description": null,
   "act_obj_pronunciatio": null,
@@ -88,8 +89,10 @@
   "chatting_with": null,
   "chat": null,
   "chatting_with_buffer": {
+    "Rosa Diaz": 0,
     "Nurse Reyes": 0,
-    "Dr. Amari": 0
+    "Dr. Amari": 0,
+    "Delana Gutkowski": 0
   },
   "chatting_end_time": null,
   "act_path_set": true,

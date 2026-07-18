@@ -100,6 +100,18 @@
     color: #d6e2ee;
   }
   .overlay pre { display: block; padding: 12px 14px; margin: 10px 0; white-space: pre-wrap; }
+  #side section { margin-bottom: 18px; }
+  .barrow { display: flex; align-items: center; gap: 8px; margin: 3px 0; font-size: 12px; }
+  .barrow .lbl { width: 104px; flex-shrink: 0; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .barrow .track { flex: 1; background: var(--panel-2); border-radius: 4px; height: 15px; overflow: hidden; }
+  .barrow .fill { height: 100%; border-radius: 4px; transition: width .25s ease; min-width: 2px; }
+  .barrow .num { width: 20px; text-align: right; font-variant-numeric: tabular-nums; }
+  .wtlist { max-height: 230px; overflow-y: auto; padding-right: 2px; }
+  .wtrow { display: flex; align-items: center; gap: 8px; margin: 2px 0; font-size: 12px; }
+  .wtrow .wn { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .wtrow .wtrack { width: 66px; flex-shrink: 0; background: var(--panel-2); border-radius: 4px; height: 9px; overflow: hidden; }
+  .wtrow .wfill { height: 100%; background: var(--accent); transition: width .25s ease; }
+  .wtrow .wm { width: 40px; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
 </style>
 </head>
 <body>
@@ -124,6 +136,14 @@
   <main>
     <div id="stage"><canvas id="canvas" width="800" height="400"></canvas></div>
     <aside id="side">
+      <section>
+        <h2>Patients per department</h2>
+        <div id="deptChart"></div>
+      </section>
+      <section>
+        <h2>Waiting time (min)</h2>
+        <div class="wtlist" id="waitList"></div>
+      </section>
       <h2>Cast</h2>
       <div id="personaList"></div>
       <div id="detail">
@@ -151,6 +171,11 @@
   const MS_PER_STEP = 700;                 // base wall-clock ms per sim step at 1x
   const PALETTE = ["#4ea1ff", "#ff8f6b", "#6bd39a", "#c792ea", "#ffcf5c",
                    "#f06595", "#4dd0c1", "#a3b1c2"]; // fallback persona colors
+  // Departments shown in the live bar chart (order matters). "Home / Exit" is
+  // intentionally excluded — it is not a department.
+  const DEPT_ORDER = ["Admissions", "Waiting Room", "Triage", "General Medicine",
+                      "OB / Prenatal Clinic", "Inpatient Ward", "Isolation Unit",
+                      "Hospice / Palliative", "Discharge"];
 
   const state = {
     world: null,
@@ -168,6 +193,10 @@
     speed: 1,
     selected: null,
     lastFrameTs: 0,
+    patients: [],        // patient persona names (excludes staff + family)
+    waitCum: {},         // name -> Float64Array cumulative waiting minutes by step
+    sectorColor: {},     // sector -> color (from world.rooms)
+    lastChartStep: -1,
   };
 
   const canvas = document.getElementById("canvas");
@@ -179,6 +208,8 @@
     stepLabel: document.getElementById("stepLabel"),
     speed: document.getElementById("speed"),
     personaList: document.getElementById("personaList"),
+    deptChart: document.getElementById("deptChart"),
+    waitList: document.getElementById("waitList"),
     detail: document.getElementById("detail"),
     overlay: document.getElementById("overlay"),
     ovTitle: document.getElementById("ovTitle"),
@@ -293,6 +324,32 @@
     for (const n of allPersonaNames(state.master))
       if (!(n in state.personaColor))
         state.personaColor[n] = PALETTE[Object.keys(state.personaColor).length % PALETTE.length];
+
+    // Sector -> color from world rooms (for the department bar chart).
+    for (const r of (state.world.rooms || []))
+      if (r.sector) state.sectorColor[r.sector] = r.color;
+
+    // Patients = personas that are not staff or family.
+    state.patients = names.filter(isPatient);
+
+    // Precompute cumulative waiting minutes per patient per step. A step counts
+    // as "waiting" when the patient is inside the hospital (not Home/Discharge)
+    // and their action mentions waiting. Precomputing keeps rendering smooth.
+    const minPerStep = state.secPerStep / 60;
+    for (const n of state.patients) {
+      const arr = new Float64Array(state.maxStep + 1);
+      for (let s = 0; s <= state.maxStep; s++) {
+        const prev = s > 0 ? arr[s - 1] : 0;
+        const e = state.frames[s] && state.frames[s][n];
+        let waiting = false;
+        if (e && e.description && /wait/i.test(e.description)) {
+          const sec = sectorOf(e);
+          waiting = sec !== "Home / Exit" && sec !== "Discharge";
+        }
+        arr[s] = prev + (waiting ? minPerStep : 0);
+      }
+      state.waitCum[n] = arr;
+    }
   }
 
   function parseSimTime(str) {
@@ -530,6 +587,68 @@
     els.clock.textContent = formatClock(timeForStep(step));
     els.stepLabel.textContent = "step " + step + " / " + state.maxStep;
     if (state.selected) updateDetail(state.selected);
+    updateCharts(step);
+  }
+
+  // ---------------------------------------------------------------------- //
+  // Live charts: patients-per-department + per-patient waiting time         //
+  // ---------------------------------------------------------------------- //
+  function isPatient(name) {
+    return !(/^Dr\.?\b/.test(name) || /^Nurse\b/.test(name)
+             || name === "Rosa Diaz" || name === "Marcus");
+  }
+
+  function sectorOf(entry) {
+    if (!entry || !entry.description) return "Home / Exit";
+    const at = entry.description.indexOf(" @ ");
+    if (at < 0) return "Home / Exit";
+    const addr = entry.description.slice(at + 3);
+    if (addr.indexOf("General Hospital:") === 0) {
+      const parts = addr.split(":");
+      return parts[1] || "Home / Exit";
+    }
+    return "Home / Exit";
+  }
+
+  function updateCharts(step) {
+    if (step === state.lastChartStep) return;     // only redraw on step change
+    state.lastChartStep = step;
+    const s = Math.min(step, state.maxStep);
+    const frame = state.frames[s] || {};
+
+    // Patients per department (patients only).
+    const counts = {};
+    for (const d of DEPT_ORDER) counts[d] = 0;
+    for (const n of state.patients) {
+      const sec = sectorOf(frame[n]);
+      if (sec in counts) counts[sec] += 1;
+    }
+    const maxC = Math.max(1, ...DEPT_ORDER.map(d => counts[d]));
+    let html = "";
+    for (const d of DEPT_ORDER) {
+      const c = counts[d];
+      const col = state.sectorColor[d] || "#4ea1ff";
+      const pct = Math.round((c / maxC) * 100);
+      html += '<div class="barrow"><span class="lbl">' + escapeHtml(d) + "</span>"
+        + '<span class="track"><span class="fill" style="width:' + pct
+        + "%;background:" + col + '"></span></span>'
+        + '<span class="num">' + c + "</span></div>";
+    }
+    els.deptChart.innerHTML = html;
+
+    // Waiting time per patient (sorted longest first).
+    const rows = state.patients.map(n => ({
+      n, w: state.waitCum[n] ? state.waitCum[n][s] : 0,
+    })).sort((a, b) => b.w - a.w);
+    const maxW = Math.max(1, ...rows.map(r => r.w));
+    let wh = "";
+    for (const row of rows) {
+      const pct = Math.round((row.w / maxW) * 100);
+      wh += '<div class="wtrow"><span class="wn">' + escapeHtml(row.n) + "</span>"
+        + '<span class="wtrack"><span class="wfill" style="width:' + pct + '%"></span></span>'
+        + '<span class="wm">' + row.w.toFixed(1) + "</span></div>";
+    }
+    els.waitList.innerHTML = wh;
   }
 
   // ---------------------------------------------------------------------- //
