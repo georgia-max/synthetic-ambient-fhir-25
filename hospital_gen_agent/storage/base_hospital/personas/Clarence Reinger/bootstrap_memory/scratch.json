@@ -1,0 +1,97 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "March 21, 2026, 09:04:00",
+  "curr_tile": [
+    2,
+    12
+  ],
+  "daily_plan_req": "Go to the hospital: check in at Admissions, wait to be called, get triaged, see the doctor about initial obstetric evaluation, get a plan, then go home.",
+  "name": "Clarence Reinger",
+  "first_name": "Clarence",
+  "last_name": "Reinger",
+  "age": 32,
+  "innate": "warm, a little anxious",
+  "learned": "has a history of recurrent urinary tract infection",
+  "currently": "here for initial obstetric evaluation",
+  "lifestyle": "generally settled home and work life",
+  "living_area": "Home",
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 143,
+  "importance_ele_n": 7,
+  "daily_req": [
+    {
+      "desc": "walking in to check in",
+      "address": "General Hospital:Admissions:reception:reception desk",
+      "duration": 2
+    },
+    {
+      "desc": "checking in at reception",
+      "address": "General Hospital:Admissions:reception:reception desk",
+      "duration": 2
+    },
+    {
+      "desc": "waiting to be seen",
+      "address": "General Hospital:Waiting Room:waiting area:waiting chairs",
+      "duration": 3
+    },
+    {
+      "desc": "getting triaged (vitals and history)",
+      "address": "General Hospital:Triage:triage bay 1:vitals station",
+      "duration": 3
+    },
+    {
+      "desc": "consulting with the doctor about here for initial obstetric evaluation",
+      "address": "General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "duration": 4
+    },
+    {
+      "desc": "receiving the care plan",
+      "address": "General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "duration": 2
+    },
+    {
+      "desc": "getting discharge instructions",
+      "address": "General Hospital:Discharge:discharge desk:exit",
+      "duration": 2
+    },
+    {
+      "desc": "leaving the hospital",
+      "address": "<spawn_loc>Home",
+      "duration": 2
+    }
+  ],
+  "f_daily_schedule": [],
+  "f_daily_schedule_hourly_org": [],
+  "act_address": "<spawn_loc>Home",
+  "act_start_time": "March 21, 2026, 08:49:30",
+  "act_duration": 2,
+  "act_description": "leaving the hospital",
+  "act_pronunciatio": "\ud83d\udeaa",
+  "act_event": [
+    "Clarence Reinger",
+    "left",
+    "hospital"
+  ],
+  "act_obj_description": null,
+  "act_obj_pronunciatio": null,
+  "act_obj_event": [
+    null,
+    null,
+    null
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {
+    "Nurse Reyes": 0,
+    "Dr. Amari": 0
+  },
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

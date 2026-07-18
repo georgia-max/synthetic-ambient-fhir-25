@@ -1,0 +1,42 @@
+{
+  "node_2": {
+    "node_count": 2,
+    "type_count": 1,
+    "type": "event",
+    "depth": 0,
+    "created": "March 20, 2026, 08:00:00",
+    "expiration": null,
+    "last_accessed": "March 20, 2026, 08:00:00",
+    "subject": "Patient B",
+    "predicate": "reports",
+    "object": "symptoms",
+    "description": "One glass, most weeks. Sometimes none. I was never much of a drinker, and it gives me a headache now anyway.",
+    "embedding_key": "One glass, most weeks. Sometimes none. I was never much of a drinker, and it gives me a headache now anyway.",
+    "poignancy": 5,
+    "keywords": [
+      "Patient B",
+      "symptoms"
+    ],
+    "filling": null
+  },
+  "node_1": {
+    "node_count": 1,
+    "type_count": 1,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 20, 2026, 08:00:00",
+    "expiration": "April 19, 2026, 08:00:00",
+    "last_accessed": "March 20, 2026, 08:00:00",
+    "subject": "Patient B",
+    "predicate": "is here for",
+    "object": "preventive screening and health maintenance",
+    "description": "Patient B is here for preventive screening and health maintenance.",
+    "embedding_key": "Patient B is here for preventive screening and health maintenance.",
+    "poignancy": 6,
+    "keywords": [
+      "Patient B",
+      "preventive screening and health maintenance"
+    ],
+    "filling": null
+  }
+}

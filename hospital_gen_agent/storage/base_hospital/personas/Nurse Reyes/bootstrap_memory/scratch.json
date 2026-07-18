@@ -1,0 +1,59 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "March 21, 2026, 09:04:00",
+  "curr_tile": [
+    13,
+    3
+  ],
+  "daily_plan_req": "See patients in Triage: take vitals, get a brief history, assign acuity, and call patients back.",
+  "name": "Nurse Reyes",
+  "first_name": "Nurse",
+  "last_name": "Reyes",
+  "age": 38,
+  "innate": "steady, attentive, kind",
+  "learned": "triage nurse",
+  "currently": "on shift in Triage",
+  "lifestyle": "works clinical shifts at the hospital",
+  "living_area": "Triage",
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 149,
+  "importance_ele_n": 1,
+  "daily_req": [
+    {
+      "desc": "on shift taking vitals in triage",
+      "address": "General Hospital:Triage:triage bay 1:vitals station",
+      "duration": 999
+    }
+  ],
+  "f_daily_schedule": [],
+  "f_daily_schedule_hourly_org": [],
+  "act_address": "General Hospital:Triage:triage bay 1:vitals station",
+  "act_start_time": "March 21, 2026, 08:00:00",
+  "act_duration": 999,
+  "act_description": "on shift taking vitals in triage",
+  "act_pronunciatio": "\ud83e\ude7a",
+  "act_event": [
+    "Nurse Reyes",
+    "takes",
+    "vitals in triage"
+  ],
+  "act_obj_description": null,
+  "act_obj_pronunciatio": null,
+  "act_obj_event": [
+    null,
+    null,
+    null
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {},
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

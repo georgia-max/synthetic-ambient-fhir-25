@@ -1,0 +1,4119 @@
+{
+  "0": {
+    "Clarence Reinger": {
+      "movement": [
+        2,
+        12
+      ],
+      "pronunciatio": "\ud83d\udeb6",
+      "description": "walking in to check in @ General Hospital:Admissions:reception:reception desk",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        2,
+        12
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Waiting Room:waiting area",
+      "chat": null
+    },
+    "Nurse Reyes": {
+      "movement": [
+        13,
+        3
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "on shift taking vitals in triage @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "on shift in OB / Prenatal Clinic @ General Hospital:OB / Prenatal Clinic:exam room:doppler",
+      "chat": null
+    },
+    "Rosa Diaz": {
+      "movement": [
+        5,
+        3
+      ],
+      "pronunciatio": "\ud83d\udece\ufe0f",
+      "description": "on shift at reception @ General Hospital:Admissions:reception:check-in kiosk",
+      "chat": null
+    },
+    "Patient A": {
+      "movement": [
+        4,
+        10
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "small talk in the waiting room @ General Hospital:Waiting Room:waiting area",
+      "chat": [
+        [
+          "Patient A",
+          "*shifts in chair, offering a small smile*\n\nYeah, sleep is the only real reset button, if I can even get to it in time. Otherwise I'm just riding it out and waiting for the fog to lift."
+        ]
+      ]
+    },
+    "Patient B": {
+      "movement": [
+        5,
+        10
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "small talk in the waiting room @ General Hospital:Waiting Room:waiting area",
+      "chat": [
+        [
+          "Patient A",
+          "*shifts in chair, offering a small smile*\n\nYeah, sleep is the only real reset button, if I can even get to it in time. Otherwise I'm just riding it out and waiting for the fog to lift."
+        ]
+      ]
+    }
+  },
+  "1": {
+    "Clarence Reinger": {
+      "movement": [
+        2,
+        11
+      ],
+      "pronunciatio": "\ud83d\udeb6",
+      "description": "walking in to check in @ General Hospital:Admissions:reception:reception desk",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        2,
+        11
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Waiting Room:waiting area",
+      "chat": null
+    },
+    "Rosa Diaz": {
+      "movement": [
+        6,
+        3
+      ],
+      "pronunciatio": "\ud83d\udece\ufe0f",
+      "description": "on shift at reception @ General Hospital:Admissions:reception:check-in kiosk",
+      "chat": null
+    },
+    "Patient A": {
+      "movement": [
+        4,
+        10
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "small talk in the waiting room @ General Hospital:Waiting Room:waiting area",
+      "chat": [
+        [
+          "Patient A",
+          "*shifts in chair, offering a small smile*\n\nYeah, sleep is the only real reset button, if I can even get to it in time. Otherwise I'm just riding it out and waiting for the fog to lift."
+        ],
+        [
+          "Patient B",
+          "*nods sympathetically* I hear you\u2014I'm just here for a routine check-up myself, so I can't complain too much. Do they have you waiting long?"
+        ]
+      ]
+    },
+    "Patient B": {
+      "movement": [
+        5,
+        10
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "small talk in the waiting room @ General Hospital:Waiting Room:waiting area",
+      "chat": [
+        [
+          "Patient A",
+          "*shifts in chair, offering a small smile*\n\nYeah, sleep is the only real reset button, if I can even get to it in time. Otherwise I'm just riding it out and waiting for the fog to lift."
+        ],
+        [
+          "Patient B",
+          "*nods sympathetically* I hear you\u2014I'm just here for a routine check-up myself, so I can't complain too much. Do they have you waiting long?"
+        ]
+      ]
+    }
+  },
+  "2": {
+    "Clarence Reinger": {
+      "movement": [
+        2,
+        10
+      ],
+      "pronunciatio": "\ud83d\udeb6",
+      "description": "walking in to check in @ General Hospital:Admissions:reception:reception desk",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        2,
+        10
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Waiting Room:waiting area",
+      "chat": null
+    },
+    "Patient A": {
+      "movement": [
+        4,
+        10
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting @ General Hospital:Waiting Room:waiting area:waiting chairs",
+      "chat": null
+    },
+    "Patient B": {
+      "movement": [
+        5,
+        10
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting @ General Hospital:Waiting Room:waiting area:waiting chairs",
+      "chat": null
+    }
+  },
+  "3": {
+    "Clarence Reinger": {
+      "movement": [
+        2,
+        9
+      ],
+      "pronunciatio": "\ud83d\udeb6",
+      "description": "walking in to check in @ General Hospital:Admissions:reception:reception desk",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        2,
+        9
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Waiting Room:waiting area",
+      "chat": null
+    }
+  },
+  "4": {
+    "Clarence Reinger": {
+      "movement": [
+        3,
+        9
+      ],
+      "pronunciatio": "\ud83d\udeb6",
+      "description": "walking in to check in @ General Hospital:Admissions:reception:reception desk",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        3,
+        9
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Waiting Room:waiting area",
+      "chat": null
+    }
+  },
+  "5": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        9
+      ],
+      "pronunciatio": "\ud83d\udeb6",
+      "description": "walking in to check in @ General Hospital:Admissions:reception:reception desk",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        9
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Waiting Room:waiting area",
+      "chat": null
+    }
+  },
+  "6": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        8
+      ],
+      "pronunciatio": "\ud83d\udeb6",
+      "description": "walking in to check in @ General Hospital:Admissions:reception:reception desk",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        8
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "7": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeb6",
+      "description": "walking in to check in @ General Hospital:Admissions:reception:reception desk",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "8": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        6
+      ],
+      "pronunciatio": "\ud83d\udeb6",
+      "description": "walking in to check in @ General Hospital:Admissions:reception:reception desk",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        6
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "9": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        5
+      ],
+      "pronunciatio": "\ud83d\udeb6",
+      "description": "walking in to check in @ General Hospital:Admissions:reception:reception desk",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Admissions:reception",
+      "chat": null
+    }
+  },
+  "10": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "checking in at reception @ General Hospital:Admissions:reception",
+      "chat": [
+        [
+          "Rosa Diaz",
+          "Good morning, Mr. Reinger! Could I get your name and date of birth to pull up your appointment?"
+        ]
+      ]
+    },
+    "Rosa Diaz": {
+      "movement": [
+        6,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "checking in at reception @ General Hospital:Admissions:reception",
+      "chat": [
+        [
+          "Rosa Diaz",
+          "Good morning, Mr. Reinger! Could I get your name and date of birth to pull up your appointment?"
+        ]
+      ]
+    }
+  },
+  "11": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        5
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "checking in at reception @ General Hospital:Admissions:reception",
+      "chat": [
+        [
+          "Rosa Diaz",
+          "Good morning, Mr. Reinger! Could I get your name and date of birth to pull up your appointment?"
+        ],
+        [
+          "Clarence Reinger",
+          "Good morning. It's Clarence Reinger, date of birth March 4th, 1990."
+        ]
+      ]
+    },
+    "Rosa Diaz": {
+      "movement": [
+        6,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "checking in at reception @ General Hospital:Admissions:reception",
+      "chat": [
+        [
+          "Rosa Diaz",
+          "Good morning, Mr. Reinger! Could I get your name and date of birth to pull up your appointment?"
+        ],
+        [
+          "Clarence Reinger",
+          "Good morning. It's Clarence Reinger, date of birth March 4th, 1990."
+        ]
+      ]
+    }
+  },
+  "12": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        4
+      ],
+      "pronunciatio": "\ud83d\udeb6",
+      "description": "walking in to check in @ General Hospital:Admissions:reception:reception desk",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        4
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Admissions:reception",
+      "chat": null
+    },
+    "Rosa Diaz": {
+      "movement": [
+        6,
+        3
+      ],
+      "pronunciatio": "\ud83d\udece\ufe0f",
+      "description": "on shift at reception @ General Hospital:Admissions:reception:check-in kiosk",
+      "chat": null
+    }
+  },
+  "13": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        3
+      ],
+      "pronunciatio": "\ud83d\udeb6",
+      "description": "walking in to check in @ General Hospital:Admissions:reception:reception desk",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Admissions:reception",
+      "chat": null
+    }
+  },
+  "14": {
+    "Clarence Reinger": {
+      "movement": [
+        5,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcdd",
+      "description": "checking in at reception @ General Hospital:Admissions:reception:check-in kiosk",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        5,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Admissions:reception",
+      "chat": null
+    }
+  },
+  "15": {
+    "Clarence Reinger": {
+      "movement": [
+        6,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcdd",
+      "description": "checking in at reception @ General Hospital:Admissions:reception:check-in kiosk",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        6,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Admissions:reception",
+      "chat": null
+    }
+  },
+  "16": {
+    "Clarence Reinger": {
+      "movement": [
+        6,
+        4
+      ],
+      "pronunciatio": "\u23f3",
+      "description": "waiting to be seen @ General Hospital:Waiting Room:waiting area:waiting chairs",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        6,
+        4
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Admissions:reception",
+      "chat": null
+    }
+  },
+  "17": {
+    "Clarence Reinger": {
+      "movement": [
+        6,
+        5
+      ],
+      "pronunciatio": "\u23f3",
+      "description": "waiting to be seen @ General Hospital:Waiting Room:waiting area:waiting chairs",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        6,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Admissions:reception",
+      "chat": null
+    }
+  },
+  "18": {
+    "Clarence Reinger": {
+      "movement": [
+        5,
+        5
+      ],
+      "pronunciatio": "\u23f3",
+      "description": "waiting to be seen @ General Hospital:Waiting Room:waiting area:waiting chairs",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        5,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Admissions:reception",
+      "chat": null
+    }
+  },
+  "19": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        5
+      ],
+      "pronunciatio": "\u23f3",
+      "description": "waiting to be seen @ General Hospital:Waiting Room:waiting area:waiting chairs",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Admissions:reception",
+      "chat": null
+    }
+  },
+  "20": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        6
+      ],
+      "pronunciatio": "\u23f3",
+      "description": "waiting to be seen @ General Hospital:Waiting Room:waiting area:waiting chairs",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        6
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "21": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        7
+      ],
+      "pronunciatio": "\u23f3",
+      "description": "waiting to be seen @ General Hospital:Waiting Room:waiting area:waiting chairs",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "22": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        8
+      ],
+      "pronunciatio": "\u23f3",
+      "description": "waiting to be seen @ General Hospital:Waiting Room:waiting area:waiting chairs",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        8
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "23": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        9
+      ],
+      "pronunciatio": "\u23f3",
+      "description": "waiting to be seen @ General Hospital:Waiting Room:waiting area:waiting chairs",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        9
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Waiting Room:waiting area",
+      "chat": null
+    }
+  },
+  "24": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        10
+      ],
+      "pronunciatio": "\u23f3",
+      "description": "waiting to be seen @ General Hospital:Waiting Room:waiting area:waiting chairs",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        10
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Waiting Room:waiting area",
+      "chat": null
+    }
+  },
+  "25": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        9
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "getting triaged (vitals and history) @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        9
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Waiting Room:waiting area",
+      "chat": null
+    }
+  },
+  "26": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        8
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "getting triaged (vitals and history) @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        8
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "27": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        7
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "getting triaged (vitals and history) @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "28": {
+    "Clarence Reinger": {
+      "movement": [
+        5,
+        7
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "getting triaged (vitals and history) @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        5,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "29": {
+    "Clarence Reinger": {
+      "movement": [
+        6,
+        7
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "getting triaged (vitals and history) @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        6,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "30": {
+    "Clarence Reinger": {
+      "movement": [
+        7,
+        7
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "getting triaged (vitals and history) @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        7,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "31": {
+    "Clarence Reinger": {
+      "movement": [
+        8,
+        7
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "getting triaged (vitals and history) @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        8,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "32": {
+    "Clarence Reinger": {
+      "movement": [
+        9,
+        7
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "getting triaged (vitals and history) @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        9,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "33": {
+    "Clarence Reinger": {
+      "movement": [
+        10,
+        7
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "getting triaged (vitals and history) @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        10,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "34": {
+    "Clarence Reinger": {
+      "movement": [
+        11,
+        7
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "getting triaged (vitals and history) @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        11,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "35": {
+    "Clarence Reinger": {
+      "movement": [
+        12,
+        7
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "getting triaged (vitals and history) @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        12,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "36": {
+    "Clarence Reinger": {
+      "movement": [
+        13,
+        7
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "getting triaged (vitals and history) @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        13,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "37": {
+    "Clarence Reinger": {
+      "movement": [
+        13,
+        6
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "getting triaged (vitals and history) @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        13,
+        6
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "38": {
+    "Clarence Reinger": {
+      "movement": [
+        13,
+        5
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "getting triaged (vitals and history) @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        13,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Triage:triage bay 1",
+      "chat": null
+    }
+  },
+  "39": {
+    "Clarence Reinger": {
+      "movement": [
+        13,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "triage: vitals and history @ General Hospital:Triage:triage bay 1",
+      "chat": [
+        [
+          "Nurse Reyes",
+          "Good afternoon, Mr. Reinger, I'm Nurse Reyes. Before we get started, can you tell me if you have any history of heart or lung conditions, or any allergies I should know about?"
+        ]
+      ]
+    },
+    "Nurse Reyes": {
+      "movement": [
+        13,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "triage: vitals and history @ General Hospital:Triage:triage bay 1",
+      "chat": [
+        [
+          "Nurse Reyes",
+          "Good afternoon, Mr. Reinger, I'm Nurse Reyes. Before we get started, can you tell me if you have any history of heart or lung conditions, or any allergies I should know about?"
+        ]
+      ]
+    }
+  },
+  "40": {
+    "Clarence Reinger": {
+      "movement": [
+        13,
+        5
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "triage: vitals and history @ General Hospital:Triage:triage bay 1",
+      "chat": [
+        [
+          "Nurse Reyes",
+          "Good afternoon, Mr. Reinger, I'm Nurse Reyes. Before we get started, can you tell me if you have any history of heart or lung conditions, or any allergies I should know about?"
+        ],
+        [
+          "Clarence Reinger",
+          "\"No heart or lung problems, and no allergies that I know of\u2014but I do get urinary tract infections pretty often, so I figured that was worth mentioning.\""
+        ]
+      ]
+    },
+    "Nurse Reyes": {
+      "movement": [
+        13,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "triage: vitals and history @ General Hospital:Triage:triage bay 1",
+      "chat": [
+        [
+          "Nurse Reyes",
+          "Good afternoon, Mr. Reinger, I'm Nurse Reyes. Before we get started, can you tell me if you have any history of heart or lung conditions, or any allergies I should know about?"
+        ],
+        [
+          "Clarence Reinger",
+          "\"No heart or lung problems, and no allergies that I know of\u2014but I do get urinary tract infections pretty often, so I figured that was worth mentioning.\""
+        ]
+      ]
+    }
+  },
+  "41": {
+    "Clarence Reinger": {
+      "movement": [
+        13,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "triage: vitals and history @ General Hospital:Triage:triage bay 1",
+      "chat": [
+        [
+          "Nurse Reyes",
+          "Good afternoon, Mr. Reinger, I'm Nurse Reyes. Before we get started, can you tell me if you have any history of heart or lung conditions, or any allergies I should know about?"
+        ],
+        [
+          "Clarence Reinger",
+          "\"No heart or lung problems, and no allergies that I know of\u2014but I do get urinary tract infections pretty often, so I figured that was worth mentioning.\""
+        ],
+        [
+          "Nurse Reyes",
+          "\"Thank you for letting me know, Mr. Reinger\u2014recurrent UTIs are definitely important to track. Now let's get your vitals started; I'm going to check your blood pressure, oxygen levels, and temperature first.\""
+        ]
+      ]
+    },
+    "Nurse Reyes": {
+      "movement": [
+        13,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "triage: vitals and history @ General Hospital:Triage:triage bay 1",
+      "chat": [
+        [
+          "Nurse Reyes",
+          "Good afternoon, Mr. Reinger, I'm Nurse Reyes. Before we get started, can you tell me if you have any history of heart or lung conditions, or any allergies I should know about?"
+        ],
+        [
+          "Clarence Reinger",
+          "\"No heart or lung problems, and no allergies that I know of\u2014but I do get urinary tract infections pretty often, so I figured that was worth mentioning.\""
+        ],
+        [
+          "Nurse Reyes",
+          "\"Thank you for letting me know, Mr. Reinger\u2014recurrent UTIs are definitely important to track. Now let's get your vitals started; I'm going to check your blood pressure, oxygen levels, and temperature first.\""
+        ]
+      ]
+    }
+  },
+  "42": {
+    "Clarence Reinger": {
+      "movement": [
+        13,
+        5
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "triage: vitals and history @ General Hospital:Triage:triage bay 1",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "\"No heart or lung problems, and no allergies that I know of\u2014but I do get urinary tract infections pretty often, so I figured that was worth mentioning.\""
+        ],
+        [
+          "Nurse Reyes",
+          "\"Thank you for letting me know, Mr. Reinger\u2014recurrent UTIs are definitely important to track. Now let's get your vitals started; I'm going to check your blood pressure, oxygen levels, and temperature first.\""
+        ],
+        [
+          "Clarence Reinger",
+          "\"Sounds good, thanks. Should I roll up my sleeve, or how do you want me positioned for that?\""
+        ]
+      ]
+    },
+    "Nurse Reyes": {
+      "movement": [
+        13,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "triage: vitals and history @ General Hospital:Triage:triage bay 1",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "\"No heart or lung problems, and no allergies that I know of\u2014but I do get urinary tract infections pretty often, so I figured that was worth mentioning.\""
+        ],
+        [
+          "Nurse Reyes",
+          "\"Thank you for letting me know, Mr. Reinger\u2014recurrent UTIs are definitely important to track. Now let's get your vitals started; I'm going to check your blood pressure, oxygen levels, and temperature first.\""
+        ],
+        [
+          "Clarence Reinger",
+          "\"Sounds good, thanks. Should I roll up my sleeve, or how do you want me positioned for that?\""
+        ]
+      ]
+    }
+  },
+  "43": {
+    "Clarence Reinger": {
+      "movement": [
+        13,
+        4
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "getting triaged (vitals and history) @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        13,
+        4
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Triage:triage bay 1",
+      "chat": null
+    },
+    "Nurse Reyes": {
+      "movement": [
+        13,
+        3
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "on shift taking vitals in triage @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    }
+  },
+  "44": {
+    "Clarence Reinger": {
+      "movement": [
+        13,
+        3
+      ],
+      "pronunciatio": "\ud83e\ude7a",
+      "description": "getting triaged (vitals and history) @ General Hospital:Triage:triage bay 1:vitals station",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        13,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Triage:triage bay 1",
+      "chat": null
+    }
+  },
+  "45": {
+    "Clarence Reinger": {
+      "movement": [
+        13,
+        4
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        13,
+        4
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Triage:triage bay 1",
+      "chat": null
+    }
+  },
+  "46": {
+    "Clarence Reinger": {
+      "movement": [
+        13,
+        5
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        13,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Triage:triage bay 1",
+      "chat": null
+    }
+  },
+  "47": {
+    "Clarence Reinger": {
+      "movement": [
+        13,
+        6
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        13,
+        6
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "48": {
+    "Clarence Reinger": {
+      "movement": [
+        13,
+        7
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        13,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "49": {
+    "Clarence Reinger": {
+      "movement": [
+        14,
+        7
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        14,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "50": {
+    "Clarence Reinger": {
+      "movement": [
+        15,
+        7
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        15,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "51": {
+    "Clarence Reinger": {
+      "movement": [
+        16,
+        7
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        16,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "52": {
+    "Clarence Reinger": {
+      "movement": [
+        17,
+        7
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        17,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "53": {
+    "Clarence Reinger": {
+      "movement": [
+        18,
+        7
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        18,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "54": {
+    "Clarence Reinger": {
+      "movement": [
+        19,
+        7
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        19,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "55": {
+    "Clarence Reinger": {
+      "movement": [
+        20,
+        7
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        20,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "56": {
+    "Clarence Reinger": {
+      "movement": [
+        21,
+        7
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        21,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "57": {
+    "Clarence Reinger": {
+      "movement": [
+        22,
+        7
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        22,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "58": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        7
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "59": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        6
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        6
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "60": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": null
+    }
+  },
+  "61": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Clarence? Hi \u2014 I am Dr. Amari, one of the obstetricians here. And you brought company today."
+        ],
+        [
+          "Clarence Reinger",
+          "Hi! Yes \u2014 this is my husband, Marcus. I told him he is contractually obligated to be at the first one."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Clarence? Hi \u2014 I am Dr. Amari, one of the obstetricians here. And you brought company today."
+        ],
+        [
+          "Clarence Reinger",
+          "Hi! Yes \u2014 this is my husband, Marcus. I told him he is contractually obligated to be at the first one."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Clarence? Hi \u2014 I am Dr. Amari, one of the obstetricians here. And you brought company today."
+        ],
+        [
+          "Clarence Reinger",
+          "Hi! Yes \u2014 this is my husband, Marcus. I told him he is contractually obligated to be at the first one."
+        ]
+      ]
+    }
+  },
+  "62": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "Hi! Yes \u2014 this is my husband, Marcus. I told him he is contractually obligated to be at the first one."
+        ],
+        [
+          "Marcus",
+          "Contractually obligated and genuinely excited. Mostly excited."
+        ],
+        [
+          "Dr. Amari",
+          "That is the right ratio. So, congratulations are in order, from what the intake form says. Tell me the story from the beginning."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "Hi! Yes \u2014 this is my husband, Marcus. I told him he is contractually obligated to be at the first one."
+        ],
+        [
+          "Marcus",
+          "Contractually obligated and genuinely excited. Mostly excited."
+        ],
+        [
+          "Dr. Amari",
+          "That is the right ratio. So, congratulations are in order, from what the intake form says. Tell me the story from the beginning."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "Hi! Yes \u2014 this is my husband, Marcus. I told him he is contractually obligated to be at the first one."
+        ],
+        [
+          "Marcus",
+          "Contractually obligated and genuinely excited. Mostly excited."
+        ],
+        [
+          "Dr. Amari",
+          "That is the right ratio. So, congratulations are in order, from what the intake form says. Tell me the story from the beginning."
+        ]
+      ]
+    }
+  },
+  "63": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "That is the right ratio. So, congratulations are in order, from what the intake form says. Tell me the story from the beginning."
+        ],
+        [
+          "Clarence Reinger",
+          "Okay, so. My period did not come when it was supposed to, and I am usually pretty regular, so after a few days I took a home test. Then I took a second one, because I did not believe the first one. Both had the two lines."
+        ],
+        [
+          "Marcus",
+          "There may have been a third test."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "That is the right ratio. So, congratulations are in order, from what the intake form says. Tell me the story from the beginning."
+        ],
+        [
+          "Clarence Reinger",
+          "Okay, so. My period did not come when it was supposed to, and I am usually pretty regular, so after a few days I took a home test. Then I took a second one, because I did not believe the first one. Both had the two lines."
+        ],
+        [
+          "Marcus",
+          "There may have been a third test."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "That is the right ratio. So, congratulations are in order, from what the intake form says. Tell me the story from the beginning."
+        ],
+        [
+          "Clarence Reinger",
+          "Okay, so. My period did not come when it was supposed to, and I am usually pretty regular, so after a few days I took a home test. Then I took a second one, because I did not believe the first one. Both had the two lines."
+        ],
+        [
+          "Marcus",
+          "There may have been a third test."
+        ]
+      ]
+    }
+  },
+  "64": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Marcus",
+          "There may have been a third test."
+        ],
+        [
+          "Clarence Reinger",
+          "There was a third test. Scientific rigor."
+        ],
+        [
+          "Dr. Amari",
+          "Peer-reviewed and replicated, I like it. How have you been feeling since?"
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Marcus",
+          "There may have been a third test."
+        ],
+        [
+          "Clarence Reinger",
+          "There was a third test. Scientific rigor."
+        ],
+        [
+          "Dr. Amari",
+          "Peer-reviewed and replicated, I like it. How have you been feeling since?"
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Marcus",
+          "There may have been a third test."
+        ],
+        [
+          "Clarence Reinger",
+          "There was a third test. Scientific rigor."
+        ],
+        [
+          "Dr. Amari",
+          "Peer-reviewed and replicated, I like it. How have you been feeling since?"
+        ]
+      ]
+    }
+  },
+  "65": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Peer-reviewed and replicated, I like it. How have you been feeling since?"
+        ],
+        [
+          "Clarence Reinger",
+          "Mostly good? Tired in a way that sneaks up on me \u2014 like, sit down on the couch at seven and wake up at nine tired. A little queasy in the mornings if I wait too long to eat. Crackers before I even get up seem to fix it."
+        ],
+        [
+          "Dr. Amari",
+          "Smart. Any vomiting you cannot keep ahead of, any dizziness or fainting?"
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Peer-reviewed and replicated, I like it. How have you been feeling since?"
+        ],
+        [
+          "Clarence Reinger",
+          "Mostly good? Tired in a way that sneaks up on me \u2014 like, sit down on the couch at seven and wake up at nine tired. A little queasy in the mornings if I wait too long to eat. Crackers before I even get up seem to fix it."
+        ],
+        [
+          "Dr. Amari",
+          "Smart. Any vomiting you cannot keep ahead of, any dizziness or fainting?"
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Peer-reviewed and replicated, I like it. How have you been feeling since?"
+        ],
+        [
+          "Clarence Reinger",
+          "Mostly good? Tired in a way that sneaks up on me \u2014 like, sit down on the couch at seven and wake up at nine tired. A little queasy in the mornings if I wait too long to eat. Crackers before I even get up seem to fix it."
+        ],
+        [
+          "Dr. Amari",
+          "Smart. Any vomiting you cannot keep ahead of, any dizziness or fainting?"
+        ]
+      ]
+    }
+  },
+  "66": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Smart. Any vomiting you cannot keep ahead of, any dizziness or fainting?"
+        ],
+        [
+          "Clarence Reinger",
+          "No, nothing like that. Just the wooziness if I am hungry."
+        ],
+        [
+          "Dr. Amari",
+          "Very important questions, and I will ask them plainly. Any bleeding or spotting at all? Any cramping or belly pain?"
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Smart. Any vomiting you cannot keep ahead of, any dizziness or fainting?"
+        ],
+        [
+          "Clarence Reinger",
+          "No, nothing like that. Just the wooziness if I am hungry."
+        ],
+        [
+          "Dr. Amari",
+          "Very important questions, and I will ask them plainly. Any bleeding or spotting at all? Any cramping or belly pain?"
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Smart. Any vomiting you cannot keep ahead of, any dizziness or fainting?"
+        ],
+        [
+          "Clarence Reinger",
+          "No, nothing like that. Just the wooziness if I am hungry."
+        ],
+        [
+          "Dr. Amari",
+          "Very important questions, and I will ask them plainly. Any bleeding or spotting at all? Any cramping or belly pain?"
+        ]
+      ]
+    }
+  },
+  "67": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Very important questions, and I will ask them plainly. Any bleeding or spotting at all? Any cramping or belly pain?"
+        ],
+        [
+          "Clarence Reinger",
+          "No bleeding, no. Maybe the tiniest pulling feeling low down once in a while, like a stretch, but not pain."
+        ],
+        [
+          "Dr. Amari",
+          "That stretching feeling is common and reassuring language you are using. Any burning with urination, going more often than you would expect, fevers?"
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Very important questions, and I will ask them plainly. Any bleeding or spotting at all? Any cramping or belly pain?"
+        ],
+        [
+          "Clarence Reinger",
+          "No bleeding, no. Maybe the tiniest pulling feeling low down once in a while, like a stretch, but not pain."
+        ],
+        [
+          "Dr. Amari",
+          "That stretching feeling is common and reassuring language you are using. Any burning with urination, going more often than you would expect, fevers?"
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Very important questions, and I will ask them plainly. Any bleeding or spotting at all? Any cramping or belly pain?"
+        ],
+        [
+          "Clarence Reinger",
+          "No bleeding, no. Maybe the tiniest pulling feeling low down once in a while, like a stretch, but not pain."
+        ],
+        [
+          "Dr. Amari",
+          "That stretching feeling is common and reassuring language you are using. Any burning with urination, going more often than you would expect, fevers?"
+        ]
+      ]
+    }
+  },
+  "68": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "That stretching feeling is common and reassuring language you are using. Any burning with urination, going more often than you would expect, fevers?"
+        ],
+        [
+          "Clarence Reinger",
+          "Going more often, yes, but I read that is just pregnancy. No burning. And I am glad you asked, because that is my big worry \u2014 I get urinary tract infections all the time. Like, at least a couple every year since my twenties. I know the feeling by heart, and I am scared of what happens if I get one while pregnant."
+        ],
+        [
+          "Dr. Amari",
+          "I am really glad you told me, and it is on your chart too \u2014 recurrent urinary tract infections change how carefully we watch. Two things. First, today we send a urine culture no matter what, because in pregnancy an infection can simmer without symptoms, and untreated ones can cause real trouble. Second, that culture becomes routine at your visits. If anything grows, we treat it promptly with medicine that is safe in pregnancy. You will not be left guessing."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "That stretching feeling is common and reassuring language you are using. Any burning with urination, going more often than you would expect, fevers?"
+        ],
+        [
+          "Clarence Reinger",
+          "Going more often, yes, but I read that is just pregnancy. No burning. And I am glad you asked, because that is my big worry \u2014 I get urinary tract infections all the time. Like, at least a couple every year since my twenties. I know the feeling by heart, and I am scared of what happens if I get one while pregnant."
+        ],
+        [
+          "Dr. Amari",
+          "I am really glad you told me, and it is on your chart too \u2014 recurrent urinary tract infections change how carefully we watch. Two things. First, today we send a urine culture no matter what, because in pregnancy an infection can simmer without symptoms, and untreated ones can cause real trouble. Second, that culture becomes routine at your visits. If anything grows, we treat it promptly with medicine that is safe in pregnancy. You will not be left guessing."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "That stretching feeling is common and reassuring language you are using. Any burning with urination, going more often than you would expect, fevers?"
+        ],
+        [
+          "Clarence Reinger",
+          "Going more often, yes, but I read that is just pregnancy. No burning. And I am glad you asked, because that is my big worry \u2014 I get urinary tract infections all the time. Like, at least a couple every year since my twenties. I know the feeling by heart, and I am scared of what happens if I get one while pregnant."
+        ],
+        [
+          "Dr. Amari",
+          "I am really glad you told me, and it is on your chart too \u2014 recurrent urinary tract infections change how carefully we watch. Two things. First, today we send a urine culture no matter what, because in pregnancy an infection can simmer without symptoms, and untreated ones can cause real trouble. Second, that culture becomes routine at your visits. If anything grows, we treat it promptly with medicine that is safe in pregnancy. You will not be left guessing."
+        ]
+      ]
+    }
+  },
+  "69": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "I am really glad you told me, and it is on your chart too \u2014 recurrent urinary tract infections change how carefully we watch. Two things. First, today we send a urine culture no matter what, because in pregnancy an infection can simmer without symptoms, and untreated ones can cause real trouble. Second, that culture becomes routine at your visits. If anything grows, we treat it promptly with medicine that is safe in pregnancy. You will not be left guessing."
+        ],
+        [
+          "Clarence Reinger",
+          "Okay. That actually helps a lot. Marcus, breathe."
+        ],
+        [
+          "Marcus",
+          "I am breathing. I wrote it down, that is all."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "I am really glad you told me, and it is on your chart too \u2014 recurrent urinary tract infections change how carefully we watch. Two things. First, today we send a urine culture no matter what, because in pregnancy an infection can simmer without symptoms, and untreated ones can cause real trouble. Second, that culture becomes routine at your visits. If anything grows, we treat it promptly with medicine that is safe in pregnancy. You will not be left guessing."
+        ],
+        [
+          "Clarence Reinger",
+          "Okay. That actually helps a lot. Marcus, breathe."
+        ],
+        [
+          "Marcus",
+          "I am breathing. I wrote it down, that is all."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "I am really glad you told me, and it is on your chart too \u2014 recurrent urinary tract infections change how carefully we watch. Two things. First, today we send a urine culture no matter what, because in pregnancy an infection can simmer without symptoms, and untreated ones can cause real trouble. Second, that culture becomes routine at your visits. If anything grows, we treat it promptly with medicine that is safe in pregnancy. You will not be left guessing."
+        ],
+        [
+          "Clarence Reinger",
+          "Okay. That actually helps a lot. Marcus, breathe."
+        ],
+        [
+          "Marcus",
+          "I am breathing. I wrote it down, that is all."
+        ]
+      ]
+    }
+  },
+  "70": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Marcus",
+          "I am breathing. I wrote it down, that is all."
+        ],
+        [
+          "Dr. Amari",
+          "Keep writing, it is a good habit. Now, your medication list is flagged as due for review, so let us do it properly. What do you take \u2014 prescriptions, over the counter, anything at all?"
+        ],
+        [
+          "Clarence Reinger",
+          "Honestly, almost nothing these days. I stopped my birth control a while back when we decided to start trying, and since then it is just the occasional thing for a headache. Nothing regular."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Marcus",
+          "I am breathing. I wrote it down, that is all."
+        ],
+        [
+          "Dr. Amari",
+          "Keep writing, it is a good habit. Now, your medication list is flagged as due for review, so let us do it properly. What do you take \u2014 prescriptions, over the counter, anything at all?"
+        ],
+        [
+          "Clarence Reinger",
+          "Honestly, almost nothing these days. I stopped my birth control a while back when we decided to start trying, and since then it is just the occasional thing for a headache. Nothing regular."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Marcus",
+          "I am breathing. I wrote it down, that is all."
+        ],
+        [
+          "Dr. Amari",
+          "Keep writing, it is a good habit. Now, your medication list is flagged as due for review, so let us do it properly. What do you take \u2014 prescriptions, over the counter, anything at all?"
+        ],
+        [
+          "Clarence Reinger",
+          "Honestly, almost nothing these days. I stopped my birth control a while back when we decided to start trying, and since then it is just the occasional thing for a headache. Nothing regular."
+        ]
+      ]
+    }
+  },
+  "71": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "Honestly, almost nothing these days. I stopped my birth control a while back when we decided to start trying, and since then it is just the occasional thing for a headache. Nothing regular."
+        ],
+        [
+          "Dr. Amari",
+          "Good \u2014 we will update the chart so it reflects reality. From here on, before you take anything new, even over the counter, run it past us. There is always a safe option; it is just sometimes a different one than the shelf suggests."
+        ],
+        [
+          "Clarence Reinger",
+          "Got it. Marcus is writing that down too."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "Honestly, almost nothing these days. I stopped my birth control a while back when we decided to start trying, and since then it is just the occasional thing for a headache. Nothing regular."
+        ],
+        [
+          "Dr. Amari",
+          "Good \u2014 we will update the chart so it reflects reality. From here on, before you take anything new, even over the counter, run it past us. There is always a safe option; it is just sometimes a different one than the shelf suggests."
+        ],
+        [
+          "Clarence Reinger",
+          "Got it. Marcus is writing that down too."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "Honestly, almost nothing these days. I stopped my birth control a while back when we decided to start trying, and since then it is just the occasional thing for a headache. Nothing regular."
+        ],
+        [
+          "Dr. Amari",
+          "Good \u2014 we will update the chart so it reflects reality. From here on, before you take anything new, even over the counter, run it past us. There is always a safe option; it is just sometimes a different one than the shelf suggests."
+        ],
+        [
+          "Clarence Reinger",
+          "Got it. Marcus is writing that down too."
+        ]
+      ]
+    }
+  },
+  "72": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "Got it. Marcus is writing that down too."
+        ],
+        [
+          "Marcus",
+          "Already underlined."
+        ],
+        [
+          "Dr. Amari",
+          "Excellent. Let me walk you through what today involves, because the first visit is the big one \u2014 lots of boxes to check, all of them routine. A urine pregnancy test here in the office to make it official. A physical exam. An ultrasound to confirm the pregnancy is in the uterus where it belongs and to check viability. I will measure your belly and we will listen for the baby. And then blood work \u2014 a whole panel."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "Got it. Marcus is writing that down too."
+        ],
+        [
+          "Marcus",
+          "Already underlined."
+        ],
+        [
+          "Dr. Amari",
+          "Excellent. Let me walk you through what today involves, because the first visit is the big one \u2014 lots of boxes to check, all of them routine. A urine pregnancy test here in the office to make it official. A physical exam. An ultrasound to confirm the pregnancy is in the uterus where it belongs and to check viability. I will measure your belly and we will listen for the baby. And then blood work \u2014 a whole panel."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "Got it. Marcus is writing that down too."
+        ],
+        [
+          "Marcus",
+          "Already underlined."
+        ],
+        [
+          "Dr. Amari",
+          "Excellent. Let me walk you through what today involves, because the first visit is the big one \u2014 lots of boxes to check, all of them routine. A urine pregnancy test here in the office to make it official. A physical exam. An ultrasound to confirm the pregnancy is in the uterus where it belongs and to check viability. I will measure your belly and we will listen for the baby. And then blood work \u2014 a whole panel."
+        ]
+      ]
+    }
+  },
+  "73": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Excellent. Let me walk you through what today involves, because the first visit is the big one \u2014 lots of boxes to check, all of them routine. A urine pregnancy test here in the office to make it official. A physical exam. An ultrasound to confirm the pregnancy is in the uterus where it belongs and to check viability. I will measure your belly and we will listen for the baby. And then blood work \u2014 a whole panel."
+        ],
+        [
+          "Clarence Reinger",
+          "How much blood are we talking? I am a fainter. Historically."
+        ],
+        [
+          "Dr. Amari",
+          "Noted \u2014 we will have you lying down with juice on standby. It is one draw, several tubes: your blood type, a full blood count to check for anemia, and the standard infection screen we run for every single pregnant patient \u2014 hepatitis B, hepatitis C, HIV, and syphilis, plus checking your immunity to rubella and chickenpox. We also test urine for chlamydia and gonorrhea, screen your urine for sugar and protein, and do a Pap smear if you are due \u2014 and you are due."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Excellent. Let me walk you through what today involves, because the first visit is the big one \u2014 lots of boxes to check, all of them routine. A urine pregnancy test here in the office to make it official. A physical exam. An ultrasound to confirm the pregnancy is in the uterus where it belongs and to check viability. I will measure your belly and we will listen for the baby. And then blood work \u2014 a whole panel."
+        ],
+        [
+          "Clarence Reinger",
+          "How much blood are we talking? I am a fainter. Historically."
+        ],
+        [
+          "Dr. Amari",
+          "Noted \u2014 we will have you lying down with juice on standby. It is one draw, several tubes: your blood type, a full blood count to check for anemia, and the standard infection screen we run for every single pregnant patient \u2014 hepatitis B, hepatitis C, HIV, and syphilis, plus checking your immunity to rubella and chickenpox. We also test urine for chlamydia and gonorrhea, screen your urine for sugar and protein, and do a Pap smear if you are due \u2014 and you are due."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Excellent. Let me walk you through what today involves, because the first visit is the big one \u2014 lots of boxes to check, all of them routine. A urine pregnancy test here in the office to make it official. A physical exam. An ultrasound to confirm the pregnancy is in the uterus where it belongs and to check viability. I will measure your belly and we will listen for the baby. And then blood work \u2014 a whole panel."
+        ],
+        [
+          "Clarence Reinger",
+          "How much blood are we talking? I am a fainter. Historically."
+        ],
+        [
+          "Dr. Amari",
+          "Noted \u2014 we will have you lying down with juice on standby. It is one draw, several tubes: your blood type, a full blood count to check for anemia, and the standard infection screen we run for every single pregnant patient \u2014 hepatitis B, hepatitis C, HIV, and syphilis, plus checking your immunity to rubella and chickenpox. We also test urine for chlamydia and gonorrhea, screen your urine for sugar and protein, and do a Pap smear if you are due \u2014 and you are due."
+        ]
+      ]
+    }
+  },
+  "74": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Noted \u2014 we will have you lying down with juice on standby. It is one draw, several tubes: your blood type, a full blood count to check for anemia, and the standard infection screen we run for every single pregnant patient \u2014 hepatitis B, hepatitis C, HIV, and syphilis, plus checking your immunity to rubella and chickenpox. We also test urine for chlamydia and gonorrhea, screen your urine for sugar and protein, and do a Pap smear if you are due \u2014 and you are due."
+        ],
+        [
+          "Clarence Reinger",
+          "The whole buffet."
+        ],
+        [
+          "Dr. Amari",
+          "The whole buffet, once, so we start with a complete picture. None of it implies anything about you personally \u2014 every patient, every pregnancy, same list. We will also place a little tuberculosis skin test on your forearm today; someone just has to look at it in two to three days, which the front desk can book as a quick nurse visit."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Noted \u2014 we will have you lying down with juice on standby. It is one draw, several tubes: your blood type, a full blood count to check for anemia, and the standard infection screen we run for every single pregnant patient \u2014 hepatitis B, hepatitis C, HIV, and syphilis, plus checking your immunity to rubella and chickenpox. We also test urine for chlamydia and gonorrhea, screen your urine for sugar and protein, and do a Pap smear if you are due \u2014 and you are due."
+        ],
+        [
+          "Clarence Reinger",
+          "The whole buffet."
+        ],
+        [
+          "Dr. Amari",
+          "The whole buffet, once, so we start with a complete picture. None of it implies anything about you personally \u2014 every patient, every pregnancy, same list. We will also place a little tuberculosis skin test on your forearm today; someone just has to look at it in two to three days, which the front desk can book as a quick nurse visit."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Noted \u2014 we will have you lying down with juice on standby. It is one draw, several tubes: your blood type, a full blood count to check for anemia, and the standard infection screen we run for every single pregnant patient \u2014 hepatitis B, hepatitis C, HIV, and syphilis, plus checking your immunity to rubella and chickenpox. We also test urine for chlamydia and gonorrhea, screen your urine for sugar and protein, and do a Pap smear if you are due \u2014 and you are due."
+        ],
+        [
+          "Clarence Reinger",
+          "The whole buffet."
+        ],
+        [
+          "Dr. Amari",
+          "The whole buffet, once, so we start with a complete picture. None of it implies anything about you personally \u2014 every patient, every pregnancy, same list. We will also place a little tuberculosis skin test on your forearm today; someone just has to look at it in two to three days, which the front desk can book as a quick nurse visit."
+        ]
+      ]
+    }
+  },
+  "75": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "The whole buffet, once, so we start with a complete picture. None of it implies anything about you personally \u2014 every patient, every pregnancy, same list. We will also place a little tuberculosis skin test on your forearm today; someone just has to look at it in two to three days, which the front desk can book as a quick nurse visit."
+        ],
+        [
+          "Marcus",
+          "Can I ask the question we argued about in the car? Coffee. She says one cup is fine, I read a scary blog."
+        ],
+        [
+          "Dr. Amari",
+          "The argument ends in her favor. A regular cup a day is fine. The blog loses. Moderation is the theme for most things \u2014 the true no-go list is alcohol, smoking, and anything recreational."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "The whole buffet, once, so we start with a complete picture. None of it implies anything about you personally \u2014 every patient, every pregnancy, same list. We will also place a little tuberculosis skin test on your forearm today; someone just has to look at it in two to three days, which the front desk can book as a quick nurse visit."
+        ],
+        [
+          "Marcus",
+          "Can I ask the question we argued about in the car? Coffee. She says one cup is fine, I read a scary blog."
+        ],
+        [
+          "Dr. Amari",
+          "The argument ends in her favor. A regular cup a day is fine. The blog loses. Moderation is the theme for most things \u2014 the true no-go list is alcohol, smoking, and anything recreational."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "The whole buffet, once, so we start with a complete picture. None of it implies anything about you personally \u2014 every patient, every pregnancy, same list. We will also place a little tuberculosis skin test on your forearm today; someone just has to look at it in two to three days, which the front desk can book as a quick nurse visit."
+        ],
+        [
+          "Marcus",
+          "Can I ask the question we argued about in the car? Coffee. She says one cup is fine, I read a scary blog."
+        ],
+        [
+          "Dr. Amari",
+          "The argument ends in her favor. A regular cup a day is fine. The blog loses. Moderation is the theme for most things \u2014 the true no-go list is alcohol, smoking, and anything recreational."
+        ]
+      ]
+    }
+  },
+  "76": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "The argument ends in her favor. A regular cup a day is fine. The blog loses. Moderation is the theme for most things \u2014 the true no-go list is alcohol, smoking, and anything recreational."
+        ],
+        [
+          "Clarence Reinger",
+          "None of those are in the picture. Never smoked, and I have not had a drink since the two lines."
+        ],
+        [
+          "Dr. Amari",
+          "Perfect. Let us do the exam and the ultrasound now, and then we will talk again... All right. So \u2014 the office urine test agrees with your three home tests. You are officially pregnant."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "The argument ends in her favor. A regular cup a day is fine. The blog loses. Moderation is the theme for most things \u2014 the true no-go list is alcohol, smoking, and anything recreational."
+        ],
+        [
+          "Clarence Reinger",
+          "None of those are in the picture. Never smoked, and I have not had a drink since the two lines."
+        ],
+        [
+          "Dr. Amari",
+          "Perfect. Let us do the exam and the ultrasound now, and then we will talk again... All right. So \u2014 the office urine test agrees with your three home tests. You are officially pregnant."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "The argument ends in her favor. A regular cup a day is fine. The blog loses. Moderation is the theme for most things \u2014 the true no-go list is alcohol, smoking, and anything recreational."
+        ],
+        [
+          "Clarence Reinger",
+          "None of those are in the picture. Never smoked, and I have not had a drink since the two lines."
+        ],
+        [
+          "Dr. Amari",
+          "Perfect. Let us do the exam and the ultrasound now, and then we will talk again... All right. So \u2014 the office urine test agrees with your three home tests. You are officially pregnant."
+        ]
+      ]
+    }
+  },
+  "77": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Perfect. Let us do the exam and the ultrasound now, and then we will talk again... All right. So \u2014 the office urine test agrees with your three home tests. You are officially pregnant."
+        ],
+        [
+          "Clarence Reinger",
+          "Officially official. Okay. Okay!"
+        ],
+        [
+          "Dr. Amari",
+          "Exam first: everything looks healthy and normal. Your uterus feels the size I would expect this early \u2014 I checked the fundal height, which is how we track growth from here on. And now the part you actually came for. Look at the screen \u2014 there. Right in the middle of the uterus, exactly where we want it."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Perfect. Let us do the exam and the ultrasound now, and then we will talk again... All right. So \u2014 the office urine test agrees with your three home tests. You are officially pregnant."
+        ],
+        [
+          "Clarence Reinger",
+          "Officially official. Okay. Okay!"
+        ],
+        [
+          "Dr. Amari",
+          "Exam first: everything looks healthy and normal. Your uterus feels the size I would expect this early \u2014 I checked the fundal height, which is how we track growth from here on. And now the part you actually came for. Look at the screen \u2014 there. Right in the middle of the uterus, exactly where we want it."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Perfect. Let us do the exam and the ultrasound now, and then we will talk again... All right. So \u2014 the office urine test agrees with your three home tests. You are officially pregnant."
+        ],
+        [
+          "Clarence Reinger",
+          "Officially official. Okay. Okay!"
+        ],
+        [
+          "Dr. Amari",
+          "Exam first: everything looks healthy and normal. Your uterus feels the size I would expect this early \u2014 I checked the fundal height, which is how we track growth from here on. And now the part you actually came for. Look at the screen \u2014 there. Right in the middle of the uterus, exactly where we want it."
+        ]
+      ]
+    }
+  },
+  "78": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83e\udec0",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Exam first: everything looks healthy and normal. Your uterus feels the size I would expect this early \u2014 I checked the fundal height, which is how we track growth from here on. And now the part you actually came for. Look at the screen \u2014 there. Right in the middle of the uterus, exactly where we want it."
+        ],
+        [
+          "Clarence Reinger",
+          "That little... that is it? That flicker?"
+        ],
+        [
+          "Dr. Amari",
+          "That flicker is the heartbeat. Strong and steady. A viable pregnancy, right where it should be."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83e\udec0",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Exam first: everything looks healthy and normal. Your uterus feels the size I would expect this early \u2014 I checked the fundal height, which is how we track growth from here on. And now the part you actually came for. Look at the screen \u2014 there. Right in the middle of the uterus, exactly where we want it."
+        ],
+        [
+          "Clarence Reinger",
+          "That little... that is it? That flicker?"
+        ],
+        [
+          "Dr. Amari",
+          "That flicker is the heartbeat. Strong and steady. A viable pregnancy, right where it should be."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83e\udec0",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Exam first: everything looks healthy and normal. Your uterus feels the size I would expect this early \u2014 I checked the fundal height, which is how we track growth from here on. And now the part you actually came for. Look at the screen \u2014 there. Right in the middle of the uterus, exactly where we want it."
+        ],
+        [
+          "Clarence Reinger",
+          "That little... that is it? That flicker?"
+        ],
+        [
+          "Dr. Amari",
+          "That flicker is the heartbeat. Strong and steady. A viable pregnancy, right where it should be."
+        ]
+      ]
+    }
+  },
+  "79": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "That flicker is the heartbeat. Strong and steady. A viable pregnancy, right where it should be."
+        ],
+        [
+          "Marcus",
+          "Oh wow. Okay. Wow. I did not think it would be \u2014 visible. Clarence, look."
+        ],
+        [
+          "Clarence Reinger",
+          "I am looking! I am also crying a little, which is very on brand for me lately."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "That flicker is the heartbeat. Strong and steady. A viable pregnancy, right where it should be."
+        ],
+        [
+          "Marcus",
+          "Oh wow. Okay. Wow. I did not think it would be \u2014 visible. Clarence, look."
+        ],
+        [
+          "Clarence Reinger",
+          "I am looking! I am also crying a little, which is very on brand for me lately."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "That flicker is the heartbeat. Strong and steady. A viable pregnancy, right where it should be."
+        ],
+        [
+          "Marcus",
+          "Oh wow. Okay. Wow. I did not think it would be \u2014 visible. Clarence, look."
+        ],
+        [
+          "Clarence Reinger",
+          "I am looking! I am also crying a little, which is very on brand for me lately."
+        ]
+      ]
+    }
+  },
+  "80": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "I am looking! I am also crying a little, which is very on brand for me lately."
+        ],
+        [
+          "Dr. Amari",
+          "On brand for most people in this room, most weeks. I will print you pictures. I also listened in \u2014 the heart sounds are exactly what we want to hear."
+        ],
+        [
+          "Clarence Reinger",
+          "So everything is... normal? Like, actually normal? With my UTI history I had convinced myself something would be complicated."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "I am looking! I am also crying a little, which is very on brand for me lately."
+        ],
+        [
+          "Dr. Amari",
+          "On brand for most people in this room, most weeks. I will print you pictures. I also listened in \u2014 the heart sounds are exactly what we want to hear."
+        ],
+        [
+          "Clarence Reinger",
+          "So everything is... normal? Like, actually normal? With my UTI history I had convinced myself something would be complicated."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "I am looking! I am also crying a little, which is very on brand for me lately."
+        ],
+        [
+          "Dr. Amari",
+          "On brand for most people in this room, most weeks. I will print you pictures. I also listened in \u2014 the heart sounds are exactly what we want to hear."
+        ],
+        [
+          "Clarence Reinger",
+          "So everything is... normal? Like, actually normal? With my UTI history I had convinced myself something would be complicated."
+        ]
+      ]
+    }
+  },
+  "81": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "So everything is... normal? Like, actually normal? With my UTI history I had convinced myself something would be complicated."
+        ],
+        [
+          "Dr. Amari",
+          "Everything today says normal, healthy pregnancy. The UTI history does not change that \u2014 it just means we stay vigilant with the urine cultures, and you call us at the first hint of symptoms rather than waiting. Burning, urgency beyond the usual, back pain on one side, fever \u2014 those are call-us-today symptoms, not wait-and-see symptoms."
+        ],
+        [
+          "Clarence Reinger",
+          "Call the same day. Marcus has it underlined twice, I assume."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "So everything is... normal? Like, actually normal? With my UTI history I had convinced myself something would be complicated."
+        ],
+        [
+          "Dr. Amari",
+          "Everything today says normal, healthy pregnancy. The UTI history does not change that \u2014 it just means we stay vigilant with the urine cultures, and you call us at the first hint of symptoms rather than waiting. Burning, urgency beyond the usual, back pain on one side, fever \u2014 those are call-us-today symptoms, not wait-and-see symptoms."
+        ],
+        [
+          "Clarence Reinger",
+          "Call the same day. Marcus has it underlined twice, I assume."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "So everything is... normal? Like, actually normal? With my UTI history I had convinced myself something would be complicated."
+        ],
+        [
+          "Dr. Amari",
+          "Everything today says normal, healthy pregnancy. The UTI history does not change that \u2014 it just means we stay vigilant with the urine cultures, and you call us at the first hint of symptoms rather than waiting. Burning, urgency beyond the usual, back pain on one side, fever \u2014 those are call-us-today symptoms, not wait-and-see symptoms."
+        ],
+        [
+          "Clarence Reinger",
+          "Call the same day. Marcus has it underlined twice, I assume."
+        ]
+      ]
+    }
+  },
+  "82": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "Call the same day. Marcus has it underlined twice, I assume."
+        ],
+        [
+          "Marcus",
+          "Three times. What is the schedule from here?"
+        ],
+        [
+          "Dr. Amari",
+          "We will see her every four weeks for now, more often later in the pregnancy. The nurse will draw the blood before you leave, place the TB test, and book two things: the quick visit to read the test this week, and your next prenatal visit. Results from today's panel come to your patient portal, and we call about anything that needs action."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "Call the same day. Marcus has it underlined twice, I assume."
+        ],
+        [
+          "Marcus",
+          "Three times. What is the schedule from here?"
+        ],
+        [
+          "Dr. Amari",
+          "We will see her every four weeks for now, more often later in the pregnancy. The nurse will draw the blood before you leave, place the TB test, and book two things: the quick visit to read the test this week, and your next prenatal visit. Results from today's panel come to your patient portal, and we call about anything that needs action."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "Call the same day. Marcus has it underlined twice, I assume."
+        ],
+        [
+          "Marcus",
+          "Three times. What is the schedule from here?"
+        ],
+        [
+          "Dr. Amari",
+          "We will see her every four weeks for now, more often later in the pregnancy. The nurse will draw the blood before you leave, place the TB test, and book two things: the quick visit to read the test this week, and your next prenatal visit. Results from today's panel come to your patient portal, and we call about anything that needs action."
+        ]
+      ]
+    }
+  },
+  "83": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "We will see her every four weeks for now, more often later in the pregnancy. The nurse will draw the blood before you leave, place the TB test, and book two things: the quick visit to read the test this week, and your next prenatal visit. Results from today's panel come to your patient portal, and we call about anything that needs action."
+        ],
+        [
+          "Clarence Reinger",
+          "And in the meantime I just... live my life? Work, walks, normal food?"
+        ],
+        [
+          "Dr. Amari",
+          "Live your life. Eat well, keep the crackers strategy, sleep when the couch claims you, and let the queasiness bully you a little less each week. Any last questions before the blood draw?"
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "We will see her every four weeks for now, more often later in the pregnancy. The nurse will draw the blood before you leave, place the TB test, and book two things: the quick visit to read the test this week, and your next prenatal visit. Results from today's panel come to your patient portal, and we call about anything that needs action."
+        ],
+        [
+          "Clarence Reinger",
+          "And in the meantime I just... live my life? Work, walks, normal food?"
+        ],
+        [
+          "Dr. Amari",
+          "Live your life. Eat well, keep the crackers strategy, sleep when the couch claims you, and let the queasiness bully you a little less each week. Any last questions before the blood draw?"
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "We will see her every four weeks for now, more often later in the pregnancy. The nurse will draw the blood before you leave, place the TB test, and book two things: the quick visit to read the test this week, and your next prenatal visit. Results from today's panel come to your patient portal, and we call about anything that needs action."
+        ],
+        [
+          "Clarence Reinger",
+          "And in the meantime I just... live my life? Work, walks, normal food?"
+        ],
+        [
+          "Dr. Amari",
+          "Live your life. Eat well, keep the crackers strategy, sleep when the couch claims you, and let the queasiness bully you a little less each week. Any last questions before the blood draw?"
+        ]
+      ]
+    }
+  },
+  "84": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Live your life. Eat well, keep the crackers strategy, sleep when the couch claims you, and let the queasiness bully you a little less each week. Any last questions before the blood draw?"
+        ],
+        [
+          "Clarence Reinger",
+          "Just one. When can we tell people? Is there a rule?"
+        ],
+        [
+          "Dr. Amari",
+          "No medical rule \u2014 that one is entirely yours to decide, together. Some people wait, some call their mother from the parking lot."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Live your life. Eat well, keep the crackers strategy, sleep when the couch claims you, and let the queasiness bully you a little less each week. Any last questions before the blood draw?"
+        ],
+        [
+          "Clarence Reinger",
+          "Just one. When can we tell people? Is there a rule?"
+        ],
+        [
+          "Dr. Amari",
+          "No medical rule \u2014 that one is entirely yours to decide, together. Some people wait, some call their mother from the parking lot."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "Live your life. Eat well, keep the crackers strategy, sleep when the couch claims you, and let the queasiness bully you a little less each week. Any last questions before the blood draw?"
+        ],
+        [
+          "Clarence Reinger",
+          "Just one. When can we tell people? Is there a rule?"
+        ],
+        [
+          "Dr. Amari",
+          "No medical rule \u2014 that one is entirely yours to decide, together. Some people wait, some call their mother from the parking lot."
+        ]
+      ]
+    }
+  },
+  "85": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "No medical rule \u2014 that one is entirely yours to decide, together. Some people wait, some call their mother from the parking lot."
+        ],
+        [
+          "Clarence Reinger",
+          "The parking lot option has a strong lead right now."
+        ],
+        [
+          "Marcus",
+          "Her mother has been asking weekly. The parking lot it is."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "No medical rule \u2014 that one is entirely yours to decide, together. Some people wait, some call their mother from the parking lot."
+        ],
+        [
+          "Clarence Reinger",
+          "The parking lot option has a strong lead right now."
+        ],
+        [
+          "Marcus",
+          "Her mother has been asking weekly. The parking lot it is."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Dr. Amari",
+          "No medical rule \u2014 that one is entirely yours to decide, together. Some people wait, some call their mother from the parking lot."
+        ],
+        [
+          "Clarence Reinger",
+          "The parking lot option has a strong lead right now."
+        ],
+        [
+          "Marcus",
+          "Her mother has been asking weekly. The parking lot it is."
+        ]
+      ]
+    }
+  },
+  "86": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Marcus",
+          "Her mother has been asking weekly. The parking lot it is."
+        ],
+        [
+          "Dr. Amari",
+          "Then congratulations to the whole phone tree. Lie back, look away from the needle, and I will see you in four weeks."
+        ],
+        [
+          "Clarence Reinger",
+          "Thank you, Dr. Amari. Really."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Marcus",
+          "Her mother has been asking weekly. The parking lot it is."
+        ],
+        [
+          "Dr. Amari",
+          "Then congratulations to the whole phone tree. Lie back, look away from the needle, and I will see you in four weeks."
+        ],
+        [
+          "Clarence Reinger",
+          "Thank you, Dr. Amari. Really."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Marcus",
+          "Her mother has been asking weekly. The parking lot it is."
+        ],
+        [
+          "Dr. Amari",
+          "Then congratulations to the whole phone tree. Lie back, look away from the needle, and I will see you in four weeks."
+        ],
+        [
+          "Clarence Reinger",
+          "Thank you, Dr. Amari. Really."
+        ]
+      ]
+    }
+  },
+  "87": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "Thank you, Dr. Amari. Really."
+        ],
+        [
+          "Marcus",
+          "Thank you \u2014 for the coffee ruling especially."
+        ],
+        [
+          "Dr. Amari",
+          "Justice was served. Take care, both of you."
+        ]
+      ]
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc42",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "Thank you, Dr. Amari. Really."
+        ],
+        [
+          "Marcus",
+          "Thank you \u2014 for the coffee ruling especially."
+        ],
+        [
+          "Dr. Amari",
+          "Justice was served. Take care, both of you."
+        ]
+      ]
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "in the prenatal consult @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": [
+        [
+          "Clarence Reinger",
+          "Thank you, Dr. Amari. Really."
+        ],
+        [
+          "Marcus",
+          "Thank you \u2014 for the coffee ruling especially."
+        ],
+        [
+          "Dr. Amari",
+          "Justice was served. Take care, both of you."
+        ]
+      ]
+    }
+  },
+  "88": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": null
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "on shift in OB / Prenatal Clinic @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": null
+    }
+  },
+  "89": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        4
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        4
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": null
+    },
+    "Dr. Amari": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "on shift in OB / Prenatal Clinic @ General Hospital:OB / Prenatal Clinic:exam room:doppler",
+      "chat": null
+    }
+  },
+  "90": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83e\udd30",
+      "description": "consulting with the doctor about here for initial obstetric evaluation @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": null
+    }
+  },
+  "91": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        3
+      ],
+      "pronunciatio": "\ud83d\udccb",
+      "description": "receiving the care plan @ General Hospital:OB / Prenatal Clinic:exam room:exam table",
+      "chat": null
+    }
+  },
+  "92": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        4
+      ],
+      "pronunciatio": "\ud83d\udccb",
+      "description": "getting discharge instructions @ General Hospital:Discharge:discharge desk:exit",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        4
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": null
+    }
+  },
+  "93": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udccb",
+      "description": "getting discharge instructions @ General Hospital:Discharge:discharge desk:exit",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        5
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:OB / Prenatal Clinic:exam room",
+      "chat": null
+    }
+  },
+  "94": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        6
+      ],
+      "pronunciatio": "\ud83d\udccb",
+      "description": "getting discharge instructions @ General Hospital:Discharge:discharge desk:exit",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        6
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "95": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        7
+      ],
+      "pronunciatio": "\ud83d\udccb",
+      "description": "getting discharge instructions @ General Hospital:Discharge:discharge desk:exit",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "96": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        8
+      ],
+      "pronunciatio": "\ud83d\udccb",
+      "description": "getting discharge instructions @ General Hospital:Discharge:discharge desk:exit",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        8
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "97": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        9
+      ],
+      "pronunciatio": "\ud83d\udccb",
+      "description": "getting discharge instructions @ General Hospital:Discharge:discharge desk:exit",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        9
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Discharge:discharge desk",
+      "chat": null
+    }
+  },
+  "98": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        10
+      ],
+      "pronunciatio": "\ud83d\udccb",
+      "description": "getting discharge instructions @ General Hospital:Discharge:discharge desk:exit",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        10
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Discharge:discharge desk",
+      "chat": null
+    }
+  },
+  "99": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        9
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        9
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Discharge:discharge desk",
+      "chat": null
+    }
+  },
+  "100": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        8
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        8
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "101": {
+    "Clarence Reinger": {
+      "movement": [
+        23,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        23,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "102": {
+    "Clarence Reinger": {
+      "movement": [
+        22,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        22,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "103": {
+    "Clarence Reinger": {
+      "movement": [
+        21,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        21,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "104": {
+    "Clarence Reinger": {
+      "movement": [
+        20,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        20,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "105": {
+    "Clarence Reinger": {
+      "movement": [
+        19,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        19,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "106": {
+    "Clarence Reinger": {
+      "movement": [
+        18,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        18,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "107": {
+    "Clarence Reinger": {
+      "movement": [
+        17,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        17,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "108": {
+    "Clarence Reinger": {
+      "movement": [
+        16,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        16,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "109": {
+    "Clarence Reinger": {
+      "movement": [
+        15,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        15,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "110": {
+    "Clarence Reinger": {
+      "movement": [
+        14,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        14,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "111": {
+    "Clarence Reinger": {
+      "movement": [
+        13,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        13,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "112": {
+    "Clarence Reinger": {
+      "movement": [
+        12,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        12,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "113": {
+    "Clarence Reinger": {
+      "movement": [
+        11,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        11,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "114": {
+    "Clarence Reinger": {
+      "movement": [
+        10,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        10,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "115": {
+    "Clarence Reinger": {
+      "movement": [
+        9,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        9,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "116": {
+    "Clarence Reinger": {
+      "movement": [
+        8,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        8,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "117": {
+    "Clarence Reinger": {
+      "movement": [
+        7,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        7,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "118": {
+    "Clarence Reinger": {
+      "movement": [
+        6,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        6,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "119": {
+    "Clarence Reinger": {
+      "movement": [
+        5,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        5,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "120": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        7
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        7
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "121": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        8
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        8
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  },
+  "122": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        9
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        9
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Waiting Room:waiting area",
+      "chat": null
+    }
+  },
+  "123": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        10
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        10
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Waiting Room:waiting area",
+      "chat": null
+    }
+  },
+  "124": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        11
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        11
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Waiting Room:waiting area",
+      "chat": null
+    }
+  },
+  "125": {
+    "Clarence Reinger": {
+      "movement": [
+        4,
+        12
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        4,
+        12
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Waiting Room:waiting area",
+      "chat": null
+    }
+  },
+  "126": {
+    "Clarence Reinger": {
+      "movement": [
+        3,
+        12
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        3,
+        12
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Waiting Room:waiting area",
+      "chat": null
+    }
+  },
+  "127": {
+    "Clarence Reinger": {
+      "movement": [
+        2,
+        12
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        2,
+        12
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital:Waiting Room:waiting area",
+      "chat": null
+    }
+  },
+  "128": {
+    "Clarence Reinger": {
+      "movement": [
+        2,
+        13
+      ],
+      "pronunciatio": "\ud83d\udeaa",
+      "description": "leaving the hospital @ <spawn_loc>Home",
+      "chat": null
+    },
+    "Marcus": {
+      "movement": [
+        2,
+        13
+      ],
+      "pronunciatio": "\ud83d\udc68",
+      "description": "with Clarence @ General Hospital::",
+      "chat": null
+    }
+  }
+}

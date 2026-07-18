@@ -1,0 +1,42 @@
+{
+  "node_2": {
+    "node_count": 2,
+    "type_count": 2,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 20, 2026, 08:00:00",
+    "expiration": "April 19, 2026, 08:00:00",
+    "last_accessed": "March 20, 2026, 08:00:00",
+    "subject": "Marcus",
+    "predicate": "is",
+    "object": "excited and taking notes",
+    "description": "Marcus is excited and writing everything down for Clarence Reinger.",
+    "embedding_key": "Marcus is excited and writing everything down for Clarence Reinger.",
+    "poignancy": 5,
+    "keywords": [
+      "Marcus",
+      "notes"
+    ],
+    "filling": null
+  },
+  "node_1": {
+    "node_count": 1,
+    "type_count": 1,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Marcus",
+    "predicate": "is",
+    "object": "Clarence Reinger's husband",
+    "description": "Marcus is Clarence Reinger's husband, here for the first prenatal visit.",
+    "embedding_key": "Marcus is Clarence Reinger's husband, here for the first prenatal visit.",
+    "poignancy": 6,
+    "keywords": [
+      "Marcus",
+      "Clarence Reinger"
+    ],
+    "filling": null
+  }
+}

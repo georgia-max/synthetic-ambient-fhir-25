@@ -1,0 +1,304 @@
+{
+  "node_15": {
+    "node_count": 15,
+    "type_count": 2,
+    "type": "event",
+    "depth": 0,
+    "created": "March 21, 2026, 08:00:00",
+    "expiration": null,
+    "last_accessed": "March 21, 2026, 08:00:00",
+    "subject": "General Hospital:OB / Prenatal Clinic:exam room:ultrasound machine",
+    "predicate": "is",
+    "object": "idle",
+    "description": "ultrasound machine is idle",
+    "embedding_key": "ultrasound machine is idle",
+    "poignancy": 1,
+    "keywords": [
+      "ultrasound machine",
+      "idle"
+    ],
+    "filling": null
+  },
+  "node_14": {
+    "node_count": 14,
+    "type_count": 1,
+    "type": "event",
+    "depth": 0,
+    "created": "March 21, 2026, 08:00:00",
+    "expiration": null,
+    "last_accessed": "March 21, 2026, 08:00:00",
+    "subject": "General Hospital:OB / Prenatal Clinic:exam room:exam table",
+    "predicate": "is",
+    "object": "idle",
+    "description": "exam table is idle",
+    "embedding_key": "exam table is idle",
+    "poignancy": 1,
+    "keywords": [
+      "exam table",
+      "idle"
+    ],
+    "filling": null
+  },
+  "node_13": {
+    "node_count": 13,
+    "type_count": 13,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Dr. Amari",
+    "predicate": "expects for",
+    "object": "Clarence Reinger",
+    "description": "For Clarence Reinger, Dr. Amari expects: Normal pregnancy \u2014 initial prenatal visit; Recurrent urinary tract infection; Medication review due.",
+    "embedding_key": "For Clarence Reinger, Dr. Amari expects: Normal pregnancy \u2014 initial prenatal visit; Recurrent urinary tract infection; Medication review due.",
+    "poignancy": 7,
+    "keywords": [
+      "Dr. Amari",
+      "Clarence Reinger"
+    ],
+    "filling": [
+      "### Normal pregnancy \u2014 initial prenatal visit\nDesired early intrauterine pregnancy confirmed by office pregnancy test and viability ultrasound showing fetal cardiac activity; fundal height and fetal heart auscultation consistent and reassuring.\n- Full prenatal intake panel sent today: blood type, hemogram with differential, hepatitis B surface antigen, HIV antigen, hepatitis C confirmatory antibody, syphilis titer, rubella and varicella immunity, chlamydia and gonorrhea testing, urine diabetes screen, and qualitative urine protein.\n- Cervical cytology (Pap smear) collected; results to portal with call for anything actionable.\n- TB Tine test placed; nurse visit in 2-3 days for reading.\n- Routine prenatal visits every 4 weeks for now; lifestyle counseling given (no alcohol, no smoking, caffeine in moderation, small frequent meals for nausea).\n\n### Recurrent urinary tract infection\nLongstanding recurrent UTIs are the patient's chief concern for this pregnancy; currently asymptomatic apart from expected urinary frequency.\n- Urine culture sent today; surveillance cultures at prenatal visits given risk of asymptomatic bacteriuria.\n- Same-day call instructions reviewed for dysuria, urgency, unilateral back pain, or fever; prompt pregnancy-safe treatment if any culture is positive.\n\n### Medication review due\nReview completed at this visit; no regular medications, contraception previously discontinued for conception.\n- Chart medication list updated; patient to contact office before starting any new prescription or over-the-counter medication."
+    ]
+  },
+  "node_12": {
+    "node_count": 12,
+    "type_count": 12,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Dr. Amari",
+    "predicate": "orders",
+    "object": "gonorrhea infection titer test",
+    "description": "Dr. Amari orders gonorrhea infection titer test at these visits.",
+    "embedding_key": "Dr. Amari orders gonorrhea infection titer test at these visits.",
+    "poignancy": 5,
+    "keywords": [
+      "Dr. Amari",
+      "gonorrhea infection titer test"
+    ],
+    "filling": null
+  },
+  "node_11": {
+    "node_count": 11,
+    "type_count": 11,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Dr. Amari",
+    "predicate": "orders",
+    "object": "evaluation of uterine fundal height",
+    "description": "Dr. Amari orders evaluation of uterine fundal height at these visits.",
+    "embedding_key": "Dr. Amari orders evaluation of uterine fundal height at these visits.",
+    "poignancy": 5,
+    "keywords": [
+      "Dr. Amari",
+      "evaluation of uterine fundal height"
+    ],
+    "filling": null
+  },
+  "node_10": {
+    "node_count": 10,
+    "type_count": 10,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Dr. Amari",
+    "predicate": "orders",
+    "object": "cytopathology procedure, preparation of smear, genital source",
+    "description": "Dr. Amari orders cytopathology procedure, preparation of smear, genital source at these visits.",
+    "embedding_key": "Dr. Amari orders cytopathology procedure, preparation of smear, genital source at these visits.",
+    "poignancy": 5,
+    "keywords": [
+      "Dr. Amari",
+      "cytopathology procedure, preparation of smear, genital source"
+    ],
+    "filling": null
+  },
+  "node_9": {
+    "node_count": 9,
+    "type_count": 9,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Dr. Amari",
+    "predicate": "orders",
+    "object": "chlamydia antigen test",
+    "description": "Dr. Amari orders chlamydia antigen test at these visits.",
+    "embedding_key": "Dr. Amari orders chlamydia antigen test at these visits.",
+    "poignancy": 5,
+    "keywords": [
+      "Dr. Amari",
+      "chlamydia antigen test"
+    ],
+    "filling": null
+  },
+  "node_8": {
+    "node_count": 8,
+    "type_count": 8,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Dr. Amari",
+    "predicate": "orders",
+    "object": "blood group typing",
+    "description": "Dr. Amari orders blood group typing at these visits.",
+    "embedding_key": "Dr. Amari orders blood group typing at these visits.",
+    "poignancy": 5,
+    "keywords": [
+      "Dr. Amari",
+      "blood group typing"
+    ],
+    "filling": null
+  },
+  "node_7": {
+    "node_count": 7,
+    "type_count": 7,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Dr. Amari",
+    "predicate": "orders",
+    "object": "auscultation of the fetal heart",
+    "description": "Dr. Amari orders auscultation of the fetal heart at these visits.",
+    "embedding_key": "Dr. Amari orders auscultation of the fetal heart at these visits.",
+    "poignancy": 5,
+    "keywords": [
+      "Dr. Amari",
+      "auscultation of the fetal heart"
+    ],
+    "filling": null
+  },
+  "node_6": {
+    "node_count": 6,
+    "type_count": 6,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Dr. Amari",
+    "predicate": "commonly sees",
+    "object": "chronic neck pain",
+    "description": "Dr. Amari commonly sees chronic neck pain in OB / Prenatal Clinic.",
+    "embedding_key": "Dr. Amari commonly sees chronic neck pain in OB / Prenatal Clinic.",
+    "poignancy": 6,
+    "keywords": [
+      "Dr. Amari",
+      "chronic neck pain"
+    ],
+    "filling": null
+  },
+  "node_5": {
+    "node_count": 5,
+    "type_count": 5,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Dr. Amari",
+    "predicate": "commonly sees",
+    "object": "chronic low back pain",
+    "description": "Dr. Amari commonly sees chronic low back pain in OB / Prenatal Clinic.",
+    "embedding_key": "Dr. Amari commonly sees chronic low back pain in OB / Prenatal Clinic.",
+    "poignancy": 6,
+    "keywords": [
+      "Dr. Amari",
+      "chronic low back pain"
+    ],
+    "filling": null
+  },
+  "node_4": {
+    "node_count": 4,
+    "type_count": 4,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Dr. Amari",
+    "predicate": "commonly sees",
+    "object": "adolescent idiopathic scoliosis",
+    "description": "Dr. Amari commonly sees adolescent idiopathic scoliosis in OB / Prenatal Clinic.",
+    "embedding_key": "Dr. Amari commonly sees adolescent idiopathic scoliosis in OB / Prenatal Clinic.",
+    "poignancy": 6,
+    "keywords": [
+      "Dr. Amari",
+      "adolescent idiopathic scoliosis"
+    ],
+    "filling": null
+  },
+  "node_3": {
+    "node_count": 3,
+    "type_count": 3,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Dr. Amari",
+    "predicate": "commonly sees",
+    "object": "stress",
+    "description": "Dr. Amari commonly sees stress in OB / Prenatal Clinic.",
+    "embedding_key": "Dr. Amari commonly sees stress in OB / Prenatal Clinic.",
+    "poignancy": 6,
+    "keywords": [
+      "Dr. Amari",
+      "stress"
+    ],
+    "filling": null
+  },
+  "node_2": {
+    "node_count": 2,
+    "type_count": 2,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Dr. Amari",
+    "predicate": "commonly sees",
+    "object": "anemia",
+    "description": "Dr. Amari commonly sees anemia in OB / Prenatal Clinic.",
+    "embedding_key": "Dr. Amari commonly sees anemia in OB / Prenatal Clinic.",
+    "poignancy": 6,
+    "keywords": [
+      "Dr. Amari",
+      "anemia"
+    ],
+    "filling": null
+  },
+  "node_1": {
+    "node_count": 1,
+    "type_count": 1,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Dr. Amari",
+    "predicate": "commonly sees",
+    "object": "normal pregnancy",
+    "description": "Dr. Amari commonly sees normal pregnancy in OB / Prenatal Clinic.",
+    "embedding_key": "Dr. Amari commonly sees normal pregnancy in OB / Prenatal Clinic.",
+    "poignancy": 6,
+    "keywords": [
+      "Dr. Amari",
+      "normal pregnancy"
+    ],
+    "filling": null
+  }
+}

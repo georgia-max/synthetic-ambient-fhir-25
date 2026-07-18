@@ -1,0 +1,5 @@
+.env
+.llm_cache/
+storage/
+__pycache__/
+*.pyc

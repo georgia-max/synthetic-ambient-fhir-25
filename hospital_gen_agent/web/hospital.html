@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<!--
+  Hospital Generative Agents — minimal grid replayer (R2)
+  =======================================================
+  A single-file, dependency-free (no frameworks, no CDN) vanilla-JS canvas
+  replayer for the hospital vertical slice. It fetches three SIBLING files from
+  the directory this HTML is served from and animates the baked replay:
+
+      world.json            floor plan (tiles, rooms, objects)
+      meta.json             sim metadata (start date, clock, sec_per_step, cast)
+      master_movement.json  delta-compressed per-step persona states
+
+  HOW TO SERVE (file:// fetch is blocked by browsers — you MUST use a server):
+
+      /Users/georgia/Desktop/synthetic-ambient-fhir-25/.venv/bin/python -m http.server
+
+  run that from THIS directory (hospital_gen_agent/web/), then open
+      http://localhost:8000/hospital.html
+
+  If master_movement.json is missing, a friendly message explains how to bake it
+  (run_slice.py) and how to serve the folder. See the plans for the data
+  contracts (SUBPLAN_B_vertical_slice.md).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hospital Generative Agents — Replay</title>
+<style>
+  :root {
+    --bg: #0e1116;
+    --panel: #161b22;
+    --panel-2: #1c232d;
+    --ink: #e6edf3;
+    --muted: #9aa7b4;
+    --accent: #4ea1ff;
+    --border: #2a323c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    background: var(--bg); color: var(--ink);
+    font: 14px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  #app { display: flex; flex-direction: column; height: 100%; }
+  header {
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+    padding: 10px 16px; background: var(--panel);
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 { font-size: 15px; margin: 0; font-weight: 600; letter-spacing: .2px; }
+  .clock {
+    font-variant-numeric: tabular-nums; font-size: 15px;
+    background: var(--panel-2); border: 1px solid var(--border);
+    padding: 5px 10px; border-radius: 6px; color: var(--accent);
+  }
+  .controls { display: flex; align-items: center; gap: 10px; margin-left: auto; flex-wrap: wrap; }
+  button, select {
+    background: var(--panel-2); color: var(--ink);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 6px 12px; font-size: 13px; cursor: pointer;
+  }
+  button:hover, select:hover { border-color: var(--accent); }
+  button:disabled { opacity: .5; cursor: default; }
+  .step-label { color: var(--muted); font-variant-numeric: tabular-nums; min-width: 92px; }
+  main { flex: 1; display: flex; overflow: hidden; }
+  #stage {
+    flex: 1; overflow: auto; display: flex; align-items: flex-start;
+    justify-content: center; padding: 16px; background:
+      repeating-linear-gradient(45deg, #0c0f14 0 12px, #0e1116 12px 24px);
+  }
+  canvas { background: #10151c; border: 1px solid var(--border); border-radius: 6px; box-shadow: 0 8px 30px rgba(0,0,0,.4); }
+  #side {
+    width: 300px; flex-shrink: 0; background: var(--panel);
+    border-left: 1px solid var(--border); padding: 14px; overflow-y: auto;
+  }
+  #side h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin: 0 0 8px; }
+  .persona-row { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 6px; cursor: pointer; }
+  .persona-row:hover { background: var(--panel-2); }
+  .persona-row.sel { background: var(--panel-2); outline: 1px solid var(--accent); }
+  .dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+  .persona-name { font-size: 13px; }
+  #detail { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+  #detail .who { font-weight: 600; margin-bottom: 4px; }
+  #detail .desc { color: var(--muted); font-size: 13px; }
+  #detail .addr { color: var(--accent); font-size: 12px; margin-top: 6px; word-break: break-word; }
+  .overlay {
+    position: fixed; inset: 0; display: none; align-items: center; justify-content: center;
+    background: rgba(6,9,13,.92); padding: 24px; z-index: 10;
+  }
+  .overlay .card {
+    max-width: 620px; background: var(--panel); border: 1px solid var(--border);
+    border-radius: 10px; padding: 26px 28px;
+  }
+  .overlay h2 { margin: 0 0 12px; font-size: 18px; color: var(--accent); }
+  .overlay p { color: var(--ink); }
+  .overlay code, pre {
+    background: #0a0d12; border: 1px solid var(--border); border-radius: 6px;
+    padding: 2px 6px; font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 12.5px;
+    color: #d6e2ee;
+  }
+  .overlay pre { display: block; padding: 12px 14px; margin: 10px 0; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>🏥 Hospital Generative Agents</h1>
+    <span class="clock" id="clock">—</span>
+    <div class="controls">
+      <button id="playBtn" title="Play / pause (space)">▶ Play</button>
+      <button id="restartBtn" title="Restart">⟲ Restart</button>
+      <span class="step-label" id="stepLabel">step 0</span>
+      <label for="speed" style="color:var(--muted)">speed</label>
+      <select id="speed">
+        <option value="0.5">0.5×</option>
+        <option value="1" selected>1×</option>
+        <option value="2">2×</option>
+        <option value="4">4×</option>
+        <option value="8">8×</option>
+      </select>
+    </div>
+  </header>
+  <main>
+    <div id="stage"><canvas id="canvas" width="800" height="400"></canvas></div>
+    <aside id="side">
+      <h2>Cast</h2>
+      <div id="personaList"></div>
+      <div id="detail">
+        <div class="who">Click a persona</div>
+        <div class="desc">Their current action appears here.</div>
+        <div class="addr"></div>
+      </div>
+    </aside>
+  </main>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="card">
+    <h2 id="ovTitle">Replay data not found</h2>
+    <div id="ovBody"></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+(function () {
+  // ---------------------------------------------------------------------- //
+  // Constants / state                                                      //
+  // ---------------------------------------------------------------------- //
+  const MS_PER_STEP = 700;                 // base wall-clock ms per sim step at 1x
+  const PALETTE = ["#4ea1ff", "#ff8f6b", "#6bd39a", "#c792ea", "#ffcf5c",
+                   "#f06595", "#4dd0c1", "#a3b1c2"]; // fallback persona colors
+
+  const state = {
+    world: null,
+    meta: null,
+    master: null,        // raw {step: {persona: entry}}
+    frames: [],          // frames[intStep] = {persona: entry} carried-forward
+    maxStep: 0,
+    baseTime: null,      // Date at metaStep
+    metaStep: 0,
+    secPerStep: 30,
+    tile: 20,
+    personaColor: {},    // name -> color
+    playhead: 0,         // float step position
+    playing: false,
+    speed: 1,
+    selected: null,
+    lastFrameTs: 0,
+  };
+
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+  const els = {
+    clock: document.getElementById("clock"),
+    playBtn: document.getElementById("playBtn"),
+    restartBtn: document.getElementById("restartBtn"),
+    stepLabel: document.getElementById("stepLabel"),
+    speed: document.getElementById("speed"),
+    personaList: document.getElementById("personaList"),
+    detail: document.getElementById("detail"),
+    overlay: document.getElementById("overlay"),
+    ovTitle: document.getElementById("ovTitle"),
+    ovBody: document.getElementById("ovBody"),
+  };
+
+  // ---------------------------------------------------------------------- //
+  // Data loading                                                           //
+  // ---------------------------------------------------------------------- //
+  async function fetchJson(name) {
+    const res = await fetch(name, { cache: "no-store" });
+    if (!res.ok) throw new Error(name + " → HTTP " + res.status);
+    return res.json();
+  }
+
+  async function boot() {
+    // world.json and meta.json are optional-with-fallback; master is required.
+    let world = null, meta = null, master = null;
+    try { world = await fetchJson("world.json"); } catch (e) { /* fall back below */ }
+    try { meta = await fetchJson("meta.json"); } catch (e) { /* fall back below */ }
+    try { master = await fetchJson("master_movement.json"); }
+    catch (e) { return showMissing(e); }
+
+    state.world = world || defaultWorld(master);
+    state.meta = meta || defaultMeta(master);
+    state.master = master;
+    prepare();
+    layout();
+    buildPersonaList();
+    render();
+    requestAnimationFrame(loop);
+  }
+
+  function showMissing(err) {
+    els.ovTitle.textContent = "Replay data not found";
+    els.ovBody.innerHTML =
+      "<p><code>master_movement.json</code> could not be loaded (" +
+      escapeHtml(String(err && err.message || err)) + ").</p>" +
+      "<p>Bake the replay first, then serve this folder:</p>" +
+      "<pre>" +
+      "# 1) bake the vertical slice (writes world/meta/master_movement)\n" +
+      "/Users/georgia/Desktop/synthetic-ambient-fhir-25/.venv/bin/python run_slice.py\n\n" +
+      "# 2) serve THIS directory (file:// fetch is blocked)\n" +
+      "cd /Users/georgia/Desktop/synthetic-ambient-fhir-25/hospital_gen_agent/web\n" +
+      "/Users/georgia/Desktop/synthetic-ambient-fhir-25/.venv/bin/python -m http.server\n\n" +
+      "# 3) open  http://localhost:8000/hospital.html" +
+      "</pre>";
+    els.overlay.style.display = "flex";
+  }
+
+  // ---------------------------------------------------------------------- //
+  // Fallbacks (keep the replay usable even if world/meta are absent)       //
+  // ---------------------------------------------------------------------- //
+  function allPersonaNames(master) {
+    const set = new Set();
+    for (const s of Object.keys(master))
+      for (const p of Object.keys(master[s])) set.add(p);
+    return Array.from(set);
+  }
+
+  function defaultWorld(master) {
+    // Infer a bounding grid from movement extents; no rooms/objects.
+    let maxX = 8, maxY = 8;
+    for (const s of Object.keys(master))
+      for (const p of Object.keys(master[s])) {
+        const m = master[s][p].movement || [0, 0];
+        maxX = Math.max(maxX, m[0]); maxY = Math.max(maxY, m[1]);
+      }
+    return { tile_size: 24, width: maxX + 2, height: maxY + 2, rooms: [], objects: [] };
+  }
+
+  function defaultMeta(master) {
+    return {
+      start_date: "Unknown date",
+      curr_time: "January 01, 2026, 08:00:00",
+      sec_per_step: 30,
+      persona_names: allPersonaNames(master),
+      step: 0,
+    };
+  }
+
+  // ---------------------------------------------------------------------- //
+  // Preprocessing: build carried-forward per-step frames                   //
+  // ---------------------------------------------------------------------- //
+  function prepare() {
+    state.tile = state.world.tile_size || 24;
+    state.secPerStep = state.meta.sec_per_step || 30;
+    state.metaStep = state.meta.step || 0;
+    state.baseTime = parseSimTime(state.meta.curr_time);
+
+    const steps = Object.keys(state.master).map(Number)
+      .filter(n => !Number.isNaN(n)).sort((a, b) => a - b);
+    state.maxStep = steps.length ? steps[steps.length - 1] : 0;
+
+    // Delta decode: carry forward each persona's last-known entry.
+    const running = {};
+    const frames = [];
+    const rawByStep = {};
+    for (const s of steps) rawByStep[s] = state.master[String(s)] || state.master[s];
+    for (let s = 0; s <= state.maxStep; s++) {
+      const upd = rawByStep[s];
+      if (upd) for (const p of Object.keys(upd)) running[p] = upd[p];
+      frames[s] = Object.assign({}, running);
+    }
+    state.frames = frames;
+
+    // Assign a stable color per persona.
+    const names = (state.meta.persona_names && state.meta.persona_names.length)
+      ? state.meta.persona_names : allPersonaNames(state.master);
+    names.forEach((n, i) => { state.personaColor[n] = PALETTE[i % PALETTE.length]; });
+    // Cover any persona not listed in meta.
+    for (const n of allPersonaNames(state.master))
+      if (!(n in state.personaColor))
+        state.personaColor[n] = PALETTE[Object.keys(state.personaColor).length % PALETTE.length];
+  }
+
+  function parseSimTime(str) {
+    // Accepts "March 21, 2026, 08:00:00" (DATETIME_FMT). Robust manual parse.
+    if (!str) return new Date(2026, 0, 1, 8, 0, 0);
+    const m = String(str).match(
+      /([A-Za-z]+)\s+(\d{1,2}),\s+(\d{4})(?:,\s+(\d{1,2}):(\d{2}):(\d{2}))?/);
+    if (!m) { const d = new Date(str); return isNaN(d) ? new Date(2026,0,1,8,0,0) : d; }
+    const months = ["january","february","march","april","may","june","july",
+                    "august","september","october","november","december"];
+    const mon = months.indexOf(m[1].toLowerCase());
+    return new Date(+m[3], mon < 0 ? 0 : mon, +m[2],
+                    +(m[4] || 8), +(m[5] || 0), +(m[6] || 0));
+  }
+
+  function timeForStep(step) {
+    const secs = (step - state.metaStep) * state.secPerStep;
+    return new Date(state.baseTime.getTime() + secs * 1000);
+  }
+
+  function formatClock(d) {
+    const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    const pad = n => String(n).padStart(2, "0");
+    return months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear() +
+      " · " + pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds());
+  }
+
+  // ---------------------------------------------------------------------- //
+  // Layout / sizing                                                        //
+  // ---------------------------------------------------------------------- //
+  function layout() {
+    const w = (state.world.width || 8) * state.tile;
+    const h = (state.world.height || 8) * state.tile;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = w + "px";
+    canvas.style.height = h + "px";
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  // ---------------------------------------------------------------------- //
+  // Rendering                                                              //
+  // ---------------------------------------------------------------------- //
+  function render() {
+    const t = state.tile;
+    const W = (state.world.width || 8) * t;
+    const H = (state.world.height || 8) * t;
+    ctx.clearRect(0, 0, W, H);
+
+    // Subtle tile grid.
+    ctx.strokeStyle = "rgba(255,255,255,0.03)";
+    ctx.lineWidth = 1;
+    for (let x = 0; x <= (state.world.width || 8); x++) {
+      ctx.beginPath(); ctx.moveTo(x * t, 0); ctx.lineTo(x * t, H); ctx.stroke();
+    }
+    for (let y = 0; y <= (state.world.height || 8); y++) {
+      ctx.beginPath(); ctx.moveTo(0, y * t); ctx.lineTo(W, y * t); ctx.stroke();
+    }
+
+    // Rooms.
+    for (const r of (state.world.rooms || [])) {
+      const rx = r.x * t, ry = r.y * t, rw = r.w * t, rh = r.h * t;
+      ctx.fillStyle = withAlpha(r.color || "#334", 0.22);
+      ctx.fillRect(rx, ry, rw, rh);
+      ctx.strokeStyle = withAlpha(r.color || "#556", 0.9);
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(rx + 0.5, ry + 0.5, rw - 1, rh - 1);
+      if (r.label) {
+        ctx.fillStyle = withAlpha(r.color || "#aab", 1);
+        ctx.font = "600 " + Math.max(10, Math.min(13, t * 0.6)) + "px sans-serif";
+        ctx.textAlign = "left"; ctx.textBaseline = "top";
+        ctx.fillText(r.label, rx + 5, ry + 4);
+      }
+    }
+
+    // Objects.
+    ctx.font = Math.max(9, Math.min(11, t * 0.5)) + "px sans-serif";
+    for (const o of (state.world.objects || [])) {
+      const ox = o.x * t, oy = o.y * t;
+      ctx.fillStyle = "rgba(255,255,255,0.55)";
+      ctx.fillRect(ox + t * 0.32, oy + t * 0.32, t * 0.36, t * 0.36);
+      ctx.fillStyle = "rgba(230,237,243,0.75)";
+      ctx.textAlign = "center"; ctx.textBaseline = "top";
+      ctx.fillText(o.label || "", ox + t / 2, oy + t + 1);
+    }
+
+    // Personas (interpolated).
+    drawPersonas();
+  }
+
+  function persMovement(step, name) {
+    const f = state.frames[Math.max(0, Math.min(step, state.maxStep))];
+    return f ? f[name] : undefined;
+  }
+
+  function drawPersonas() {
+    const t = state.tile;
+    const cur = Math.floor(state.playhead);
+    const frac = state.playhead - cur;
+    const next = Math.min(cur + 1, state.maxStep);
+    const frame = state.frames[Math.min(cur, state.maxStep)] || {};
+
+    // Draw non-selected first, selected + chatting last (on top).
+    const names = Object.keys(frame);
+    const order = names.slice().sort((a, b) => {
+      const ac = (frame[a] && frame[a].chat) ? 1 : 0;
+      const bc = (frame[b] && frame[b].chat) ? 1 : 0;
+      if (ac !== bc) return ac - bc;
+      return (a === state.selected ? 1 : 0) - (b === state.selected ? 1 : 0);
+    });
+
+    for (const name of order) {
+      const e0 = persMovement(cur, name);
+      if (!e0 || !e0.movement) continue;
+      const e1 = persMovement(next, name) || e0;
+      const p0 = e0.movement, p1 = (e1.movement || p0);
+      const tx = (p0[0] + (p1[0] - p0[0]) * frac + 0.5) * t;
+      const ty = (p0[1] + (p1[1] - p0[1]) * frac + 0.5) * t;
+      const color = state.personaColor[name] || "#8fa";
+      const r = Math.max(6, t * 0.32);
+
+      // Body dot.
+      ctx.beginPath();
+      ctx.arc(tx, ty, r, 0, Math.PI * 2);
+      ctx.fillStyle = color;
+      ctx.fill();
+      if (name === state.selected) {
+        ctx.lineWidth = 2.5; ctx.strokeStyle = "#fff"; ctx.stroke();
+      } else {
+        ctx.lineWidth = 1.5; ctx.strokeStyle = "rgba(0,0,0,0.4)"; ctx.stroke();
+      }
+
+      // Pronunciatio emoji above head.
+      if (e0.pronunciatio) {
+        ctx.font = Math.round(r * 1.7) + "px sans-serif";
+        ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
+        ctx.fillText(e0.pronunciatio, tx, ty - r - 4);
+      }
+
+      // Name label below.
+      ctx.font = "600 " + Math.max(9, t * 0.42) + "px sans-serif";
+      ctx.textAlign = "center"; ctx.textBaseline = "top";
+      ctx.lineWidth = 3; ctx.strokeStyle = "rgba(0,0,0,0.55)";
+      ctx.strokeText(shortName(name), tx, ty + r + 2);
+      ctx.fillStyle = "#e6edf3";
+      ctx.fillText(shortName(name), tx, ty + r + 2);
+
+      // Speech bubble for active chat.
+      if (e0.chat && e0.chat.length) drawBubble(tx, ty - r - 22, e0.chat);
+    }
+  }
+
+  function drawBubble(x, y, chat) {
+    const t = state.tile;
+    const lines = chat.slice(-3).map(c => shortName(c[0]) + ": " + c[1]);
+    ctx.font = Math.max(10, t * 0.5) + "px sans-serif";
+    let bw = 0;
+    const wrapped = [];
+    const maxW = 220;
+    for (const ln of lines) for (const w of wrapText(ln, maxW)) {
+      wrapped.push(w); bw = Math.max(bw, ctx.measureText(w).width);
+    }
+    if (!wrapped.length) return;
+    const lh = Math.max(13, t * 0.62);
+    const padX = 8, padY = 6;
+    const boxW = bw + padX * 2;
+    const boxH = wrapped.length * lh + padY * 2;
+    let bx = x - boxW / 2;
+    let by = y - boxH;
+    bx = Math.max(2, Math.min(bx, (state.world.width * t) - boxW - 2));
+    by = Math.max(2, by);
+
+    ctx.fillStyle = "rgba(20,26,34,0.95)";
+    ctx.strokeStyle = "rgba(78,161,255,0.7)";
+    ctx.lineWidth = 1.5;
+    roundRect(bx, by, boxW, boxH, 8);
+    ctx.fill(); ctx.stroke();
+    // Tail.
+    ctx.beginPath();
+    ctx.moveTo(x - 5, by + boxH);
+    ctx.lineTo(x + 5, by + boxH);
+    ctx.lineTo(x, by + boxH + 8);
+    ctx.closePath(); ctx.fillStyle = "rgba(20,26,34,0.95)"; ctx.fill();
+
+    ctx.textAlign = "left"; ctx.textBaseline = "top";
+    ctx.fillStyle = "#dbe6f0";
+    wrapped.forEach((w, i) => ctx.fillText(w, bx + padX, by + padY + i * lh));
+  }
+
+  function wrapText(text, maxW) {
+    const words = text.split(" ");
+    const out = []; let line = "";
+    for (const w of words) {
+      const trial = line ? line + " " + w : w;
+      if (ctx.measureText(trial).width > maxW && line) { out.push(line); line = w; }
+      else line = trial;
+    }
+    if (line) out.push(line);
+    return out;
+  }
+
+  function roundRect(x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  // ---------------------------------------------------------------------- //
+  // Animation loop                                                         //
+  // ---------------------------------------------------------------------- //
+  function loop(ts) {
+    if (state.playing) {
+      if (!state.lastFrameTs) state.lastFrameTs = ts;
+      const dt = ts - state.lastFrameTs;
+      state.lastFrameTs = ts;
+      state.playhead += (dt / MS_PER_STEP) * state.speed;
+      if (state.playhead >= state.maxStep) {
+        state.playhead = 0;         // loop the replay
+      }
+    } else {
+      state.lastFrameTs = ts;
+    }
+    render();
+    updateHud();
+    requestAnimationFrame(loop);
+  }
+
+  function updateHud() {
+    const step = Math.floor(state.playhead);
+    els.clock.textContent = formatClock(timeForStep(step));
+    els.stepLabel.textContent = "step " + step + " / " + state.maxStep;
+    if (state.selected) updateDetail(state.selected);
+  }
+
+  // ---------------------------------------------------------------------- //
+  // Sidebar / interaction                                                  //
+  // ---------------------------------------------------------------------- //
+  function buildPersonaList() {
+    const names = (state.meta.persona_names && state.meta.persona_names.length)
+      ? state.meta.persona_names : allPersonaNames(state.master);
+    els.personaList.innerHTML = "";
+    for (const name of names) {
+      const row = document.createElement("div");
+      row.className = "persona-row";
+      row.dataset.name = name;
+      const dot = document.createElement("span");
+      dot.className = "dot";
+      dot.style.background = state.personaColor[name] || "#8fa";
+      const label = document.createElement("span");
+      label.className = "persona-name";
+      label.textContent = name;
+      row.appendChild(dot); row.appendChild(label);
+      row.addEventListener("click", () => selectPersona(name));
+      els.personaList.appendChild(row);
+    }
+  }
+
+  function selectPersona(name) {
+    state.selected = name;
+    for (const row of els.personaList.children)
+      row.classList.toggle("sel", row.dataset.name === name);
+    updateDetail(name);
+  }
+
+  function updateDetail(name) {
+    const step = Math.floor(state.playhead);
+    const e = persMovement(step, name);
+    const who = els.detail.querySelector(".who");
+    const desc = els.detail.querySelector(".desc");
+    const addr = els.detail.querySelector(".addr");
+    who.textContent = (e && e.pronunciatio ? e.pronunciatio + " " : "") + name;
+    if (!e) { desc.textContent = "(not yet in the scene)"; addr.textContent = ""; return; }
+    // description is "action @ world:sector:arena:object" — split for readability.
+    const full = e.description || "";
+    const at = full.indexOf(" @ ");
+    if (at >= 0) {
+      desc.textContent = full.slice(0, at);
+      addr.textContent = "📍 " + full.slice(at + 3);
+    } else {
+      desc.textContent = full; addr.textContent = "";
+    }
+  }
+
+  function canvasClick(ev) {
+    const rect = canvas.getBoundingClientRect();
+    const mx = ev.clientX - rect.left, my = ev.clientY - rect.top;
+    const t = state.tile;
+    const step = Math.floor(state.playhead);
+    const frame = state.frames[Math.min(step, state.maxStep)] || {};
+    let best = null, bestD = 1e9;
+    for (const name of Object.keys(frame)) {
+      const e = frame[name];
+      if (!e || !e.movement) continue;
+      const cx = (e.movement[0] + 0.5) * t, cy = (e.movement[1] + 0.5) * t;
+      const d = Math.hypot(mx - cx, my - cy);
+      if (d < bestD) { bestD = d; best = name; }
+    }
+    if (best && bestD < Math.max(14, t * 0.9)) selectPersona(best);
+  }
+
+  // ---------------------------------------------------------------------- //
+  // Controls                                                               //
+  // ---------------------------------------------------------------------- //
+  function setPlaying(p) {
+    state.playing = p;
+    state.lastFrameTs = 0;
+    els.playBtn.textContent = p ? "⏸ Pause" : "▶ Play";
+  }
+
+  els.playBtn.addEventListener("click", () => setPlaying(!state.playing));
+  els.restartBtn.addEventListener("click", () => { state.playhead = 0; });
+  els.speed.addEventListener("change", () => { state.speed = parseFloat(els.speed.value); });
+  canvas.addEventListener("click", canvasClick);
+  window.addEventListener("keydown", (e) => {
+    if (e.code === "Space") { e.preventDefault(); setPlaying(!state.playing); }
+  });
+
+  // ---------------------------------------------------------------------- //
+  // Small helpers                                                          //
+  // ---------------------------------------------------------------------- //
+  function shortName(name) {
+    // Keep "Dr. Amari" / "Nurse Reyes" whole; else first name only if long.
+    return name;
+  }
+
+  function withAlpha(color, a) {
+    // Accept #rgb / #rrggbb; return rgba().
+    let c = color.trim();
+    if (c[0] === "#") {
+      if (c.length === 4) c = "#" + c[1] + c[1] + c[2] + c[2] + c[3] + c[3];
+      const n = parseInt(c.slice(1), 16);
+      const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+      return "rgba(" + r + "," + g + "," + b + "," + a + ")";
+    }
+    return color; // named colors etc. pass through
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, c => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+
+  // Auto-play once loaded.
+  boot().then(() => setPlaying(true)).catch(showMissing);
+})();
+</script>
+</body>
+</html>

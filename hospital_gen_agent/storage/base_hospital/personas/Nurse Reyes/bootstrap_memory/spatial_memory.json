@@ -1,0 +1,92 @@
+{
+  "General Hospital": {
+    "Admissions": {
+      "reception": [
+        "reception desk",
+        "check-in kiosk",
+        "waiting chairs"
+      ]
+    },
+    "Waiting Room": {
+      "waiting area": [
+        "waiting chairs"
+      ]
+    },
+    "Triage": {
+      "triage bay 1": [
+        "vitals station",
+        "exam stool",
+        "computer"
+      ],
+      "triage bay 2": [
+        "vitals station",
+        "exam stool",
+        "computer"
+      ]
+    },
+    "General Medicine": {
+      "exam room": [
+        "exam table",
+        "computer",
+        "sink",
+        "blood-pressure cuff"
+      ],
+      "nurse station": [
+        "computer",
+        "medication cart"
+      ]
+    },
+    "OB / Prenatal Clinic": {
+      "exam room": [
+        "exam table",
+        "doppler",
+        "computer",
+        "ultrasound machine"
+      ],
+      "ultrasound room": [
+        "ultrasound machine",
+        "exam table"
+      ]
+    },
+    "Inpatient Ward": {
+      "ward bay": [
+        "ward bed",
+        "monitor",
+        "nurse station"
+      ]
+    },
+    "Isolation Unit": {
+      "isolation room": [
+        "isolation bed",
+        "PPE station",
+        "monitor"
+      ]
+    },
+    "Hospice / Palliative": {
+      "palliative room": [
+        "palliative bed",
+        "family chairs",
+        "comfort cart"
+      ]
+    },
+    "Diagnostics / Lab": {
+      "lab": [
+        "blood draw chair",
+        "analyzer",
+        "imaging table",
+        "ultrasound"
+      ]
+    },
+    "Pharmacy": {
+      "pharmacy": [
+        "pharmacy counter",
+        "medication shelves"
+      ]
+    },
+    "Discharge": {
+      "discharge desk": [
+        "exit"
+      ]
+    }
+  }
+}

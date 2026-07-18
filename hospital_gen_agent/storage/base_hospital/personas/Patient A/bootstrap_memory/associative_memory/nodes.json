@@ -1,0 +1,102 @@
+{
+  "node_5": {
+    "node_count": 5,
+    "type_count": 3,
+    "type": "event",
+    "depth": 0,
+    "created": "March 20, 2026, 08:00:00",
+    "expiration": null,
+    "last_accessed": "March 20, 2026, 08:00:00",
+    "subject": "Patient A",
+    "predicate": "reports",
+    "object": "symptoms",
+    "description": "Sure. Honestly it is a short list. The stuff I keep for when a headache gets really bad, and that is about it. I am not a big pill person.",
+    "embedding_key": "Sure. Honestly it is a short list. The stuff I keep for when a headache gets really bad, and that is about it. I am not a big pill person.",
+    "poignancy": 5,
+    "keywords": [
+      "Patient A",
+      "symptoms"
+    ],
+    "filling": null
+  },
+  "node_4": {
+    "node_count": 4,
+    "type_count": 2,
+    "type": "event",
+    "depth": 0,
+    "created": "March 20, 2026, 08:00:00",
+    "expiration": null,
+    "last_accessed": "March 20, 2026, 08:00:00",
+    "subject": "Patient A",
+    "predicate": "reports",
+    "object": "symptoms",
+    "description": "Dark room, no sound. If it hits at work I push through and regret it. Light makes it worse, and sometimes I get queasy with it. Sleep is the only\u2026",
+    "embedding_key": "Dark room, no sound. If it hits at work I push through and regret it. Light makes it worse, and sometimes I get queasy with it. Sleep is the only\u2026",
+    "poignancy": 4,
+    "keywords": [
+      "Patient A",
+      "symptoms"
+    ],
+    "filling": null
+  },
+  "node_3": {
+    "node_count": 3,
+    "type_count": 1,
+    "type": "event",
+    "depth": 0,
+    "created": "March 20, 2026, 08:00:00",
+    "expiration": null,
+    "last_accessed": "March 20, 2026, 08:00:00",
+    "subject": "Patient A",
+    "predicate": "reports",
+    "object": "symptoms",
+    "description": "Mostly okay. Tired a lot. The headaches are still around. Stress is... yeah. Stress is there.",
+    "embedding_key": "Mostly okay. Tired a lot. The headaches are still around. Stress is... yeah. Stress is there.",
+    "poignancy": 4,
+    "keywords": [
+      "Patient A",
+      "symptoms"
+    ],
+    "filling": null
+  },
+  "node_2": {
+    "node_count": 2,
+    "type_count": 2,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 20, 2026, 08:00:00",
+    "expiration": "April 19, 2026, 08:00:00",
+    "last_accessed": "March 20, 2026, 08:00:00",
+    "subject": "Patient A",
+    "predicate": "is here for",
+    "object": "preventive screening and migraine check-in",
+    "description": "Patient A is here for preventive screening and migraine check-in.",
+    "embedding_key": "Patient A is here for preventive screening and migraine check-in.",
+    "poignancy": 6,
+    "keywords": [
+      "Patient A",
+      "preventive screening and migraine check-in"
+    ],
+    "filling": null
+  },
+  "node_1": {
+    "node_count": 1,
+    "type_count": 1,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Patient A",
+    "predicate": "has",
+    "object": "chronic intractable migraine without aura",
+    "description": "Patient A has chronic intractable migraine without aura.",
+    "embedding_key": "Patient A has chronic intractable migraine without aura.",
+    "poignancy": 6,
+    "keywords": [
+      "Patient A",
+      "chronic intractable migraine without aura"
+    ],
+    "filling": null
+  }
+}

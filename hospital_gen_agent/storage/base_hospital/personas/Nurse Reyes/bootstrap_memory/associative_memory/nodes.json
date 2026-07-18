@@ -1,0 +1,182 @@
+{
+  "node_9": {
+    "node_count": 9,
+    "type_count": 1,
+    "type": "event",
+    "depth": 0,
+    "created": "March 21, 2026, 08:00:00",
+    "expiration": null,
+    "last_accessed": "March 21, 2026, 08:00:00",
+    "subject": "General Hospital:Triage:triage bay 1:vitals station",
+    "predicate": "is",
+    "object": "idle",
+    "description": "vitals station is idle",
+    "embedding_key": "vitals station is idle",
+    "poignancy": 1,
+    "keywords": [
+      "vitals station",
+      "idle"
+    ],
+    "filling": null
+  },
+  "node_8": {
+    "node_count": 8,
+    "type_count": 8,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Nurse Reyes",
+    "predicate": "knows",
+    "object": "blood pressure",
+    "description": "Typical blood pressure runs about 97/51 to 143/100 mm[Hg] here.",
+    "embedding_key": "Typical blood pressure runs about 97/51 to 143/100 mm[Hg] here.",
+    "poignancy": 5,
+    "keywords": [
+      "Nurse Reyes",
+      "blood pressure"
+    ],
+    "filling": null
+  },
+  "node_7": {
+    "node_count": 7,
+    "type_count": 7,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Nurse Reyes",
+    "predicate": "knows",
+    "object": "oxygen saturation",
+    "description": "Typical oxygen saturation runs about 75.7-87.2 % here.",
+    "embedding_key": "Typical oxygen saturation runs about 75.7-87.2 % here.",
+    "poignancy": 5,
+    "keywords": [
+      "Nurse Reyes",
+      "oxygen saturation"
+    ],
+    "filling": null
+  },
+  "node_6": {
+    "node_count": 6,
+    "type_count": 6,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Nurse Reyes",
+    "predicate": "knows",
+    "object": "body temperature",
+    "description": "Typical body temperature runs about 36.9-42.1 Cel here.",
+    "embedding_key": "Typical body temperature runs about 36.9-42.1 Cel here.",
+    "poignancy": 5,
+    "keywords": [
+      "Nurse Reyes",
+      "body temperature"
+    ],
+    "filling": null
+  },
+  "node_5": {
+    "node_count": 5,
+    "type_count": 5,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Nurse Reyes",
+    "predicate": "knows",
+    "object": "body mass index",
+    "description": "Typical body mass index runs about 22.5-31.4 kg/m2 here.",
+    "embedding_key": "Typical body mass index runs about 22.5-31.4 kg/m2 here.",
+    "poignancy": 5,
+    "keywords": [
+      "Nurse Reyes",
+      "body mass index"
+    ],
+    "filling": null
+  },
+  "node_4": {
+    "node_count": 4,
+    "type_count": 4,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Nurse Reyes",
+    "predicate": "knows",
+    "object": "body height",
+    "description": "Typical body height runs about 162.1-185.2 cm here.",
+    "embedding_key": "Typical body height runs about 162.1-185.2 cm here.",
+    "poignancy": 5,
+    "keywords": [
+      "Nurse Reyes",
+      "body height"
+    ],
+    "filling": null
+  },
+  "node_3": {
+    "node_count": 3,
+    "type_count": 3,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Nurse Reyes",
+    "predicate": "knows",
+    "object": "body weight",
+    "description": "Typical body weight runs about 73.3-98.1 kg here.",
+    "embedding_key": "Typical body weight runs about 73.3-98.1 kg here.",
+    "poignancy": 5,
+    "keywords": [
+      "Nurse Reyes",
+      "body weight"
+    ],
+    "filling": null
+  },
+  "node_2": {
+    "node_count": 2,
+    "type_count": 2,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Nurse Reyes",
+    "predicate": "knows",
+    "object": "respiratory rate",
+    "description": "Typical respiratory rate runs about 12-34.1 /min here.",
+    "embedding_key": "Typical respiratory rate runs about 12-34.1 /min here.",
+    "poignancy": 5,
+    "keywords": [
+      "Nurse Reyes",
+      "respiratory rate"
+    ],
+    "filling": null
+  },
+  "node_1": {
+    "node_count": 1,
+    "type_count": 1,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Nurse Reyes",
+    "predicate": "knows",
+    "object": "heart rate",
+    "description": "Typical heart rate runs about 57.0-198.2 /min here.",
+    "embedding_key": "Typical heart rate runs about 57.0-198.2 /min here.",
+    "poignancy": 5,
+    "keywords": [
+      "Nurse Reyes",
+      "heart rate"
+    ],
+    "filling": null
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "node_4": {
+    "node_count": 4,
+    "type_count": 2,
+    "type": "event",
+    "depth": 0,
+    "created": "March 21, 2026, 08:00:00",
+    "expiration": null,
+    "last_accessed": "March 21, 2026, 08:00:00",
+    "subject": "General Hospital:Admissions:reception:check-in kiosk",
+    "predicate": "is",
+    "object": "idle",
+    "description": "check-in kiosk is idle",
+    "embedding_key": "check-in kiosk is idle",
+    "poignancy": 1,
+    "keywords": [
+      "check-in kiosk",
+      "idle"
+    ],
+    "filling": null
+  },
+  "node_3": {
+    "node_count": 3,
+    "type_count": 1,
+    "type": "event",
+    "depth": 0,
+    "created": "March 21, 2026, 08:00:00",
+    "expiration": null,
+    "last_accessed": "March 21, 2026, 08:00:00",
+    "subject": "General Hospital:Admissions:reception:reception desk",
+    "predicate": "is",
+    "object": "idle",
+    "description": "reception desk is idle",
+    "embedding_key": "reception desk is idle",
+    "poignancy": 1,
+    "keywords": [
+      "reception desk",
+      "idle"
+    ],
+    "filling": null
+  },
+  "node_2": {
+    "node_count": 2,
+    "type_count": 2,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Rosa Diaz",
+    "predicate": "can book",
+    "object": "follow-up nurse visits",
+    "description": "Rosa Diaz books follow-up nurse visits and next appointments at the desk.",
+    "embedding_key": "Rosa Diaz books follow-up nurse visits and next appointments at the desk.",
+    "poignancy": 4,
+    "keywords": [
+      "Rosa Diaz",
+      "appointments"
+    ],
+    "filling": null
+  },
+  "node_1": {
+    "node_count": 1,
+    "type_count": 1,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Rosa Diaz",
+    "predicate": "knows",
+    "object": "the check-in process",
+    "description": "Rosa Diaz checks patients in and routes them to Triage or their clinic.",
+    "embedding_key": "Rosa Diaz checks patients in and routes them to Triage or their clinic.",
+    "poignancy": 4,
+    "keywords": [
+      "Rosa Diaz",
+      "check-in"
+    ],
+    "filling": null
+  }
+}

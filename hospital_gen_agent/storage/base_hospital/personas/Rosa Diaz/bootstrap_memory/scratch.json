@@ -1,0 +1,59 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "March 21, 2026, 09:04:00",
+  "curr_tile": [
+    6,
+    3
+  ],
+  "daily_plan_req": "See patients in Admissions: greet arrivals, check them in, and direct them to the waiting room.",
+  "name": "Rosa Diaz",
+  "first_name": "Rosa",
+  "last_name": "Diaz",
+  "age": 41,
+  "innate": "steady, attentive, kind",
+  "learned": "front-desk reception clerk",
+  "currently": "on shift in Admissions",
+  "lifestyle": "works clinical shifts at the hospital",
+  "living_area": "Admissions",
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 148,
+  "importance_ele_n": 2,
+  "daily_req": [
+    {
+      "desc": "on shift at reception",
+      "address": "General Hospital:Admissions:reception:reception desk",
+      "duration": 999
+    }
+  ],
+  "f_daily_schedule": [],
+  "f_daily_schedule_hourly_org": [],
+  "act_address": "General Hospital:Admissions:reception:check-in kiosk",
+  "act_start_time": "March 21, 2026, 08:00:00",
+  "act_duration": 999,
+  "act_description": "on shift at reception",
+  "act_pronunciatio": "\ud83d\udece\ufe0f",
+  "act_event": [
+    "Rosa Diaz",
+    "is on shift at",
+    "reception"
+  ],
+  "act_obj_description": null,
+  "act_obj_pronunciatio": null,
+  "act_obj_event": [
+    null,
+    null,
+    null
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {},
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

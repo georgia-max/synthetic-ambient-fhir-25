@@ -1,0 +1,104 @@
+{
+  "tile_size": 32,
+  "width": 28,
+  "height": 14,
+  "rooms": [
+    {
+      "id": "admissions",
+      "label": "Admissions",
+      "x": 1,
+      "y": 1,
+      "w": 11,
+      "h": 5,
+      "color": "#5b8def"
+    },
+    {
+      "id": "triage",
+      "label": "Triage",
+      "x": 13,
+      "y": 1,
+      "w": 8,
+      "h": 5,
+      "color": "#3fb98f"
+    },
+    {
+      "id": "ob",
+      "label": "OB / Prenatal",
+      "x": 22,
+      "y": 1,
+      "w": 5,
+      "h": 5,
+      "color": "#e86aa6"
+    },
+    {
+      "id": "waiting",
+      "label": "Waiting Room",
+      "x": 1,
+      "y": 9,
+      "w": 20,
+      "h": 4,
+      "color": "#e0a53f"
+    },
+    {
+      "id": "discharge",
+      "label": "Discharge",
+      "x": 22,
+      "y": 9,
+      "w": 5,
+      "h": 4,
+      "color": "#9b6ae8"
+    }
+  ],
+  "objects": [
+    {
+      "label": "reception desk",
+      "x": 4,
+      "y": 3
+    },
+    {
+      "label": "check-in kiosk",
+      "x": 6,
+      "y": 3
+    },
+    {
+      "label": "vitals station",
+      "x": 13,
+      "y": 3
+    },
+    {
+      "label": "exam table",
+      "x": 23,
+      "y": 3
+    },
+    {
+      "label": "ultrasound machine",
+      "x": 25,
+      "y": 4
+    },
+    {
+      "label": "waiting chairs",
+      "x": 4,
+      "y": 10
+    },
+    {
+      "label": "waiting chairs",
+      "x": 5,
+      "y": 10
+    },
+    {
+      "label": "waiting chairs",
+      "x": 6,
+      "y": 10
+    },
+    {
+      "label": "exit",
+      "x": 23,
+      "y": 10
+    },
+    {
+      "label": "Home",
+      "x": 2,
+      "y": 13
+    }
+  ]
+}

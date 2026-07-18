@@ -1,0 +1,356 @@
+{
+  "node_17": {
+    "node_count": 17,
+    "type_count": 10,
+    "type": "event",
+    "depth": 0,
+    "created": "March 21, 2026, 08:49:00",
+    "expiration": null,
+    "last_accessed": "March 21, 2026, 08:49:00",
+    "subject": "General Hospital:Discharge:discharge desk:exit",
+    "predicate": "is",
+    "object": "idle",
+    "description": "exit is idle",
+    "embedding_key": "exit is idle",
+    "poignancy": 1,
+    "keywords": [
+      "exit",
+      "idle"
+    ],
+    "filling": null
+  },
+  "node_16": {
+    "node_count": 16,
+    "type_count": 9,
+    "type": "event",
+    "depth": 0,
+    "created": "March 21, 2026, 08:44:30",
+    "expiration": null,
+    "last_accessed": "March 21, 2026, 08:44:30",
+    "subject": "General Hospital:OB / Prenatal Clinic:exam room:ultrasound machine",
+    "predicate": "is",
+    "object": "idle",
+    "description": "ultrasound machine is idle",
+    "embedding_key": "ultrasound machine is idle",
+    "poignancy": 1,
+    "keywords": [
+      "ultrasound machine",
+      "idle"
+    ],
+    "filling": null
+  },
+  "node_15": {
+    "node_count": 15,
+    "type_count": 8,
+    "type": "event",
+    "depth": 0,
+    "created": "March 21, 2026, 08:44:30",
+    "expiration": null,
+    "last_accessed": "March 21, 2026, 08:44:30",
+    "subject": "General Hospital:OB / Prenatal Clinic:exam room:exam table",
+    "predicate": "is",
+    "object": "idle",
+    "description": "exam table is idle",
+    "embedding_key": "exam table is idle",
+    "poignancy": 1,
+    "keywords": [
+      "exam table",
+      "idle"
+    ],
+    "filling": null
+  },
+  "node_14": {
+    "node_count": 14,
+    "type_count": 7,
+    "type": "thought",
+    "depth": 2,
+    "created": "March 21, 2026, 08:30:00",
+    "expiration": "April 20, 2026, 08:30:00",
+    "last_accessed": "March 21, 2026, 08:30:00",
+    "subject": "Clarence Reinger",
+    "predicate": "requires",
+    "object": "ongoing monitoring during pregnancy due to history of recurrent UTIs",
+    "description": "Clarence's history of recurrent UTIs requires ongoing monitoring during the pregnancy",
+    "embedding_key": "Clarence's history of recurrent UTIs requires ongoing monitoring during the pregnancy",
+    "poignancy": 5,
+    "keywords": [
+      "Clarence Reinger",
+      "requires",
+      "ongoing monitoring during pregnancy due to history of recurrent UTIs"
+    ],
+    "filling": [
+      "node_3",
+      "node_11"
+    ]
+  },
+  "node_13": {
+    "node_count": 13,
+    "type_count": 6,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2026, 08:30:00",
+    "expiration": "April 20, 2026, 08:30:00",
+    "last_accessed": "March 21, 2026, 08:30:00",
+    "subject": "Clarence Reinger",
+    "predicate": "is experiencing",
+    "object": "typical early pregnancy symptoms like fatigue and morning nausea",
+    "description": "Clarence is experiencing typical early pregnancy symptoms like fatigue and morning nausea",
+    "embedding_key": "Clarence is experiencing typical early pregnancy symptoms like fatigue and morning nausea",
+    "poignancy": 5,
+    "keywords": [
+      "Clarence Reinger",
+      "is experiencing",
+      "typical early pregnancy symptoms like fatigue and morning nausea"
+    ],
+    "filling": [
+      "node_5",
+      "node_4"
+    ]
+  },
+  "node_12": {
+    "node_count": 12,
+    "type_count": 5,
+    "type": "thought",
+    "depth": 2,
+    "created": "March 21, 2026, 08:30:00",
+    "expiration": "April 20, 2026, 08:30:00",
+    "last_accessed": "March 21, 2026, 08:30:00",
+    "subject": "Clarence Reinger",
+    "predicate": "is in early stages of",
+    "object": "newly confirmed pregnancy",
+    "description": "Clarence is in the early stages of a newly confirmed pregnancy",
+    "embedding_key": "Clarence is in the early stages of a newly confirmed pregnancy",
+    "poignancy": 5,
+    "keywords": [
+      "Clarence Reinger",
+      "is in early stages of",
+      "newly confirmed pregnancy"
+    ],
+    "filling": [
+      "node_4",
+      "node_3",
+      "node_11"
+    ]
+  },
+  "node_11": {
+    "node_count": 11,
+    "type_count": 4,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2026, 08:30:00",
+    "expiration": "April 20, 2026, 08:30:00",
+    "last_accessed": "March 21, 2026, 08:30:00",
+    "subject": "Clarence Reinger",
+    "predicate": "received confirmation of",
+    "object": "a healthy, viable intrauterine pregnancy with normal findings, requiring only routine UTI",
+    "description": "Clarence Reinger Clarence's main takeaway is that they have a confirmed, healthy, viable pregnancy located properly in the uterus, and while their history of recurrent UTIs means the care team will stay vigilant with routine urine cultures, everything looks normal\u2014so they can live life as usual and simply call the same day if any UTI symptoms appear.",
+    "embedding_key": "Clarence Reinger Clarence's main takeaway is that they have a confirmed, healthy, viable pregnancy located properly in the uterus, and while their history of recurrent UTIs means the care team will stay vigilant with routine urine cultures, everything looks normal\u2014so they can live life as usual and simply call the same day if any UTI symptoms appear.",
+    "poignancy": 5,
+    "keywords": [
+      "Clarence Reinger",
+      "received confirmation of",
+      "a healthy, viable intrauterine pregnancy with normal findings, requiring only routine UTI"
+    ],
+    "filling": null
+  },
+  "node_10": {
+    "node_count": 10,
+    "type_count": 7,
+    "type": "event",
+    "depth": 0,
+    "created": "March 21, 2026, 08:21:30",
+    "expiration": null,
+    "last_accessed": "March 21, 2026, 08:21:30",
+    "subject": "General Hospital:Triage:triage bay 1:vitals station",
+    "predicate": "is",
+    "object": "idle",
+    "description": "vitals station is idle",
+    "embedding_key": "vitals station is idle",
+    "poignancy": 1,
+    "keywords": [
+      "vitals station",
+      "idle"
+    ],
+    "filling": null
+  },
+  "node_9": {
+    "node_count": 9,
+    "type_count": 6,
+    "type": "event",
+    "depth": 0,
+    "created": "March 21, 2026, 08:06:00",
+    "expiration": null,
+    "last_accessed": "March 21, 2026, 08:06:00",
+    "subject": "General Hospital:Admissions:reception:check-in kiosk",
+    "predicate": "is",
+    "object": "idle",
+    "description": "check-in kiosk is idle",
+    "embedding_key": "check-in kiosk is idle",
+    "poignancy": 1,
+    "keywords": [
+      "check-in kiosk",
+      "idle"
+    ],
+    "filling": null
+  },
+  "node_8": {
+    "node_count": 8,
+    "type_count": 5,
+    "type": "event",
+    "depth": 0,
+    "created": "March 21, 2026, 08:06:00",
+    "expiration": null,
+    "last_accessed": "March 21, 2026, 08:06:00",
+    "subject": "General Hospital:Admissions:reception:reception desk",
+    "predicate": "is",
+    "object": "idle",
+    "description": "reception desk is idle",
+    "embedding_key": "reception desk is idle",
+    "poignancy": 1,
+    "keywords": [
+      "reception desk",
+      "idle"
+    ],
+    "filling": null
+  },
+  "node_7": {
+    "node_count": 7,
+    "type_count": 4,
+    "type": "event",
+    "depth": 0,
+    "created": "March 21, 2026, 08:00:30",
+    "expiration": null,
+    "last_accessed": "March 21, 2026, 08:00:30",
+    "subject": "General Hospital:Waiting Room:waiting area:waiting chairs",
+    "predicate": "is",
+    "object": "idle",
+    "description": "waiting chairs is idle",
+    "embedding_key": "waiting chairs is idle",
+    "poignancy": 1,
+    "keywords": [
+      "waiting chairs",
+      "idle"
+    ],
+    "filling": null
+  },
+  "node_6": {
+    "node_count": 6,
+    "type_count": 3,
+    "type": "event",
+    "depth": 0,
+    "created": "March 20, 2026, 08:00:00",
+    "expiration": null,
+    "last_accessed": "March 20, 2026, 08:00:00",
+    "subject": "Clarence Reinger",
+    "predicate": "reports",
+    "object": "symptoms",
+    "description": "No bleeding, no. Maybe the tiniest pulling feeling low down once in a while, like a stretch, but not pain.",
+    "embedding_key": "No bleeding, no. Maybe the tiniest pulling feeling low down once in a while, like a stretch, but not pain.",
+    "poignancy": 6,
+    "keywords": [
+      "Clarence Reinger",
+      "symptoms"
+    ],
+    "filling": null
+  },
+  "node_5": {
+    "node_count": 5,
+    "type_count": 2,
+    "type": "event",
+    "depth": 0,
+    "created": "March 20, 2026, 08:00:00",
+    "expiration": null,
+    "last_accessed": "March 20, 2026, 08:00:00",
+    "subject": "Clarence Reinger",
+    "predicate": "reports",
+    "object": "symptoms",
+    "description": "Mostly good? Tired in a way that sneaks up on me \u2014 like, sit down on the couch at seven and wake up at nine tired. A little queasy in the mornings if\u2026",
+    "embedding_key": "Mostly good? Tired in a way that sneaks up on me \u2014 like, sit down on the couch at seven and wake up at nine tired. A little queasy in the mornings if\u2026",
+    "poignancy": 4,
+    "keywords": [
+      "Clarence Reinger",
+      "symptoms"
+    ],
+    "filling": null
+  },
+  "node_4": {
+    "node_count": 4,
+    "type_count": 1,
+    "type": "event",
+    "depth": 0,
+    "created": "March 20, 2026, 08:00:00",
+    "expiration": null,
+    "last_accessed": "March 20, 2026, 08:00:00",
+    "subject": "Clarence Reinger",
+    "predicate": "reports",
+    "object": "symptoms",
+    "description": "Okay, so. My period did not come when it was supposed to, and I am usually pretty regular, so after a few days I took a home test. Then I took a\u2026",
+    "embedding_key": "Okay, so. My period did not come when it was supposed to, and I am usually pretty regular, so after a few days I took a home test. Then I took a\u2026",
+    "poignancy": 5,
+    "keywords": [
+      "Clarence Reinger",
+      "symptoms"
+    ],
+    "filling": null
+  },
+  "node_3": {
+    "node_count": 3,
+    "type_count": 3,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 20, 2026, 08:00:00",
+    "expiration": "April 19, 2026, 08:00:00",
+    "last_accessed": "March 20, 2026, 08:00:00",
+    "subject": "Clarence Reinger",
+    "predicate": "is here for",
+    "object": "initial obstetric evaluation",
+    "description": "Clarence Reinger is here for initial obstetric evaluation.",
+    "embedding_key": "Clarence Reinger is here for initial obstetric evaluation.",
+    "poignancy": 6,
+    "keywords": [
+      "Clarence Reinger",
+      "initial obstetric evaluation"
+    ],
+    "filling": null
+  },
+  "node_2": {
+    "node_count": 2,
+    "type_count": 2,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Clarence Reinger",
+    "predicate": "has",
+    "object": "normal pregnancy",
+    "description": "Clarence Reinger has normal pregnancy.",
+    "embedding_key": "Clarence Reinger has normal pregnancy.",
+    "poignancy": 8,
+    "keywords": [
+      "Clarence Reinger",
+      "normal pregnancy"
+    ],
+    "filling": null
+  },
+  "node_1": {
+    "node_count": 1,
+    "type_count": 1,
+    "type": "thought",
+    "depth": 1,
+    "created": "March 21, 2025, 08:00:00",
+    "expiration": "April 20, 2025, 08:00:00",
+    "last_accessed": "March 21, 2025, 08:00:00",
+    "subject": "Clarence Reinger",
+    "predicate": "has",
+    "object": "recurrent urinary tract infection",
+    "description": "Clarence Reinger has recurrent urinary tract infection.",
+    "embedding_key": "Clarence Reinger has recurrent urinary tract infection.",
+    "poignancy": 6,
+    "keywords": [
+      "Clarence Reinger",
+      "recurrent urinary tract infection"
+    ],
+    "filling": null
+  }
+}

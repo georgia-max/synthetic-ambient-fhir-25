@@ -1,0 +1,20 @@
+{
+  "General Hospital": {
+    "Admissions": {
+      "reception": [
+        "reception desk",
+        "check-in kiosk"
+      ]
+    },
+    "Waiting Room": {
+      "waiting area": [
+        "waiting chairs"
+      ]
+    },
+    "Triage": {
+      "triage bay 1": [
+        "vitals station"
+      ]
+    }
+  }
+}

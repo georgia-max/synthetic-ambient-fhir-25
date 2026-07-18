@@ -1,0 +1,4 @@
+[2026-07-18T21:53:29.141Z] GET http://localhost:8000/hospital.html → 200 (4ms, 25738B)
+[2026-07-18T21:53:29.152Z] GET http://localhost:8000/world.json → 200 (26ms, 1541B)
+[2026-07-18T21:53:29.178Z] GET http://localhost:8000/meta.json → 200 (2ms, 327B)
+[2026-07-18T21:53:29.181Z] GET http://localhost:8000/master_movement.json → 200 (1ms, 72554B)
