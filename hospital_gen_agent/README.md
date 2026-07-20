@@ -1,146 +1,192 @@
 # Hospital Generative Agents
 
-A faithful reimplementation of Stanford's **generative_agents** (Smallville),
-adapted to a hospital and driven by a synthetic FHIR dataset. Villagers become
-patients and clinical staff; Smallville becomes a hospital. The 25 synthetic FHIR
-encounters in `../dataset/synthetic-ambient-fhir-25.jsonl` are the knowledge the
-agents hold about the hospital: they seed the world, each patient's chart, and the
-staff's clinical knowledge.
+A faithful port of Stanford's **Generative Agents** (Smallville, arXiv 2304.03442)
+to a **hospital**. Villagers become **patients and clinical staff**; Smallville
+becomes a **General Hospital**. The 25 synthetic FHIR encounters in
+[`../dataset/`](../dataset) are the *knowledge the agents have about the hospital*:
+they seed the world's departments, each patient's own chart and symptoms, and the
+staff's aggregated clinical knowledge.
 
-See `CLAUDE.md` and `plans/` for the full port plan, seeding rules, and the
-vertical-slice step script.
+The original cognitive architecture is kept intact — the same
+`perceive → retrieve → plan → reflect → execute` chain, the same three memory
+structures, the same `world:sector:arena:game_object` maze addressing, and the
+same `movement` / `meta` replay contract. Only the domain content and the LLM
+backend (Claude, not OpenAI) change.
 
-## What was built
+> The full design rationale lives in [`CLAUDE.md`](CLAUDE.md) and the detailed
+> specs in [`plans/`](plans).
 
-A single **vertical slice**: hero patient **Clarence Reinger** (32F, prenatal
-intake) walks the full care pathway while six other personas (spouse Marcus,
-triage Nurse Reyes, OB Dr. Amari, clerk Rosa Diaz, and two background patients)
-bring the hospital to life. The whole thing precomputes ("bakes") a replay bundle
-that a minimal canvas renderer plays back deterministically.
+---
 
-- **`hgen/seeding/`** — dataset -> bootstrap. Turns the hero FHIR record into the
-  Smallville persona layout (`scratch.json`, `spatial_memory.json`,
-  `associative_memory/nodes.json`), derives the department map from `visit_type`,
-  and loads staff clinical knowledge (vitals ranges, OB diagnoses) as memory nodes.
-- **`hgen/cognition/`** — the ported cognitive architecture: `ConceptNode` /
-  `Scratch` / `MemoryTree` structures and the `perceive -> retrieve -> plan ->
-  reflect -> execute` module chain, same JSON contracts as the original.
-- **`hgen/world/`** — the small logical maze (28x14), the five matrix CSVs, and a
-  BFS pathfinder (`path_finder.py`), plus the renderer floor plan (`world.json`).
-- **`hgen/llm/`** — the Anthropic (Claude-only) backend seam and prompt wrappers.
-- **`hgen/cognition/director.py`** — owns the care-pathway schedule (the role
-  `reverie.py` plays upstream), steps the cast through the visit using the real
-  `perceive` + `execute` + pathfinder, injects the **verbatim** OB consult from
-  the record transcript, and writes the two post-consult reflection thoughts.
-- **`hgen/compress.py`** — delta-compresses per-step `movement/*.json` into
-  `web/master_movement.json` (frame 0 full, later frames only changed personas).
-- **`run_slice.py`** — the orchestrator: seed -> maze -> direct -> compress.
-- **`web/`** — the minimal single-file canvas renderer (`hospital.html`) plus the
-  three baked JSON files it consumes.
+## What it does
 
-## Run
-
-Use the repo virtualenv at `../.venv`. Do not `pip install` (the scaffold owns deps).
-
-### Canned mode (default, no API key — deterministic)
+`run_slice.py` runs the whole bake end to end and leaves a self-contained replay
+in `web/`:
 
 ```
+seed → maze → direct → compress → replay
+```
+
+1. **Seed** — turn the 25 dataset records into persona bootstrap files: one
+   patient per record (routed to their real department by `visit_type`), plus
+   authored staff (one doctor per department, two triage nurses, a reception
+   clerk) whose memory is aggregated from the dataset.
+2. **Maze** — generate the logical hospital grid (matrices + `web/world.json`)
+   from the grid spec.
+3. **Direct** — step every persona through the hospital via the live cognition
+   loop, writing one movement frame per step. The hero's OB consult
+   (Clarence Reinger) replays the **verbatim** clinician transcript.
+4. **Compress** — fold the per-step frames into a delta-encoded
+   `web/master_movement.json`.
+5. **Replay** — a dependency-free canvas renderer (`web/hospital.html`) animates
+   the bundle.
+
+The whole pipeline runs **offline with no API key** in canned LLM mode.
+
+---
+
+## Quick start
+
+From the repo root (`../`), using the project virtualenv:
+
+```bash
 cd hospital_gen_agent
+
+# 1. Bake the replay (no API key needed — canned LLM mode is the default).
 HGEN_LLM_MODE=canned ../.venv/bin/python run_slice.py
-```
 
-This bakes `web/master_movement.json`, `web/meta.json`, and `web/world.json`
-without touching the network. Every LLM call returns a deterministic per-prompt
-stub, so re-bakes are byte-for-byte identical.
-
-### Live mode (real Claude calls)
-
-```
-cd hospital_gen_agent
-export ANTHROPIC_API_KEY=sk-ant-...
-HGEN_LLM_MODE=live ../.venv/bin/python run_slice.py     # always call the API, refresh cache
-HGEN_LLM_MODE=cache ../.venv/bin/python run_slice.py    # cache hit -> reuse, miss -> live call
-```
-
-Models: `claude-sonnet-5` for frequent cognition calls, `claude-opus-4-8` for the
-reflection synthesis. Completions are cached under `hgen/.llm_cache/`. The OB
-consult is always verbatim from the transcript (no model call) in every mode.
-
-## View the demo
-
-```
-cd hospital_gen_agent
+# 2. Serve the web dir and open the replayer.
 ../.venv/bin/python -m http.server 8000 --directory web
 # open http://localhost:8000/hospital.html
 ```
 
-The renderer draws the labeled hospital grid, animates each persona tile-to-tile
-from `master_movement.json`, shows the `pronunciatio` emoji over each head, the
-`description` on hover/click, and the consult `chat` in a speech bubble.
+Dependencies (`requirements.txt`): `anthropic`, `numpy`. `anthropic` is only
+imported for live API calls, so canned-mode bakes need neither the SDK nor a key.
 
-## File / directory map
+---
+
+## Modes
+
+Two environment variables control the run.
+
+### `HGEN_MODE` — director
+
+| Value | Behavior |
+|-------|----------|
+| `autonomous` *(default)* | Full hospital: all 25 patients, each routed to their real department, arriving staggered and walking their care pathway via the live cognition loop. Clarence's verbatim OB consult is kept. |
+| `scripted` | Legacy hand-timed OB vertical slice (7-persona cast). A fallback. |
+
+### `HGEN_LLM_MODE` — Claude backend
+
+| Value | Behavior |
+|-------|----------|
+| `canned` *(default)* | Never touches the network; returns deterministic per-prompt stubs. Runs the entire pipeline offline. |
+| `cache` | Serve cached completions on hit; call the live API on a miss and store the result (`hgen/.llm_cache/`). |
+| `live` | Always call the live Anthropic API and refresh the cache. Requires `ANTHROPIC_API_KEY`. |
+
+Model tiers (`hgen/config.py`): `claude-sonnet-5` for the frequent, cheap
+cognition calls; `claude-opus-4-8` for the low-frequency reflection.
+
+---
+
+## Layout
 
 ```
 hospital_gen_agent/
-├── run_slice.py                  orchestrator: seed -> maze -> direct -> compress
-├── CLAUDE.md                     full port plan (locked decisions)
-├── plans/
-│   ├── SUBPLAN_A_seeding.md      dataset -> bootstrap rules
-│   └── SUBPLAN_B_vertical_slice.md  cast, grid map, step script, acceptance criteria
-├── hgen/                         the package
-│   ├── config.py                 absolute paths, model ids, world constants
-│   ├── contracts.py              movement / meta JSON contract helpers
-│   ├── compress.py               movement/*.json -> web/master_movement.json (delta)
-│   ├── seeding/                  dataset -> personas + world + staff knowledge
-│   │   ├── build.py              seed entrypoint (python -m hgen.seeding.build)
-│   │   ├── world.py  patients.py  staff.py  notes.py  names.py
-│   ├── cognition/                ported generative-agents architecture
-│   │   ├── memory.py             ConceptNode / Scratch / MemoryTree
-│   │   ├── modules.py            perceive / retrieve / plan / reflect / execute
-│   │   ├── persona.py            Persona.move chain
-│   │   └── director.py           care-pathway schedule + verbatim consult + reflect
-│   ├── world/                    maze + pathfinding + renderer floor plan
-│   │   ├── grid.py  maze.py  build_maze.py  path_finder.py
-│   └── llm/                      Claude-only backend
-│       ├── claude_backend.py     Anthropic seam, 3 modes (canned/cache/live), cache
-│       └── prompts.py            run_gpt_prompt_* wrappers
-├── storage/
-│   ├── base_hospital/
-│   │   ├── meta.json
-│   │   ├── personas/<Name>/bootstrap_memory/{scratch,spatial_memory,associative_memory/nodes}.json
-│   │   └── movement/<step>.json  per-step backend output (baked)
-│   └── assets/hospital/matrix/   maze_meta_info.json + 5 matrix CSVs
-└── web/                          replay bundle + renderer
-    ├── hospital.html             minimal canvas renderer
-    ├── master_movement.json      delta-compressed replay (baked)
-    ├── meta.json                 replay metadata (baked)
-    └── world.json                renderer floor plan (baked)
+├── run_slice.py           top-level orchestrator: seed → maze → direct → compress
+├── CLAUDE.md              the full port plan
+├── plans/                 detailed subplan specs (seeding, slice, frontend, ER surge)
+├── hgen/                  the package
+│   ├── config.py          absolute paths, model ids, world constants
+│   ├── contracts.py       shared schemas + JSON IO (ConceptNode, Scratch, meta/movement)
+│   ├── compress.py        per-step movement → delta-encoded master_movement.json
+│   ├── llm/
+│   │   ├── claude_backend.py   the single Anthropic seam (llm(); canned/cache/live)
+│   │   └── prompts.py          cognition prompt helpers (analog of run_gpt_prompt_*)
+│   ├── seeding/           dataset → bootstrap files
+│   │   ├── build.py            seeding CLI: build every persona + meta + environment
+│   │   ├── world.py            visit_type → department map; canonical world tree
+│   │   ├── patients.py         one record → Scratch + associative + spatial memory
+│   │   ├── staff.py            authored staff + dataset-aggregated clinical knowledge
+│   │   ├── notes.py            transcript / clinical-note / AVS parsing
+│   │   └── names.py            FHIR name normalization
+│   ├── cognition/         the ported agent brain
+│   │   ├── persona.py          identity + 3 memory structures + move() chain
+│   │   ├── modules.py          perceive/retrieve/plan/reflect/execute
+│   │   ├── memory.py           AssociativeMemory (memory stream) + MemoryTree (spatial)
+│   │   ├── autonomous.py       autonomous director: full-hospital bake
+│   │   └── director.py         scripted director: legacy OB vertical slice
+│   └── world/             the maze
+│       ├── grid.py             hospital grid spec → matrices + world.json
+│       ├── maze.py             loads matrices into an addressable tile grid
+│       ├── path_finder.py      4-connected BFS pathfinding
+│       └── build_maze.py       CLI to write maze assets + self-test
+├── web/                   the replayer (see web/README.md)
+│   ├── hospital.html           single-file vanilla-JS canvas renderer
+│   ├── world.json              rooms + objects floor plan
+│   ├── meta.json               sim clock + persona names
+│   └── master_movement.json    baked, delta-compressed movement (generated)
+└── storage/               generated bootstrap + per-step frames (gitignored)
+    └── base_hospital/
+        ├── personas/<Name>/bootstrap_memory/   scratch + spatial + associative
+        ├── environment/0.json                  initial spawn tiles
+        ├── movement/<step>.json                per-step director output
+        └── reverie/meta.json
 ```
 
-Standalone entrypoints: `python -m hgen.seeding.build`,
-`python -m hgen.cognition.director`, `python -m hgen.compress`.
+---
 
-## Known limitations (honest)
+## The cognitive loop
 
-- **Scope is one vertical slice**, not a 25-agent hospital day. Only Clarence
-  walks the full pathway; Nurse Reyes and Dr. Amari hold posts, Rosa and the two
-  background patients sit/idle. Marcus is a follower sprite (one tile behind
-  Clarence), not an independent cognition.
-- **The director scripts the schedule.** The care-pathway ordering (arrive ->
-  check in -> wait -> triage -> OB -> reflect -> discharge -> exit) is owned by
-  `director.py`, standing in for the role `reverie.py` + first-day LLM planning
-  play in the original. Movement *within* each beat is the real `perceive` +
-  `execute` + BFS pathfinder.
-- **Canned mode uses authored dialogue.** The check-in, triage banter, and
-  background-patient lines are authored strings in the director that reflect the
-  seeded staff knowledge (e.g. the nurse's vitals ranges) thematically; in canned
-  mode they are not dynamically generated from memory. The OB consult is verbatim
-  transcript by design in every mode. Live mode routes the surrounding beats
-  through Claude, but the demo bundle shipped here is the canned bake.
-- **Retrieval is keyword-only.** No embeddings; `get_embedding` is not wired for
-  the slice (per the plan's default). Relevance recall is the keyword path.
-- **Renderer is R2 (minimal grid).** No Phaser/Tiled tilemap; a lightweight
-  labeled-room canvas. That is the locked renderer decision, not a regression.
-- **Reflection depth is two thoughts.** After the consult, exactly two grounded
-  reflection thoughts are written to Clarence (normal pregnancy; recurrent UTI
-  surveillance), matching the note's two Assessment-and-Plan headings.
+Each persona runs the original chain unchanged; only the domain content differs
+(see `hgen/cognition/modules.py`):
+
+```
+perceive ─→ retrieve ─→ plan ─→ reflect ─→ execute
+   │           │           │        │          │
+ nearby     keyword +   care     convo →    BFS path,
+ tiles &    relevance   pathway  thoughts   returns
+ agents     recall of   routing  & insights (next_tile,
+ → memory   memories    (LLM)    (LLM)      emoji, desc)
+```
+
+**Three memory structures per agent** (mirroring Stanford):
+- **`scratch`** — identity (name, age, `innate`/`learned`/`currently`/`lifestyle`)
+  plus the current action and chat state.
+- **associative memory** — the memory stream of `ConceptNode`s (event / thought /
+  chat), newest-first and keyword-indexed, with the original retrieval scoring
+  (`recency*0.5 + relevance*3 + importance*2`). Relevance falls back to keyword
+  overlap when embeddings are empty (the default), so no embedding model is
+  required.
+- **spatial memory** — a `world → sector → arena → [game_objects]` tree, grown as
+  the agent perceives new tiles.
+
+Planning follows a deterministic hospital **care pathway** (arrive → reception →
+wait → triage → department → consult → receive plan → discharge → exit) in place
+of the original hourly schedule, while action-location resolution, reactions,
+`pronunciatio` emoji, event triples, and reflection all still route through the
+LLM.
+
+---
+
+## The verbatim consult
+
+The dataset ships the real clinician–patient `transcript` and `note` for each
+encounter. For the hero (Clarence Reinger's prenatal visit), when he reaches the
+OB exam table co-located with Dr. Amari, the real `DR:` / `PT:` / `FAMILY:` lines
+are injected directly as `chat`, paced across steps. This is the highest-stakes
+scene, so it is fixed to the real transcript — it cannot drift or stall, and
+needs no model call. Everything *around* the consult (triage, reactions, routing,
+and the post-consult reflection where Clarence internalizes the diagnosis) still
+runs through the cognition loop.
+
+---
+
+## Notes
+
+- `storage/`, `.env`, and `hgen/.llm_cache/` are gitignored.
+- Individual stages can be run on their own:
+  `python -m hgen.seeding.build`, `python -m hgen.world.build_maze`, and
+  `python -m hgen.compress`.
+- The renderer's inputs and controls are documented in
+  [`web/README.md`](web/README.md).

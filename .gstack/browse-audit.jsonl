@@ -39,3 +39,10 @@
 {"ts":"2026-07-18T23:18:24.234Z","cmd":"js","args":"var s=document.querySelector('select'); s.value='8'; s.dispatchEvent(new Event('change')); 'ok'","origin":"http://localhost:4001/hospital.html?v=4","durationMs":1,"status":"ok","hasCookies":false,"mode":"launched"}
 {"ts":"2026-07-18T23:18:34.296Z","cmd":"js","args":"(document.body.innerText||'').match(/step \\d+/)[0]","origin":"http://localhost:4001/hospital.html?v=4","durationMs":0,"status":"ok","hasCookies":false,"mode":"launched"}
 {"ts":"2026-07-18T23:18:34.418Z","cmd":"screenshot","args":"/tmp/hg_final.png","origin":"http://localhost:4001/hospital.html?v=4","durationMs":73,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-07-20T15:17:07.460Z","cmd":"goto","args":"http://localhost:8123/hospital.html","origin":"http://localhost:8123/hospital.html","durationMs":71,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-07-20T15:17:09.514Z","cmd":"viewport","args":"1400x760","origin":"http://localhost:8123/hospital.html","durationMs":2,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-07-20T15:17:09.685Z","cmd":"screenshot","args":"/tmp/hospital_after.png","origin":"http://localhost:8123/hospital.html","durationMs":133,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-07-20T15:17:09.724Z","cmd":"console","args":"--errors","origin":"http://localhost:8123/hospital.html","durationMs":1,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-07-20T15:17:37.748Z","cmd":"select","args":"#speed 8","origin":"http://localhost:8123/hospital.html","durationMs":11,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-07-20T15:17:44.850Z","cmd":"screenshot","args":"/tmp/hospital_mid.png","origin":"http://localhost:8123/hospital.html","durationMs":54,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-07-20T15:17:44.888Z","cmd":"js","args":"document.getElementById('stepLabel').textContent","origin":"http://localhost:8123/hospital.html","durationMs":0,"status":"ok","hasCookies":false,"mode":"launched"}

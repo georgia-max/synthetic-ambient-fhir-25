@@ -69,7 +69,7 @@
     justify-content: center; padding: 16px; background:
       repeating-linear-gradient(45deg, #0c0f14 0 12px, #0e1116 12px 24px);
   }
-  canvas { background: #10151c; border: 1px solid var(--border); border-radius: 6px; box-shadow: 0 8px 30px rgba(0,0,0,.4); }
+  canvas { background: #eef1f6; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 12px 44px rgba(0,0,0,.55); }
   #side {
     width: 300px; flex-shrink: 0; background: var(--panel);
     border-left: 1px solid var(--border); padding: 14px; overflow-y: auto;
@@ -394,51 +394,267 @@
   // ---------------------------------------------------------------------- //
   // Rendering                                                              //
   // ---------------------------------------------------------------------- //
+  // Clinical floor-plan palette (light floor, dark UI chrome around it).
+  const THEME = {
+    floor: "#eef1f6", room: "#ffffff", corridor: "#e3e8f1",
+    grid: "rgba(120,140,170,0.10)", wall: "#9aa7bd",
+    furn: "#ffffff", furnStroke: "#7f8ca3", screen: "#5b8def",
+    screenDark: "#12233f", inkMuted: "#6b7686",
+  };
+
+  function line(x1, y1, x2, y2) {
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+  }
+
   function render() {
     const t = state.tile;
     const W = (state.world.width || 8) * t;
     const H = (state.world.height || 8) * t;
-    ctx.clearRect(0, 0, W, H);
 
-    // Subtle tile grid.
-    ctx.strokeStyle = "rgba(255,255,255,0.03)";
-    ctx.lineWidth = 1;
-    for (let x = 0; x <= (state.world.width || 8); x++) {
-      ctx.beginPath(); ctx.moveTo(x * t, 0); ctx.lineTo(x * t, H); ctx.stroke();
-    }
-    for (let y = 0; y <= (state.world.height || 8); y++) {
-      ctx.beginPath(); ctx.moveTo(0, y * t); ctx.lineTo(W, y * t); ctx.stroke();
-    }
+    // Floor base + faint tile grid.
+    ctx.fillStyle = THEME.floor;
+    ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = THEME.grid; ctx.lineWidth = 1;
+    for (let x = 0; x * t <= W; x++) line(x * t, 0, x * t, H);
+    for (let y = 0; y * t <= H; y++) line(0, y * t, W, y * t);
 
-    // Rooms.
-    for (const r of (state.world.rooms || [])) {
-      const rx = r.x * t, ry = r.y * t, rw = r.w * t, rh = r.h * t;
-      ctx.fillStyle = withAlpha(r.color || "#334", 0.22);
-      ctx.fillRect(rx, ry, rw, rh);
-      ctx.strokeStyle = withAlpha(r.color || "#556", 0.9);
-      ctx.lineWidth = 1.5;
-      ctx.strokeRect(rx + 0.5, ry + 0.5, rw - 1, rh - 1);
-      if (r.label) {
-        ctx.fillStyle = withAlpha(r.color || "#aab", 1);
-        ctx.font = "600 " + Math.max(10, Math.min(13, t * 0.6)) + "px sans-serif";
-        ctx.textAlign = "left"; ctx.textBaseline = "top";
-        ctx.fillText(r.label, rx + 5, ry + 4);
-      }
-    }
+    // Circulation corridor connecting every room's doorway.
+    drawCorridor(W, t);
 
-    // Objects.
-    ctx.font = Math.max(9, Math.min(11, t * 0.5)) + "px sans-serif";
-    for (const o of (state.world.objects || [])) {
-      const ox = o.x * t, oy = o.y * t;
-      ctx.fillStyle = "rgba(255,255,255,0.55)";
-      ctx.fillRect(ox + t * 0.32, oy + t * 0.32, t * 0.36, t * 0.36);
-      ctx.fillStyle = "rgba(230,237,243,0.75)";
-      ctx.textAlign = "center"; ctx.textBaseline = "top";
-      ctx.fillText(o.label || "", ox + t / 2, oy + t + 1);
-    }
+    // Rooms: tinted floor, walls with door gaps, and a signage plate.
+    for (const r of (state.world.rooms || [])) drawRoom(r, t);
+
+    // Furniture / fixtures as recognizable icons.
+    for (const o of (state.world.objects || [])) drawObjectIcon(o, t);
 
     // Personas (interpolated).
     drawPersonas();
+  }
+
+  // ---------------------------------------------------------------------- //
+  // Floor plan: corridor, rooms, doorways, signage                         //
+  // ---------------------------------------------------------------------- //
+  function corridorBand() {
+    // The horizontal circulation band between the top and bottom rows of rooms.
+    const rowsN = state.world.height || 8;
+    let topB = 0, botT = rowsN;
+    for (const r of (state.world.rooms || [])) {
+      const cy = r.y + r.h / 2;
+      if (cy < rowsN / 2) topB = Math.max(topB, r.y + r.h);
+      else botT = Math.min(botT, r.y);
+    }
+    if (!(topB > 0)) topB = Math.floor(rowsN * 0.45);
+    if (!(botT < rowsN)) botT = Math.ceil(rowsN * 0.62);
+    if (botT <= topB) { topB = Math.floor(rowsN / 2); botT = topB + 1; }
+    return { y0: topB, y1: botT };
+  }
+
+  function drawCorridor(W, t) {
+    const b = corridorBand();
+    ctx.fillStyle = THEME.corridor;
+    ctx.fillRect(0, b.y0 * t, W, (b.y1 - b.y0) * t);
+    // Dashed centre guide, like a floor marking.
+    const cy = (b.y0 + (b.y1 - b.y0) / 2) * t;
+    ctx.save();
+    ctx.strokeStyle = "rgba(120,140,170,0.35)";
+    ctx.lineWidth = 2; ctx.setLineDash([t * 0.4, t * 0.4]);
+    line(t * 0.5, cy, W - t * 0.5, cy);
+    ctx.restore();
+  }
+
+  function doorsForRoom(r) {
+    // Doorways on this room's corridor-facing wall (tile centres, in tiles).
+    const out = [];
+    for (const d of (state.world.doors || [])) {
+      if (d.x < r.x || d.x > r.x + r.w - 1) continue;
+      if (d.y === r.y + r.h) out.push({ edge: "bottom", c: d.x + 0.5 });
+      else if (d.y === r.y - 1) out.push({ edge: "top", c: d.x + 0.5 });
+    }
+    if (!out.length) {  // fallback: one gap on the corridor-facing edge
+      const band = corridorBand();
+      const edge = (r.y + r.h / 2) < band.y0 ? "bottom" : "top";
+      out.push({ edge, c: r.x + r.w / 2 });
+    }
+    return out;
+  }
+
+  function hWall(px0, px1, py, gapsCx, t) {
+    // Horizontal wall from px0..px1 at py, skipping a ~1-tile gap at each centre.
+    const g = t * 0.5;
+    const cuts = gapsCx.map(c => [c * t - g, c * t + g]).sort((a, b) => a[0] - b[0]);
+    let x = px0;
+    for (const [a, b] of cuts) {
+      if (a > x) line(x, py, Math.min(a, px1), py);
+      x = Math.max(x, b);
+    }
+    if (x < px1) line(x, py, px1, py);
+  }
+
+  function drawRoom(r, t) {
+    const x0 = r.x * t, y0 = r.y * t, x1 = (r.x + r.w) * t, y1 = (r.y + r.h) * t;
+
+    // Interior floor: white, faintly tinted with the department colour.
+    ctx.fillStyle = THEME.room; ctx.fillRect(x0, y0, x1 - x0, y1 - y0);
+    ctx.fillStyle = withAlpha(r.color || "#889", 0.12);
+    ctx.fillRect(x0, y0, x1 - x0, y1 - y0);
+
+    // Walls with real doorways.
+    const doors = doorsForRoom(r);
+    const topGaps = doors.filter(d => d.edge === "top").map(d => d.c);
+    const botGaps = doors.filter(d => d.edge === "bottom").map(d => d.c);
+    ctx.strokeStyle = THEME.wall; ctx.lineWidth = 3; ctx.lineCap = "round";
+    hWall(x0, x1, y0, topGaps, t);
+    hWall(x0, x1, y1, botGaps, t);
+    line(x0, y0, x0, y1);
+    line(x1, y0, x1, y1);
+    ctx.lineCap = "butt";
+
+    // Signage plate.
+    const pad = 4, shH = Math.min(t * 0.72, 22);
+    ctx.fillStyle = r.color || "#556";
+    roundRect(x0 + pad, y0 + pad, (x1 - x0) - 2 * pad, shH, 4); ctx.fill();
+    if (r.label) {
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "700 " + Math.max(10, Math.min(13, t * 0.42)) + "px -apple-system, sans-serif";
+      ctx.textAlign = "left"; ctx.textBaseline = "middle";
+      ctx.fillText(r.label, x0 + pad + 6, y0 + pad + shH / 2 + 0.5);
+    }
+  }
+
+  // ---------------------------------------------------------------------- //
+  // Furniture icons                                                        //
+  // ---------------------------------------------------------------------- //
+  function fillRR(x, y, w, h, rad, fill, stroke) {
+    roundRect(x, y, w, h, rad);
+    ctx.fillStyle = fill || THEME.furn; ctx.fill();
+    if (stroke !== null) { ctx.strokeStyle = stroke || THEME.furnStroke; ctx.stroke(); }
+  }
+
+  function objType(o) {
+    if (o.type) return o.type;
+    const n = (o.label || "").toLowerCase();
+    if (n.includes("bed")) return "bed";
+    if (n.includes("desk")) return "desk";
+    if (n.includes("kiosk")) return "kiosk";
+    if (n.includes("vitals")) return "vitals";
+    if (n.includes("exam table")) return "exam_table";
+    if (n.includes("computer")) return "computer";
+    if (n.includes("ultrasound")) return "ultrasound";
+    if (n.includes("chair")) return "chairs";
+    if (n.includes("ppe")) return "ppe";
+    if (n.includes("exit")) return "exit";
+    if (n === "home") return "home";
+    return "generic";
+  }
+
+  function drawObjectIcon(o, t) {
+    const cx = (o.x + 0.5) * t, cy = (o.y + 0.5) * t, s = t * 0.62;
+    const x = cx - s / 2, y = cy - s / 2;
+
+    // Soft ground shadow.
+    ctx.beginPath();
+    ctx.ellipse(cx, cy + s * 0.42, s * 0.42, s * 0.16, 0, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(30,42,64,0.10)"; ctx.fill();
+
+    ctx.lineWidth = 1.4; ctx.strokeStyle = THEME.furnStroke; ctx.lineCap = "butt";
+    switch (objType(o)) {
+      case "bed": icoBed(x, y, s); break;
+      case "desk": icoDesk(x, y, s); break;
+      case "kiosk": icoKiosk(x, y, s); break;
+      case "vitals": icoVitals(x, y, s); break;
+      case "exam_table": icoExam(x, y, s); break;
+      case "computer": icoComputer(x, y, s); break;
+      case "ultrasound": icoUltrasound(x, y, s); break;
+      case "chairs": icoChair(x, y, s); break;
+      case "ppe": icoPPE(x, y, s); break;
+      case "exit": icoExit(x, y, s); break;
+      case "home": icoHome(x, y, s); break;
+      default: fillRR(x + s * 0.2, y + s * 0.2, s * 0.6, s * 0.6, 3);
+    }
+
+    // Label under the icon (dark on light, with a white halo).
+    if (o.label) {
+      ctx.font = Math.max(8, t * 0.3) + "px -apple-system, sans-serif";
+      ctx.textAlign = "center"; ctx.textBaseline = "top";
+      ctx.lineWidth = 3; ctx.lineJoin = "round";
+      ctx.strokeStyle = "rgba(255,255,255,0.85)";
+      ctx.strokeText(o.label, cx, cy + s * 0.5);
+      ctx.fillStyle = THEME.inkMuted;
+      ctx.fillText(o.label, cx, cy + s * 0.5);
+    }
+  }
+
+  function icoBed(x, y, s) {
+    fillRR(x, y + s * 0.12, s, s * 0.76, 3);
+    fillRR(x + s * 0.07, y + s * 0.2, s * 0.3, s * 0.6, 2, "#d6e6ff");
+    line(x + s * 0.45, y + s * 0.14, x + s * 0.45, y + s * 0.86);
+  }
+  function icoDesk(x, y, s) {
+    fillRR(x, y + s * 0.34, s, s * 0.4, 3);
+    line(x, y + s * 0.46, x + s, y + s * 0.46);
+  }
+  function icoKiosk(x, y, s) {
+    fillRR(x + s * 0.42, y + s * 0.5, s * 0.16, s * 0.42, 1, THEME.furnStroke);
+    fillRR(x + s * 0.22, y + s * 0.02, s * 0.56, s * 0.5, 3, THEME.screen);
+  }
+  function icoVitals(x, y, s) {
+    fillRR(x + s * 0.14, y + s * 0.02, s * 0.72, s * 0.5, 3, THEME.screenDark);
+    ctx.strokeStyle = "#5be0a0"; ctx.lineWidth = 1.6;
+    const by = y + s * 0.27;
+    ctx.beginPath();
+    ctx.moveTo(x + s * 0.2, by); ctx.lineTo(x + s * 0.38, by);
+    ctx.lineTo(x + s * 0.46, by - s * 0.14); ctx.lineTo(x + s * 0.54, by + s * 0.12);
+    ctx.lineTo(x + s * 0.62, by); ctx.lineTo(x + s * 0.8, by); ctx.stroke();
+    ctx.strokeStyle = THEME.furnStroke; ctx.lineWidth = 1.4;
+    fillRR(x + s * 0.42, y + s * 0.52, s * 0.16, s * 0.42, 1, THEME.furnStroke);
+  }
+  function icoExam(x, y, s) {
+    fillRR(x, y + s * 0.28, s, s * 0.44, 4);
+    fillRR(x + s * 0.03, y + s * 0.3, s * 0.24, s * 0.4, 2, "#d6e6ff");
+    line(x + s * 0.2, y + s * 0.72, x + s * 0.2, y + s * 0.9);
+    line(x + s * 0.8, y + s * 0.72, x + s * 0.8, y + s * 0.9);
+  }
+  function icoComputer(x, y, s) {
+    fillRR(x + s * 0.12, y + s * 0.06, s * 0.76, s * 0.52, 2, THEME.screen);
+    fillRR(x + s * 0.42, y + s * 0.58, s * 0.16, s * 0.18, 1, THEME.furnStroke);
+    line(x + s * 0.3, y + s * 0.82, x + s * 0.7, y + s * 0.82);
+  }
+  function icoUltrasound(x, y, s) {
+    fillRR(x + s * 0.08, y + s * 0.08, s * 0.56, s * 0.8, 3);
+    fillRR(x + s * 0.14, y + s * 0.14, s * 0.44, s * 0.3, 2, THEME.screen);
+    ctx.beginPath(); ctx.arc(x + s * 0.82, y + s * 0.3, s * 0.08, 0, Math.PI * 2);
+    ctx.fillStyle = THEME.furn; ctx.fill(); ctx.stroke();
+    line(x + s * 0.6, y + s * 0.5, x + s * 0.82, y + s * 0.36);
+  }
+  function icoChair(x, y, s) {
+    fillRR(x + s * 0.26, y + s * 0.4, s * 0.42, s * 0.16, 2);
+    fillRR(x + s * 0.26, y + s * 0.14, s * 0.12, s * 0.4, 2);
+  }
+  function icoPPE(x, y, s) {
+    fillRR(x + s * 0.18, y + s * 0.04, s * 0.62, s * 0.88, 2);
+    line(x + s * 0.49, y + s * 0.06, x + s * 0.49, y + s * 0.9);
+    ctx.fillStyle = "#e05b6a";
+    ctx.fillRect(x + s * 0.3, y + s * 0.4, s * 0.08, s * 0.2);
+    ctx.fillRect(x + s * 0.24, y + s * 0.46, s * 0.2, s * 0.08);
+  }
+  function icoExit(x, y, s) {
+    fillRR(x + s * 0.16, y + s * 0.02, s * 0.56, s * 0.92, 2, "#2fae6b", "#1f8f55");
+    ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.lineCap = "round";
+    const ay = y + s * 0.48;
+    ctx.beginPath();
+    ctx.moveTo(x + s * 0.3, ay); ctx.lineTo(x + s * 0.6, ay);
+    ctx.moveTo(x + s * 0.5, ay - s * 0.1); ctx.lineTo(x + s * 0.62, ay);
+    ctx.lineTo(x + s * 0.5, ay + s * 0.1); ctx.stroke();
+    ctx.strokeStyle = THEME.furnStroke; ctx.lineWidth = 1.4; ctx.lineCap = "butt";
+  }
+  function icoHome(x, y, s) {
+    ctx.beginPath();
+    ctx.moveTo(x + s * 0.5, y + s * 0.05); ctx.lineTo(x + s * 0.95, y + s * 0.45);
+    ctx.lineTo(x + s * 0.05, y + s * 0.45); ctx.closePath();
+    ctx.fillStyle = "#e08a4a"; ctx.fill();
+    ctx.strokeStyle = THEME.furnStroke; ctx.stroke();
+    fillRR(x + s * 0.16, y + s * 0.44, s * 0.68, s * 0.5, 2);
+    fillRR(x + s * 0.4, y + s * 0.62, s * 0.2, s * 0.32, 1, "#cbd5e6");
   }
 
   function persMovement(step, name) {
@@ -470,37 +686,77 @@
       const tx = (p0[0] + (p1[0] - p0[0]) * frac + 0.5) * t;
       const ty = (p0[1] + (p1[1] - p0[1]) * frac + 0.5) * t;
       const color = state.personaColor[name] || "#8fa";
-      const r = Math.max(6, t * 0.32);
+      const r = Math.max(7, t * 0.30);
 
-      // Body dot.
-      ctx.beginPath();
-      ctx.arc(tx, ty, r, 0, Math.PI * 2);
-      ctx.fillStyle = color;
-      ctx.fill();
-      if (name === state.selected) {
-        ctx.lineWidth = 2.5; ctx.strokeStyle = "#fff"; ctx.stroke();
-      } else {
-        ctx.lineWidth = 1.5; ctx.strokeStyle = "rgba(0,0,0,0.4)"; ctx.stroke();
-      }
+      drawPersonToken(tx, ty, r, color, name === state.selected, name);
 
       // Pronunciatio emoji above head.
       if (e0.pronunciatio) {
-        ctx.font = Math.round(r * 1.7) + "px sans-serif";
+        ctx.font = Math.round(r * 1.8) + "px sans-serif";
         ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
-        ctx.fillText(e0.pronunciatio, tx, ty - r - 4);
+        ctx.fillText(e0.pronunciatio, tx, ty - r - 6);
       }
 
-      // Name label below.
-      ctx.font = "600 " + Math.max(9, t * 0.42) + "px sans-serif";
+      // Name label below (dark on the light floor, with a white halo).
+      ctx.font = "600 " + Math.max(9, t * 0.4) + "px -apple-system, sans-serif";
       ctx.textAlign = "center"; ctx.textBaseline = "top";
-      ctx.lineWidth = 3; ctx.strokeStyle = "rgba(0,0,0,0.55)";
-      ctx.strokeText(shortName(name), tx, ty + r + 2);
-      ctx.fillStyle = "#e6edf3";
-      ctx.fillText(shortName(name), tx, ty + r + 2);
+      ctx.lineWidth = 3; ctx.lineJoin = "round";
+      ctx.strokeStyle = "rgba(255,255,255,0.92)";
+      ctx.strokeText(shortName(name), tx, ty + r + 3);
+      ctx.fillStyle = "#243044";
+      ctx.fillText(shortName(name), tx, ty + r + 3);
 
       // Speech bubble for active chat.
       if (e0.chat && e0.chat.length) drawBubble(tx, ty - r - 22, e0.chat);
     }
+  }
+
+  function isStaff(name) {
+    return /^Dr\.?\b/.test(name) || /^Nurse\b/.test(name) || name === "Rosa Diaz";
+  }
+
+  function lighten(hex, amt) {
+    let c = String(hex).trim();
+    if (c[0] !== "#") return hex;
+    if (c.length === 4) c = "#" + c[1] + c[1] + c[2] + c[2] + c[3] + c[3];
+    const n = parseInt(c.slice(1), 16);
+    let r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+    r = Math.round(r + (255 - r) * amt);
+    g = Math.round(g + (255 - g) * amt);
+    b = Math.round(b + (255 - b) * amt);
+    return "rgb(" + r + "," + g + "," + b + ")";
+  }
+
+  function drawCross(x, y, size) {
+    const a = size * 0.5, b = size * 0.17;
+    ctx.fillStyle = "rgba(255,255,255,0.95)";
+    ctx.fillRect(x - b / 2, y - a / 2, b, a);
+    ctx.fillRect(x - a / 2, y - b / 2, a, b);
+  }
+
+  function drawPersonToken(x, y, r, color, selected, name) {
+    // Soft ground shadow.
+    ctx.beginPath();
+    ctx.ellipse(x, y + r * 0.85, r * 0.95, r * 0.42, 0, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(30,42,64,0.18)"; ctx.fill();
+
+    // Body with a soft highlight so it reads as a rounded token, not a flat dot.
+    const g = ctx.createRadialGradient(x - r * 0.3, y - r * 0.4, r * 0.2, x, y, r);
+    g.addColorStop(0, lighten(color, 0.4));
+    g.addColorStop(1, color);
+    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fillStyle = g; ctx.fill();
+
+    if (selected) {
+      ctx.lineWidth = 3; ctx.strokeStyle = "#ffffff"; ctx.stroke();
+      ctx.beginPath(); ctx.arc(x, y, r + 3, 0, Math.PI * 2);
+      ctx.lineWidth = 1.5; ctx.strokeStyle = withAlpha(color, 0.9); ctx.stroke();
+    } else {
+      ctx.lineWidth = 2; ctx.strokeStyle = "rgba(255,255,255,0.92)"; ctx.stroke();
+    }
+
+    // Clinical staff carry a small white medical-cross badge.
+    if (isStaff(name)) drawCross(x, y, r * 0.95);
   }
 
   function drawBubble(x, y, chat) {
@@ -523,20 +779,26 @@
     bx = Math.max(2, Math.min(bx, (state.world.width * t) - boxW - 2));
     by = Math.max(2, by);
 
-    ctx.fillStyle = "rgba(20,26,34,0.95)";
-    ctx.strokeStyle = "rgba(78,161,255,0.7)";
+    ctx.save();
+    ctx.shadowColor = "rgba(30,42,64,0.25)";
+    ctx.shadowBlur = 10; ctx.shadowOffsetY = 3;
+    ctx.fillStyle = "rgba(255,255,255,0.98)";
+    ctx.strokeStyle = "rgba(91,141,239,0.85)";
     ctx.lineWidth = 1.5;
     roundRect(bx, by, boxW, boxH, 8);
-    ctx.fill(); ctx.stroke();
+    ctx.fill();
+    ctx.restore();
+    ctx.strokeStyle = "rgba(91,141,239,0.85)"; ctx.lineWidth = 1.5;
+    roundRect(bx, by, boxW, boxH, 8); ctx.stroke();
     // Tail.
     ctx.beginPath();
     ctx.moveTo(x - 5, by + boxH);
     ctx.lineTo(x + 5, by + boxH);
     ctx.lineTo(x, by + boxH + 8);
-    ctx.closePath(); ctx.fillStyle = "rgba(20,26,34,0.95)"; ctx.fill();
+    ctx.closePath(); ctx.fillStyle = "rgba(255,255,255,0.98)"; ctx.fill();
 
     ctx.textAlign = "left"; ctx.textBaseline = "top";
-    ctx.fillStyle = "#dbe6f0";
+    ctx.fillStyle = "#233043";
     wrapped.forEach((w, i) => ctx.fillText(w, bx + padX, by + padY + i * lh));
   }
 

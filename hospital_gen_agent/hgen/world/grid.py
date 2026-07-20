@@ -248,6 +248,33 @@ def meta_info() -> dict:
 # --------------------------------------------------------------------------- #
 # Renderer world.json                                                          #
 # --------------------------------------------------------------------------- #
+def _obj_type(name: str) -> str:
+    """Map a game_object name to a renderer icon type (keeps the floor plan
+    legible without hard-coding coordinates in the frontend)."""
+    n = name.lower()
+    if "bed" in n:
+        return "bed"
+    if "desk" in n:
+        return "desk"
+    if "kiosk" in n:
+        return "kiosk"
+    if "vitals" in n:
+        return "vitals"
+    if "exam table" in n:
+        return "exam_table"
+    if "computer" in n:
+        return "computer"
+    if "ultrasound" in n:
+        return "ultrasound"
+    if "chair" in n:
+        return "chairs"
+    if "ppe" in n:
+        return "ppe"
+    if "exit" in n:
+        return "exit"
+    return "generic"
+
+
 def world_json() -> dict:
     """Floor-plan spec for the minimal grid renderer."""
     rooms = []
@@ -266,14 +293,24 @@ def world_json() -> dict:
     objects = []
     for r in ROOMS:
         for o in r.objects:
-            objects.append({"label": o.name, "x": o.x, "y": o.y})
-    objects.append({"label": SPAWN_NAME, "x": SPAWN_TILE[0], "y": SPAWN_TILE[1]})
+            objects.append({"label": o.name, "x": o.x, "y": o.y,
+                            "type": _obj_type(o.name)})
+    objects.append({"label": SPAWN_NAME, "x": SPAWN_TILE[0], "y": SPAWN_TILE[1],
+                    "type": "home"})
+
+    # Circulation: the corridor spine + the door tiles that open onto it, so the
+    # renderer can draw walls with real doorways instead of solid boxes.
+    corridor = {"x": min(CORRIDOR_X), "y": CORRIDOR_ROW,
+                "w": len(CORRIDOR_X), "h": 1}
+    doors = [{"x": x, "y": y} for (x, y) in DOOR_TILES]
 
     return {
         "tile_size": TILE_SIZE,
         "width": WIDTH,
         "height": HEIGHT,
         "rooms": rooms,
+        "corridor": corridor,
+        "doors": doors,
         "objects": objects,
     }
 

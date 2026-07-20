@@ -85,91 +85,152 @@
       "color": "#9b6ae8"
     }
   ],
+  "corridor": {
+    "x": 1,
+    "y": 8,
+    "w": 40,
+    "h": 1
+  },
+  "doors": [
+    {
+      "x": 4,
+      "y": 7
+    },
+    {
+      "x": 12,
+      "y": 7
+    },
+    {
+      "x": 22,
+      "y": 7
+    },
+    {
+      "x": 31,
+      "y": 7
+    },
+    {
+      "x": 38,
+      "y": 7
+    },
+    {
+      "x": 6,
+      "y": 9
+    },
+    {
+      "x": 17,
+      "y": 9
+    },
+    {
+      "x": 27,
+      "y": 9
+    },
+    {
+      "x": 37,
+      "y": 9
+    }
+  ],
   "objects": [
     {
       "label": "reception desk",
       "x": 4,
-      "y": 3
+      "y": 3,
+      "type": "desk"
     },
     {
       "label": "check-in kiosk",
       "x": 6,
-      "y": 3
+      "y": 3,
+      "type": "kiosk"
     },
     {
       "label": "vitals station",
       "x": 12,
-      "y": 3
+      "y": 3,
+      "type": "vitals"
     },
     {
       "label": "exam table",
       "x": 22,
-      "y": 3
+      "y": 3,
+      "type": "exam_table"
     },
     {
       "label": "computer",
       "x": 24,
-      "y": 3
+      "y": 3,
+      "type": "computer"
     },
     {
       "label": "exam table",
       "x": 31,
-      "y": 3
+      "y": 3,
+      "type": "exam_table"
     },
     {
       "label": "ultrasound machine",
       "x": 33,
-      "y": 4
+      "y": 4,
+      "type": "ultrasound"
     },
     {
       "label": "ward bed",
       "x": 38,
-      "y": 3
+      "y": 3,
+      "type": "bed"
     },
     {
       "label": "waiting chairs",
       "x": 4,
-      "y": 11
+      "y": 11,
+      "type": "chairs"
     },
     {
       "label": "waiting chairs",
       "x": 5,
-      "y": 11
+      "y": 11,
+      "type": "chairs"
     },
     {
       "label": "waiting chairs",
       "x": 6,
-      "y": 11
+      "y": 11,
+      "type": "chairs"
     },
     {
       "label": "isolation bed",
       "x": 17,
-      "y": 11
+      "y": 11,
+      "type": "bed"
     },
     {
       "label": "PPE station",
       "x": 19,
-      "y": 11
+      "y": 11,
+      "type": "ppe"
     },
     {
       "label": "palliative bed",
       "x": 27,
-      "y": 11
+      "y": 11,
+      "type": "bed"
     },
     {
       "label": "family chairs",
       "x": 29,
-      "y": 11
+      "y": 11,
+      "type": "chairs"
     },
     {
       "label": "exit",
       "x": 37,
-      "y": 11
+      "y": 11,
+      "type": "exit"
     },
     {
       "label": "Home",
       "x": 1,
-      "y": 8
+      "y": 8,
+      "type": "home"
     }
   ]
 }
