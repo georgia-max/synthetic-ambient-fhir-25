@@ -3,7 +3,7 @@
 A faithful port of Stanford's **Generative Agents** (Smallville, arXiv 2304.03442)
 to a **hospital**. Villagers become **patients and clinical staff**; Smallville
 becomes a **General Hospital**. The 25 synthetic FHIR encounters in
-[`../dataset/`](../dataset) are the *knowledge the agents have about the hospital*:
+[`dataset/`](dataset) are the *knowledge the agents have about the hospital*:
 they seed the world's departments, each patient's own chart and symptoms, and the
 staff's aggregated clinical knowledge.
 
@@ -13,8 +13,8 @@ structures, the same `world:sector:arena:game_object` maze addressing, and the
 same `movement` / `meta` replay contract. Only the domain content and the LLM
 backend (Claude, not OpenAI) change.
 
-> The full design rationale lives in [`CLAUDE.md`](CLAUDE.md) and the detailed
-> specs in [`plans/`](plans).
+> The full design rationale lives in [`hospital_gen_agent/CLAUDE.md`](hospital_gen_agent/CLAUDE.md)
+> and the detailed specs in [`hospital_gen_agent/plans/`](hospital_gen_agent/plans).
 
 ---
 
@@ -47,7 +47,7 @@ The whole pipeline runs **offline with no API key** in canned LLM mode.
 
 ## Quick start
 
-From the repo root (`../`), using the project virtualenv:
+From the repo root, using the project virtualenv:
 
 ```bash
 cd hospital_gen_agent
@@ -189,4 +189,4 @@ runs through the cognition loop.
   `python -m hgen.seeding.build`, `python -m hgen.world.build_maze`, and
   `python -m hgen.compress`.
 - The renderer's inputs and controls are documented in
-  [`web/README.md`](web/README.md).
+  [`hospital_gen_agent/web/README.md`](hospital_gen_agent/web/README.md).
