@@ -22,6 +22,45 @@ backend (Claude, not OpenAI) change.
 
 ---
 
+## Why this exists
+
+**The problem.** You can't experiment on a real hospital. You can't rerun a bad
+night in the ER to see whether a second doctor would have cleared the backlog, and
+you can't test a new triage policy on live patients. The knowledge needed to answer
+those questions is scattered across charts, transcripts, and staff who go home at
+the end of a shift — real operational data is siloed, sensitive, and impossible to
+replay. So the questions that matter most for patient flow go unanswered, and the
+lessons only arrive after someone has already paid for them.
+
+**What this builds.** A living, synthetic hospital you *can* experiment on. Every
+patient and clinician is a generative agent with the full Stanford cognitive
+architecture — they perceive their surroundings, retrieve memories, plan, hold
+conversations, and reflect. The agents are seeded entirely from
+[synthetic FHIR data](dataset) (no real patient, nothing at stake), so each patient
+carries their own chart and story and each clinician carries department-level
+clinical knowledge aggregated from the dataset. Run the whole hospital forward and
+watch care actually flow room to room.
+
+That opens up two things at once:
+
+- **A human story** — follow one patient (Clarence Reinger's prenatal visit) from
+  check-in through triage to a real, grounded OB consult, so you can see the
+  cognition produce believable, clinically faithful behavior at the individual
+  level.
+- **An operations story** — turn the same world into a what-if lab: the live
+  replay already tracks per-department occupancy and per-patient waiting time, and
+  the design's second act (specced in
+  [`plans/SUBPLAN_D`](hospital_gen_agent/plans/SUBPLAN_D_scenario_comparison.md))
+  extends this to a mass-casualty surge run with one ER doctor versus three, so the
+  wait-time and bottleneck charts show exactly where the system breaks — before it
+  breaks on real people.
+
+The bet: the most useful thing to build in healthcare isn't a system that acts on
+patients, it's one that lets you learn the hard operational lessons safely, in
+simulation, first.
+
+---
+
 ## What it does
 
 `run_slice.py` runs the whole bake end to end and leaves a self-contained replay
