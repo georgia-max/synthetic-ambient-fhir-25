@@ -7,6 +7,10 @@ becomes a **General Hospital**. The 25 synthetic FHIR encounters in
 they seed the world's departments, each patient's own chart and symptoms, and the
 staff's aggregated clinical knowledge.
 
+![The hospital replay: 25 synthetic patients walking their care pathways through the departments, with live per-department occupancy and waiting-time charts.](assets/hospital-replay.png)
+
+> Inspired by [georgia-max/generative_agents](https://github.com/georgia-max/generative_agents).
+
 The original cognitive architecture is kept intact — the same
 `perceive → retrieve → plan → reflect → execute` chain, the same three memory
 structures, the same `world:sector:arena:game_object` maze addressing, and the
